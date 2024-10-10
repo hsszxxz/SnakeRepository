@@ -20,8 +20,7 @@ namespace sneak
         private SneakMotor sneakMotor= new SneakMotor();
         public HeadType headType;
         private Dictionary<HeadType, List<KeyCode>> keyValuePairs;
-        [HideInInspector]
-        public float force;
+        public float moveForce;
         private void Update()
         {
             HeadMove(headType);
@@ -33,14 +32,13 @@ namespace sneak
             {
                 if (Input.GetKey(keyValuePairs[headType][i]))
                 {
-                    sneakMotor.SneakMove((Direction)i,force);
+                    sneakMotor.SneakMove((Direction)i,moveForce);
                 }
             }
         }
 
         protected override void Init()
         {
-            force = 2f;
             sneakMotor.InitMotor(this);
             keyValuePairs = new Dictionary<HeadType, List<KeyCode>>()
             {

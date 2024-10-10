@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4763254426224505273}
   - component: {fileID: 3503345640165275490}
   - component: {fileID: 3290165402117880624}
+  - component: {fileID: 6769363395093535401}
   m_Layer: 0
   m_Name: Head1
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   nextBody: {fileID: 0}
   type: 0
   headType: 0
-  force: 1
+  moveForce: 3
 --- !u!50 &4763254426224505273
 Rigidbody2D:
   serializedVersion: 4
@@ -180,3 +181,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b971a207c10d2c49aa90e99883e79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6769363395093535401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631005094112231846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d531364f25601419f87af6f578a92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 120
+  range: 6
+  backForce: 1
