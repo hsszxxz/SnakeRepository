@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+public interface IResetable
+{
+    void OnReset();
+}
 public class GameObjectPool : MonoSingleton<GameObjectPool>
 {
     private Dictionary<string, List<GameObject>> cahe;
@@ -64,6 +68,10 @@ public class GameObjectPool : MonoSingleton<GameObjectPool>
         go.transform.position = pos;
         go.transform.rotation = quaternion;
         go.SetActive(true);
+        foreach (var item in go.GetComponents<IResetable>())
+        {
+            item.OnReset();
+        }
     }
 
     private GameObject AddObject(string key, GameObject prefab)
