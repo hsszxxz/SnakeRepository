@@ -19,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Barrier
-  - 
+  - Halo
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Halo
+    uniqueID: 2682710391
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

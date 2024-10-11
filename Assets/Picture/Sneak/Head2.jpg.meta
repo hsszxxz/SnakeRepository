@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 19ff072de3b52fd4aa9aecf1990868eb
+guid: 0ecf557528ea8754692f0f9adb5e68af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5366285406051711267
-    second: SneakHead2_0
+      213: -7918947902851932483
+    second: Cache_-74d8779b2c5f8256_0
   - first:
-      213: 3557659872739855509
-    second: SneakHead2_1
+      213: 5741165448688490211
+    second: Cache_-74d8779b2c5f8256_1
   - first:
-      213: -6546648927415350545
-    second: SneakHead2_2
+      213: -1922663005297344711
+    second: Cache_-74d8779b2c5f8256_2
   - first:
-      213: 8837062780476774930
-    second: SneakHead2_3
+      213: -7777898817096127927
+    second: Cache_-74d8779b2c5f8256_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SneakHead2_0
+      name: Cache_-74d8779b2c5f8256_0
       rect:
         serializedVersion: 2
         x: 6
         y: 0
         width: 52
-        height: 52
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd6cce0eadf1785b0800000000000000
-      internalID: -5366285406051711267
+      spriteID: dbe9fa7b6de3a1290800000000000000
+      internalID: -7918947902851932483
       vertices: []
       indices: 
       edges: []
@@ -130,7 +130,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7c71e4872b44f2742bf60a70531a694c
+    spriteID: f3e6130af88ba4b42a833da1be66c1b8
     internalID: 0
     vertices: []
     indices: 
@@ -138,7 +138,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SneakHead2_0: -5366285406051711267
+      Cache_-74d8779b2c5f8256_0: -7918947902851932483
+      Cache_-74d8779b2c5f8256_1: 5741165448688490211
+      Cache_-74d8779b2c5f8256_2: -1922663005297344711
+      Cache_-74d8779b2c5f8256_3: -7777898817096127927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

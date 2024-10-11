@@ -45,7 +45,8 @@ namespace enemy
             currentTime += Time.deltaTime;
             if (currentTime > timeToEnemy)
             {
-                GameObjectPool.Instance.CreateObject("enemy", Resources.Load("Prefab/Enemy") as GameObject, transform.position, Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("enemy", Resources.Load("Prefabs/Enemy") as GameObject, transform.position, Quaternion.identity);
+                currentTime = 0;
                 GameObjectPool.Instance.CollectObject(gameObject);
             }
         }
@@ -60,6 +61,7 @@ namespace enemy
         {
             breakNum = resetBreakNum;
             timeToEnemy = resetTimeToEnemy;
+            currentTime = 0;
         }
     }
 }

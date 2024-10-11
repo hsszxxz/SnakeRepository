@@ -13,7 +13,7 @@ namespace enemy
         public List<int> enemyNum = new List<int>();
         private void Start()
         {
-            if (!GenerateMethod.Instance.InitRandomObject(enemyNum, minPoints, maxPoints, "Prefabs/Enemy", "enemy"))
+            if (!GenerateMethod.InitRandomObject(enemyNum, minPoints, maxPoints, "Prefabs/Enemy", "enemy"))
             {
                 Debug.LogError("enemyÉú³É´íÎó");
             }

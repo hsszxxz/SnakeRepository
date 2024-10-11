@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 7f28a6afab0058f418891a759c5f8e6d
+guid: 0dae0de73d3ff7b48934642c8a5df5e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8515581304071891326
-    second: 39750182cb96abb1a210d89c628ed68c_0
+      213: -7918947902851932483
+    second: Cache_-74d8779b2c5f8256_0
   - first:
-      213: 4570656117508253161
-    second: 39750182cb96abb1a210d89c628ed68c_1
+      213: 5741165448688490211
+    second: Cache_-74d8779b2c5f8256_1
   - first:
-      213: 4989036013315794771
-    second: 39750182cb96abb1a210d89c628ed68c_2
+      213: -1922663005297344711
+    second: Cache_-74d8779b2c5f8256_2
   - first:
-      213: -4521297360586686158
-    second: 39750182cb96abb1a210d89c628ed68c_3
+      213: -7777898817096127927
+    second: Cache_-74d8779b2c5f8256_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 39750182cb96abb1a210d89c628ed68c_0
+      name: Cache_-74d8779b2c5f8256_0
       rect:
         serializedVersion: 2
         x: 6
@@ -121,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e79a92d141c6d2670800000000000000
-      internalID: 8515581304071891326
+      spriteID: dbe9fa7b6de3a1290800000000000000
+      internalID: -7918947902851932483
       vertices: []
       indices: 
       edges: []
@@ -130,7 +130,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f125782b4db3c5440a2985753b30e91b
+    spriteID: 9a1f1c5cc21c9744a95760ed03792d9f
     internalID: 0
     vertices: []
     indices: 
@@ -138,10 +138,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      39750182cb96abb1a210d89c628ed68c_0: 8515581304071891326
-      39750182cb96abb1a210d89c628ed68c_1: 4570656117508253161
-      39750182cb96abb1a210d89c628ed68c_2: 4989036013315794771
-      39750182cb96abb1a210d89c628ed68c_3: -4521297360586686158
+      Cache_-74d8779b2c5f8256_0: -7918947902851932483
+      Cache_-74d8779b2c5f8256_1: 5741165448688490211
+      Cache_-74d8779b2c5f8256_2: -1922663005297344711
+      Cache_-74d8779b2c5f8256_3: -7777898817096127927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,7 +8,7 @@ public class FoodsManager : MonoBehaviour
     public List<int> foodNum = new List<int>();
     private void Start()
     {
-        if (!GenerateMethod.Instance.InitRandomObject(foodNum, minPoints, maxPoints, "Prefabs/Food", "food"))
+        if (!GenerateMethod.InitRandomObject(foodNum, minPoints, maxPoints, "Prefabs/Food", "food"))
         {
             Debug.LogError("foodÉú³É´íÎó");
         }
