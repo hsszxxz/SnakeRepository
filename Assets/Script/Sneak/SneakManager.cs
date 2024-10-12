@@ -32,10 +32,7 @@ namespace sneak
             AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
             AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
         }
-        private void Update()
-        {
-           
-        }
+
         public void InitHeads()
         {
             DeletSneakBody();
@@ -51,8 +48,6 @@ namespace sneak
             head2.GetComponent<SneakBody>().nextBody = null;
             bodies.Add(head1.GetComponent<SneakBody>());
             bodies.Add(head2.GetComponent<SneakBody>());
-            head1.transform.localPosition = new Vector3(0.8f,0,0);
-            head2.transform.localPosition = new Vector3(-0.8f, 0, 0);
         }
         public void AddSneakBodyToPrevious(SneakBody PreviousBody)
         {
