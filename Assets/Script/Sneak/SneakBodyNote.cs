@@ -13,6 +13,7 @@ namespace sneak
             type = HeadType.Body;
             transform.tag = type.ToString();
         }
+
     }
 }
 

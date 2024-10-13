@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1527623571039254316}
   - component: {fileID: -8218092482469725973}
   - component: {fileID: -6796766417454747466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,8 +124,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.06473422}
+  m_Radius: 0.4352658
 --- !u!50 &2702129108037783159
 Rigidbody2D:
   serializedVersion: 4

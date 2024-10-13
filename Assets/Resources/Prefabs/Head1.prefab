@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3503345640165275490}
   - component: {fileID: 3290165402117880624}
   - component: {fileID: 6769363395093535401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,8 +167,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.08676518}
+  m_Radius: 0.4132348
 --- !u!114 &3290165402117880624
 MonoBehaviour:
   m_ObjectHideFlags: 0
