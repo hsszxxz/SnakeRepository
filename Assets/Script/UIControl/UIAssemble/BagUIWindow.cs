@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace ns
+using UnityEngine.UI;
+
+public class BagUIWindow:UIWindow
 {
-    ///<summary>
-    ///
-    ///<summary>
-    public class BagUIWindow
+    public Button close;
+    private void Start()
     {
-    
+        close.onClick.AddListener(CloseBag);
+    }
+    private void CloseBag()
+    {
+        ShutAndOpen(false);
     }
 }
 

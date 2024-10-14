@@ -22,7 +22,7 @@ public class UIWindow : MonoBehaviour
         canvasGroup.blocksRaycasts = flag;
     }
 }
-public class UIManage : MonoSingleton<UIManage>
+public class UIManager : MonoSingleton<UIManager>
 {
     private Dictionary<string, UIWindow> UIWindowDic;
     public override void Init()

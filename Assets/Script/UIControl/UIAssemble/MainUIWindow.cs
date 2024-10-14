@@ -12,7 +12,7 @@ public class MainUIWindow:UIWindow
     }
     private void OpenBag()
     {
-
+        UIManager.Instance.GetUIWindow<BagUIWindow>().ShutAndOpen(true);
     }
 }
 
