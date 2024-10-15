@@ -12,6 +12,7 @@ public class MainUIWindow:UIWindow
     }
     private void OpenBag()
     {
+        Time.timeScale = 0;
         UIManager.Instance.GetUIWindow<BagUIWindow>().ShutAndOpen(true);
     }
 }

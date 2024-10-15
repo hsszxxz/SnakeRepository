@@ -20,6 +20,7 @@ public class ItemScript : MonoBehaviour
         image.sprite = dataBase.img;
         name = dataBase.name;
         id = dataBase.id;
+        num = 1;
     }
 }
 

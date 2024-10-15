@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94178a9a1145b5a449a97fb9b2165210, type: 3}
+  m_Name: ItemList
+  m_EditorClassIdentifier: 
+  datas:
+  - id: 1
+    name: star
+    description: iii
+    img: {fileID: -5530124188274321961, guid: 0828213b3e562ed41a45863b8df386ab, type: 3}
+  - id: 2
+    name: 555
+    description: iii
+    img: {fileID: -7918947902851932483, guid: 0dae0de73d3ff7b48934642c8a5df5e1, type: 3}
