@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 744056887}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1087,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 1653660346271953231, guid: aba5c963dfe627c4f95c6ccfa2ee2623, type: 3}
-  m_Color: {r: 0.58478695, g: 0.781893, b: 0.8301887, a: 1}
+  m_Color: {r: 0.58478695, g: 0.781893, b: 0.8301887, a: 0.81960785}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

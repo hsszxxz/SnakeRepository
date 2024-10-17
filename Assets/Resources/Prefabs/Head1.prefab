@@ -194,5 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 120
-  range: 6
+  range: 10
   backForce: 1
+  waveSpeed: 2

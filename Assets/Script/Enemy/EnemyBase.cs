@@ -1,6 +1,7 @@
+using NUnit.Framework;
 using Pathfinding;
 using sneak;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 namespace enemy
 {
@@ -13,6 +14,10 @@ namespace enemy
         private AIDestinationSetter destinationSetter;
         private Seeker seeker;
         private AIPath aipath;
+        [HideInInspector]
+        public int blood;
+        [Tooltip("怪碰到哪些tag的碰撞体会收到伤害")]
+        public List<string> colliderHurtTags ;
         private void Start()
         {
             destinationSetter = GetComponent<AIDestinationSetter>();
@@ -43,6 +48,11 @@ namespace enemy
             aipath.enabled = flag;
             seeker.enabled = flag;
             destinationSetter.enabled = flag;
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (colliderHurtTags.Contains(collision.transform.tag))
+                blood -= 1;
         }
     }
 }
