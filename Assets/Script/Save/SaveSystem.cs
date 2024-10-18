@@ -1,5 +1,7 @@
 using sneak;
+using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 namespace save
 {
@@ -21,6 +23,45 @@ namespace save
         {
             public int sneakBodyLength;
             public Vector3 head1position;
+        }
+        class BagData
+        {
+            //id是x
+            //数量是y
+            public List<Vector2 >items = new List<Vector2>();
+        }
+        public static void SaveBag()
+        {
+            List<Vector2> itemsValue = new List<Vector2>();
+            foreach( ItemScript temp in ItemManager.Instance.datas)
+            {
+                itemsValue.Add(new Vector2(temp.id, temp.num));
+            }
+            BagData bagData = new BagData()
+            {
+                items = itemsValue
+            };
+            SavePlayerPrefs("bag", bagData);
+        }
+        public static void LoadBag()
+        {
+            BagData data = LoadFromPlayerPrefs<BagData>("bag");
+            Debug.Log(data.items.Count);
+            ItemManager.Instance.CleanAllItems();
+            foreach ( Vector2 temp in data.items )
+            {
+                ItemManager.Instance.AddObject((int)temp.x, (int)temp.y);
+            }
+        }
+        public static void SaveAll()
+        {
+            SaveBag();
+            SaveSnake();
+        }
+        public static void LoadAll()
+        {
+            LoadBag();
+            LoadSnake();
         }
         public static void SaveSnake()
         {
@@ -51,13 +92,13 @@ namespace save
                 SneakManager.Instance.AddSneakBodyToPrevious(SneakManager.Instance.head1.GetComponent<SneakBody>());
             }
         }
-        public static void SavePlayerPrefs(string key, object data)
+        private static void SavePlayerPrefs(string key, object data)
         {
             var json =JsonUtility.ToJson(data);
             PlayerPrefs.SetString(key, json);
             PlayerPrefs.Save();
         }
-        public static T LoadFromPlayerPrefs<T>(string key)
+        private static T LoadFromPlayerPrefs<T>(string key)
         {
             var json = PlayerPrefs.GetString(key, null);
             return JsonUtility.FromJson<T>(json);

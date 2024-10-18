@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using Pathfinding;
 using sneak;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace enemy

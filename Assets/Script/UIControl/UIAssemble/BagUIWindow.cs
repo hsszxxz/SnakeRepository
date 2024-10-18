@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +18,7 @@ public class BagUIWindow:UIWindow
     public int maxItemNum;
 
     [HideInInspector]
-    public Dictionary<int,Transform>bagItemsPanels = new Dictionary<int,Transform>() ;
-
-    private float panelDis = 560;
+    public Dictionary<int,RectTransform>bagItemsPanels = new Dictionary<int,RectTransform>() ;
 
     public Transform bag;
 
@@ -57,15 +56,21 @@ public class BagUIWindow:UIWindow
     private int maxPage;
     private void Start()
     {
-        maxPage = 1;
-        page = 1;
         close.onClick.AddListener(CloseBag);
-        Transform panel = Instantiate(Resources.Load("Prefabs/BagItems") as GameObject, bag).transform;
-        bagItemsPanels.Add(maxPage, panel);
-        pageItems.Add(maxPage, new List<Transform>());
+        InitBag();
         turnLeft.onClick.AddListener(TurnLeftPage);
         turnRight.onClick.AddListener(TurnRightPage);
     }
+
+    private void InitBag()
+    {
+        maxPage = 1;
+        page = 1;
+        RectTransform panel = Instantiate(Resources.Load("Prefabs/BagItems") as GameObject, bag).GetComponent<RectTransform>();
+        bagItemsPanels.Add(maxPage, panel);
+        pageItems.Add(maxPage, new List<Transform>());
+    }
+
     private void TurnLeftPage()
     {
         TurnPage(-1);
@@ -83,19 +88,65 @@ public class BagUIWindow:UIWindow
         }
         page += pageChange;
     }
-    IEnumerator TurnToPage(Vector3 target,Transform page)
+    IEnumerator TurnToPage(Vector3 target,Transform pageTransform)
     {
         turnRight.interactable = false ;
         turnLeft.interactable = false ;
-        while(Vector3.Distance(page.localPosition,target) >0.5f)
+        while(Vector3.Distance(pageTransform.localPosition,target) >0.5f)
         {
-            page.localPosition = Vector3.Lerp(page.localPosition, target, 0.2f);
+            pageTransform.localPosition = Vector3.Lerp(pageTransform.localPosition, target, 0.2f);
             yield return null;
         }
-        turnRight.interactable = true;
-        turnLeft.interactable = true;
+        page = pageValue;
     }
-    
+    private  void DeletOnePage(int pageNum)
+    {
+        for (int j = bagItemsPanels.Count;j>pageNum; j--)
+        {
+            bagItemsPanels[j].localPosition = bagItemsPanels[j-1].localPosition;
+        }
+        for (int i = pageNum; i < bagItemsPanels.Count; i++)
+        {
+            bagItemsPanels[i] = bagItemsPanels[i + 1];
+            pageItems[i] = pageItems[i + 1];
+        }
+        bagItemsPanels.Remove(maxPage);
+        pageItems.Remove(maxPage);
+        maxPage -= 1;
+        if (page > maxPage )
+        {
+               TurnPage(-1);
+        }
+        page = pageValue;
+    }
+    public void CleanBag()
+    {
+        pageItems.Clear();
+        foreach(var bagPage in bagItemsPanels.Values)
+        {
+            Destroy(bagPage.gameObject);
+        }
+        bagItemsPanels.Clear();
+        InitBag();
+    }
+    public void MinusItemFromPage(Transform item)
+    {
+        for (int i = 0; i < pageItems.Count; i++)
+        {
+            if (pageItems[i + 1].Contains(item))
+            {
+                pageItems[i + 1].Remove(item);
+                Destroy(item.gameObject);
+                if (pageItems[i + 1].Count == 0)
+                {
+                    GameObject deletGo = bagItemsPanels[i + 1].gameObject;
+                    DeletOnePage(i + 1);
+                    Destroy(deletGo);
+                }
+                break;
+            }
+        }
+    }
     public int AddItemsToPage(Transform item)
     {
         bool flag = true;
@@ -110,10 +161,10 @@ public class BagUIWindow:UIWindow
         }
         if (flag)
         {
-            Transform panel = Instantiate(Resources.Load("Prefabs/BagItems") as GameObject, bag).transform;
+            RectTransform panel = Instantiate(Resources.Load("Prefabs/BagItems") as GameObject, bag).GetComponent<RectTransform>();
             panel.localPosition = bagItemsPanels[maxPage].localPosition + offsetPos;
             maxPage += 1;
-            page = page;
+            page = pageValue;
             bagItemsPanels.Add(maxPage,panel);
             pageItems.Add(maxPage, new List<Transform>() { item });
             return maxPage;

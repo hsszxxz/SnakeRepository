@@ -8,7 +8,7 @@ using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 public class ItemManager : MonoSingleton<ItemManager>
 {
     [HideInInspector]
-    public List<ItemScript> datas;
+    public List<ItemScript> datas = new List<ItemScript>();
     public ItemData itemDatas;
     public void AddObject(int id,int num=1)
     {
@@ -29,7 +29,7 @@ public class ItemManager : MonoSingleton<ItemManager>
                 if (data.id==id)
                 {
                     GameObject itemGo = Instantiate(Resources.Load("Prefabs/Item") as GameObject);
-                    int transformIndex =UIManager.Instance.GetUIWindow<BagUIWindow>().AddItemsToPage(itemGo.transform);
+                    int transformIndex =UIManager.Instance.GetUIWindow<BagUIWindow>().AddItemsToPage(itemGo.GetComponent<RectTransform>());
                     if (transformIndex != -1)
                         itemGo.transform.SetParent(UIManager.Instance.GetUIWindow<BagUIWindow>().bagItemsPanels[transformIndex]);
                     itemGo.transform.localScale = new Vector3(1, 1, 1);
@@ -40,45 +40,10 @@ public class ItemManager : MonoSingleton<ItemManager>
             }
         }
     }
-    public void AddObject(ItemDataBase dataBase,int num =1)
+    public void CleanAllItems()
     {
-        bool flag = true;
-       foreach (ItemScript item in datas)
-        {
-            if (item.id == dataBase.id)
-            {
-                item.num += num;
-                flag = false;
-                break;
-            }
-        }
-       if (flag)
-        {
-            GameObject itemGo = Instantiate(Resources.Load("Prefabs/Item") as GameObject);
-            int transformIndex = UIManager.Instance.GetUIWindow<BagUIWindow>().AddItemsToPage(itemGo.transform);
-            if (transformIndex != -1)
-                itemGo.transform.SetParent(UIManager.Instance.GetUIWindow<BagUIWindow>().bagItemsPanels[transformIndex]);
-            ItemScript item = itemGo.GetComponent<ItemScript>();
-            item.InitItem(dataBase);
-            datas.Add(item);
-        }
-    }
-    public bool MinusObject(ItemDataBase dataBase, int num = 1)
-    {
-        foreach (ItemScript item in datas)
-        {
-            if (item.id == dataBase.id)
-            {
-                if (item.num == num)
-                    DeletObject(item.id);
-                else if (item.num < num)
-                    return false;
-                else
-                    item.num -= num;
-                break;
-            }
-        }
-        return true;
+        UIManager.Instance.GetUIWindow<BagUIWindow>().CleanBag();
+        datas.Clear();
     }
     public void DeletObject(int id)
     {
@@ -87,7 +52,7 @@ public class ItemManager : MonoSingleton<ItemManager>
             if (item.id == id)
             {
                 datas.Remove(item);
-                Destroy(item.gameObject);
+                UIManager.Instance.GetUIWindow<BagUIWindow>().MinusItemFromPage(item.transform);
                 break;
             }
         }
