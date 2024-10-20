@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      peiyangcang-guandao2_0: 6239990582157213697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

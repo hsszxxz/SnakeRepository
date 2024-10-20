@@ -176,7 +176,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      peiyangcang-peiyangcang6_0: -5087485516804483217
+      peiyangcang-peiyangcang6_1: -8252177992184982594
+      peiyangcang-peiyangcang6_2: 3126553517123629523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
