@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766273249911901905}
   - component: {fileID: 7185259800169680467}
+  - component: {fileID: -7482165774526619592}
   - component: {fileID: 1729478062827233909}
   - component: {fileID: 6311217163318140581}
   - component: {fileID: 4994187687907434411}
@@ -17,9 +18,8 @@ GameObject:
   - component: {fileID: 1921168937030631233}
   - component: {fileID: 2998267837223792295}
   - component: {fileID: 3687657158654968374}
-  - component: {fileID: 3391846837609035356}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyRemote
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,6 +92,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7482165774526619592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746943627451774842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191e5c1cca2fa8a4a98fba75054cd36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 3
+  distance: 5
+  spaceTime: 2
 --- !u!61 &1729478062827233909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a616564d31a59874ebc8f71f35a2469b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlood: 1
+  maxBlood: 5
   blood: 0
   colliderHurtTags:
   - building
@@ -277,16 +292,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b971a207c10d2c49aa90e99883e79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3391846837609035356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746943627451774842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38bcdb8f854af284abb673f7a782d925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 3

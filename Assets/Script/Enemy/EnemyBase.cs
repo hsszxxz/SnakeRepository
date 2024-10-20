@@ -4,6 +4,7 @@ using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 namespace enemy
 {
     ///<summary>
@@ -15,6 +16,8 @@ namespace enemy
         private AIDestinationSetter destinationSetter;
         private Seeker seeker;
         private AIPath aipath;
+        [Tooltip("最大血量")]
+        public int maxBlood;
         [HideInInspector]
         public int blood;
         [Tooltip("怪碰到哪些tag的碰撞体会收到伤害")]
@@ -26,8 +29,9 @@ namespace enemy
             aipath = GetComponent<AIPath>();
             rigid = GetComponent<Rigidbody2D>();
             destinationSetter.target = FindTarget();
+            blood = maxBlood;
         }
-        private Transform FindTarget()
+        public Transform FindTarget()
         {
             Transform head1Trans = SneakManager.Instance.head1.transform;
             Transform head2Trans = SneakManager.Instance.head2.transform;
@@ -55,8 +59,15 @@ namespace enemy
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (colliderHurtTags.Contains(collision.transform.tag))
+            if (colliderHurtTags.Contains(collision.transform.tag)|| collision.transform.CompareTag("playerbullet"))
+            {
                 blood -= 1;
+                if (blood <= 0)
+                {
+                    GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
+                    GameObjectPool.Instance.CollectObject(gameObject);
+                }
+            }
         }
     }
 }

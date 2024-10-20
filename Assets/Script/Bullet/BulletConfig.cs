@@ -39,6 +39,7 @@ namespace bullet
                 for (int j = 0; j < data.Count; j++)
                 {
                     GameObject bullet = GameObjectPool.Instance.CreateObject(shooter.name + "bullet", data.prafabs, data.P_Offset + shooter.position, Quaternion.Euler(data.R_Offset));
+                    bullet.transform.tag = "enemybullet";
                     BulletMotor motor = bullet.GetComponent<BulletMotor>();
                     motor.bulletSpeed = data.speed;
                     motor.direction = bullet.transform.right;

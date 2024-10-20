@@ -14,7 +14,6 @@ public class BuildingTransparent : MonoBehaviour
     private void Start()
     {
         buildings = new List<GameObject[]>();
-        Debug.Log(buildings);
         for (int i =0; i <buildingTags.Count;i++)
         {
             buildings.Add(GameObject.FindGameObjectsWithTag(buildingTags[i]));

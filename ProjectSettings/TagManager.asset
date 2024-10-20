@@ -8,10 +8,11 @@ TagManager:
   - Head1
   - Head2
   - Body
-  - bullet
   - building
   - enemy
   - wave
+  - playerbullet
+  - enemybullet
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Barrier
   - Halo
   - Sneak
-  - 
+  - PlayerBullet
   - 
   - 
   - 

@@ -15,12 +15,12 @@ MonoBehaviour:
   prafabs: {fileID: 5296609587309178213, guid: 9fefe6301c0a8664cbd845f082f7ce97, type: 3}
   P_Offset: {x: 0, y: 0, z: 0}
   R_Offset: {x: 0, y: 0, z: 0}
-  Count: 4
-  cdTime: 0.2
-  speed: 5
+  Count: 1
+  cdTime: 1
+  speed: 1
   angle: 90
   distance: 0
   centerDis: 0
   selfRotate: 30
-  tempShootTime: 29.797445
-  tempRotation: {x: 0, y: 0, z: 0, w: 1}
+  tempShootTime: 1.0047748
+  tempRotation: {x: 0, y: 0, z: 0.25881904, w: 0.9659258}
