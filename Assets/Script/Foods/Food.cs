@@ -7,4 +7,5 @@ public class Food : MonoBehaviour
     {
         transform.tag = "food";
     }
+    
 }

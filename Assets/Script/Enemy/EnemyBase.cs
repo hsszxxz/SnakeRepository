@@ -25,12 +25,15 @@ namespace enemy
             seeker = GetComponent<Seeker>();
             aipath = GetComponent<AIPath>();
             rigid = GetComponent<Rigidbody2D>();
-            destinationSetter.target = RandomTarget();
+            destinationSetter.target = FindTarget();
         }
-        private Transform RandomTarget()
+        private Transform FindTarget()
         {
-            int randomIndex = Random.Range(1, 2);
-            return SneakManager.Instance.bodies[randomIndex].transform;
+            Transform head1Trans = SneakManager.Instance.head1.transform;
+            Transform head2Trans = SneakManager.Instance.head2.transform;
+            float distance1 = Vector2.Distance(transform.position, head1Trans.position);
+            float distance2 = Vector2.Distance(transform.position,head2Trans.position);
+            return (distance1 > distance2) ? head2Trans : head1Trans;
         }
         public void ShakeEnemyBack(Transform shakeFrom,float backForce)
         {

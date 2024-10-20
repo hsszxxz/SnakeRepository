@@ -52,11 +52,7 @@ namespace sneak
         {
             if(collision.transform.CompareTag("food"))
             {
-                if (headType == HeadType.Head2)
-                {
-                    SneakManager.Instance.AddSneakBodyToNext(this);
-                }
-                else if (headType == HeadType.Head1)
+                 if (headType == HeadType.Head1)
                 {
                     SneakManager.Instance.AddSneakBodyToPrevious(this);
                 }

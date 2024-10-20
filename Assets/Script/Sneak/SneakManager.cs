@@ -17,7 +17,8 @@ namespace sneak
         public GameObject sneakBodies;
         [HideInInspector]
         public GameObject head1;
-        private GameObject head2;
+        [HideInInspector]
+        public GameObject head2;
         private float forceChange = 0.2f;
         public override void Init()
         {

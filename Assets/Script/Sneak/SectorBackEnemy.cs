@@ -15,8 +15,6 @@ namespace sneak
         public float range = 4f;
         [Tooltip("推敌人的波的力")]
         public float backForce;
-        [Tooltip("波的速度")]
-        public float waveSpeed;
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.E))
