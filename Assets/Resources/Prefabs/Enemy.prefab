@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1766273249911901905}
   - component: {fileID: 7185259800169680467}
   - component: {fileID: 1729478062827233909}
-  - component: {fileID: 6311217163318140581}
+  - component: {fileID: -6031473358920527275}
+  - component: {fileID: 7733093569942278737}
   - component: {fileID: 4994187687907434411}
   - component: {fileID: 2279772146090397143}
   - component: {fileID: 1921168937030631233}
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6311217163318140581
+--- !u!114 &-6031473358920527275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,13 +148,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 5746943627451774842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a616564d31a59874ebc8f71f35a2469b, type: 3}
+  m_Script: {fileID: 11500000, guid: 362e0e2c39a0b044c9113c1d7719597d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7733093569942278737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746943627451774842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3218991cc9aaf4190ea864556a41a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxBlood: 1
   blood: 0
   colliderHurtTags:
   - building
+  - playerbullet
 --- !u!114 &4994187687907434411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,4 +303,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bcdb8f854af284abb673f7a782d925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3
+  distance: 2
+  spaceTime: 2

@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class ChooseUIWindow : UIWindow
 {
-    public List<Text> player1Choices;
-    public List<Text> player2Choices;
+    public List<Image> player1Choices;
+    public List<Image> player2Choices;
     public float chooseTime;
 
     public Image timeLine;

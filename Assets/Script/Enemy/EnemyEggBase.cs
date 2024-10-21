@@ -1,4 +1,5 @@
 using Pathfinding;
+using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,8 @@ namespace enemy
         private int breakNumValue;
         [Tooltip("几秒之后会变成Enemy")]
         public float timeToEnemy;
-
+        [Tooltip("距离玩家多少距离开始计时")]
+        public float distance;
 
         private float currentTime;
         private int resetBreakNum;
@@ -42,13 +44,24 @@ namespace enemy
         }
         private void Update()
         {
-            currentTime += Time.deltaTime;
+            if (Vector2.Distance(FindTarget().position,transform.position) <= distance)
+            {
+                currentTime += Time.deltaTime;
+            }
             if (currentTime > timeToEnemy)
             {
                 GameObjectPool.Instance.CreateObject("enemy", Resources.Load("Prefabs/Enemy") as GameObject, transform.position, Quaternion.identity);
                 currentTime = 0;
                 GameObjectPool.Instance.CollectObject(gameObject);
             }
+        }
+        private Transform FindTarget()
+        {
+            Transform head1Trans = SneakManager.Instance.head1.transform;
+            Transform head2Trans = SneakManager.Instance.head2.transform;
+            float distance1 = Vector2.Distance(transform.position, head1Trans.position);
+            float distance2 = Vector2.Distance(transform.position, head2Trans.position);
+            return (distance1 > distance2) ? head2Trans : head1Trans;
         }
         public void ShakeEnemyBack(Transform shakeFrom, float backForce)
         {
