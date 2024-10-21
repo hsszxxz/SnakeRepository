@@ -15,7 +15,7 @@ MonoBehaviour:
   datas:
   - id: 1
     name: star
-    description: iii
+    description: 6666
     img: {fileID: -5530124188274321961, guid: 0828213b3e562ed41a45863b8df386ab, type: 3}
   - id: 2
     name: 555
