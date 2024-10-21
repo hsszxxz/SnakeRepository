@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class FoodsManager : MonoBehaviour
 {
+    [Tooltip("生成位置的x，y最小值")]
     public List<Vector2> minPoints = new List<Vector2>();
+    [Tooltip("生成位置的x，y最大值")]
     public List<Vector2> maxPoints = new List<Vector2>();
+    [Tooltip("每一片区域生成多少物体")]
     public List<int> foodNum = new List<int>();
     private void Start()
     {

@@ -27,6 +27,8 @@ namespace enemy
                 }
             }
         }
+        [Tooltip("需要波打几次才会消失")]
+        public int BreakNum;
         private int breakNumValue;
         [Tooltip("几秒之后会变成Enemy")]
         public float timeToEnemy;
@@ -41,6 +43,7 @@ namespace enemy
             rigid = GetComponent<Rigidbody2D>();
             resetBreakNum = breakNum;
             resetTimeToEnemy = timeToEnemy;
+            breakNum = BreakNum;
         }
         private void Update()
         {

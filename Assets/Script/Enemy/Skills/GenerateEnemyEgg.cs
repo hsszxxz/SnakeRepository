@@ -10,13 +10,13 @@ namespace enemy
     [Serializable]
     public class GenerateEnemyEgg
     {
-        public Vector3 possitionOffset;
-        public int num;
+        [Tooltip("蛋的生成位置关于boss的相对位置(有几个位置就会有多少个蛋)")]
+        public List<Vector3> positionOffset;
         public void Excute(Vector3 bossPos)
         {
-            for (int i = 0; i < num; i++)
+            for (int i = 0; i < positionOffset.Count; i++)
             {
-                GameObjectPool.Instance.CreateObject("enemyEgg", Resources.Load("Prefabs/EnemyEgg") as GameObject, possitionOffset + bossPos, Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("enemyEgg", Resources.Load("Prefabs/EnemyEgg") as GameObject, positionOffset[i] + bossPos, Quaternion.identity);
             }
         }
     }

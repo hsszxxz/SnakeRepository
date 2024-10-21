@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 430521260471342084}
   - component: {fileID: 7099078228184664076}
   - component: {fileID: 9132778618076515300}
-  - component: {fileID: -7792456720484286052}
   - component: {fileID: 8330620983029848548}
   m_Layer: 0
   m_Name: enemyBoss
@@ -140,27 +139,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3578668aef19494480c88b5b5764fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlood: 0
-  eggBlood: 0
+  maxBlood: 5
   blood: 0
+  colliderHurtTags:
+  - playerbullet
+  eggBlood: 2
   generateEnemyEgg:
-    possitionOffset: {x: 0, y: 0, z: 0}
-    num: 0
---- !u!114 &-7792456720484286052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940787177242264529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a616564d31a59874ebc8f71f35a2469b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxBlood: 0
-  blood: 0
-  colliderHurtTags: []
+    positionOffset: []
 --- !u!114 &8330620983029848548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +159,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
+  spaceTime: 1

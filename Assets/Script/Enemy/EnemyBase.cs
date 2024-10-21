@@ -4,7 +4,6 @@ using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 namespace enemy
 {
     ///<summary>
@@ -30,7 +29,7 @@ namespace enemy
             float distance2 = Vector2.Distance(transform.position,head2Trans.position);
             return (distance1 > distance2) ? head2Trans : head1Trans;
         }
-        private void OnCollisionEnter2D(Collision2D collision)
+        protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
             if (colliderHurtTags.Contains(collision.transform.tag))
             {

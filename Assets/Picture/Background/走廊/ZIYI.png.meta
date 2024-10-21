@@ -1,0 +1,298 @@
+fileFormatVersion: 2
+guid: 1916229d11984a047bcc0f36b23da8dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4115110312811043395
+    second: ZIYI_0
+  - first:
+      213: 3349639203562050054
+    second: ZIYI_1
+  - first:
+      213: -3173119198256996407
+    second: ZIYI_2
+  - first:
+      213: 2416302278120778453
+    second: ZIYI_3
+  - first:
+      213: -2394112233469870155
+    second: ZIYI_4
+  - first:
+      213: 4746175097204436752
+    second: ZIYI_5
+  - first:
+      213: -1840073054655323321
+    second: ZIYI_6
+  - first:
+      213: 1478297655389094242
+    second: ZIYI_7
+  - first:
+      213: -434175466857514958
+    second: ZIYI_8
+  - first:
+      213: -9219699547683948265
+    second: ZIYI_9
+  - first:
+      213: -968169576767207880
+    second: ZIYI_10
+  - first:
+      213: -6965853078063065739
+    second: ZIYI_11
+  - first:
+      213: 5203042284708092253
+    second: ZIYI_12
+  - first:
+      213: -6597836342488892566
+    second: ZIYI_13
+  - first:
+      213: 9119057326790504251
+    second: ZIYI_14
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ZIYI_0
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 6689
+        width: 1112
+        height: 702
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5e95929f034e6c0800000000000000
+      internalID: -4115110312811043395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZIYI_1
+      rect:
+        serializedVersion: 2
+        x: 5479
+        y: 6739
+        width: 2750
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602d906cb1f4c7e20800000000000000
+      internalID: 3349639203562050054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZIYI_3
+      rect:
+        serializedVersion: 2
+        x: 9639
+        y: 6759
+        width: 1632
+        height: 532
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da2b5dae1e688120800000000000000
+      internalID: 2416302278120778453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZIYI_4
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 5449
+        width: 560
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf7c93bb9766ced0800000000000000
+      internalID: -2394112233469870155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZIYI_6
+      rect:
+        serializedVersion: 2
+        x: 5159
+        y: 5449
+        width: 1770
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74360805e4fb676e0800000000000000
+      internalID: -1840073054655323321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZIYI_12
+      rect:
+        serializedVersion: 2
+        x: 10569
+        y: 5449
+        width: 860
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59dc5b146be43840800000000000000
+      internalID: 5203042284708092253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ZIYI_0: -4115110312811043395
+      ZIYI_1: 3349639203562050054
+      ZIYI_10: -968169576767207880
+      ZIYI_11: -6965853078063065739
+      ZIYI_12: 5203042284708092253
+      ZIYI_13: -6597836342488892566
+      ZIYI_14: 9119057326790504251
+      ZIYI_2: -3173119198256996407
+      ZIYI_3: 2416302278120778453
+      ZIYI_4: -2394112233469870155
+      ZIYI_5: 4746175097204436752
+      ZIYI_6: -1840073054655323321
+      ZIYI_7: 1478297655389094242
+      ZIYI_8: -434175466857514958
+      ZIYI_9: -9219699547683948265
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

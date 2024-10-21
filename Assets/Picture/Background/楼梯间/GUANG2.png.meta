@@ -1,0 +1,862 @@
+fileFormatVersion: 2
+guid: 3d4703440d7d5c242b92aa22d57c1c60
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1015205958630930356
+    second: GUANG2_0
+  - first:
+      213: 1343189319135813776
+    second: GUANG2_1
+  - first:
+      213: 5481272045148781475
+    second: GUANG2_2
+  - first:
+      213: 8664070305006674693
+    second: GUANG2_3
+  - first:
+      213: 2560296508829482429
+    second: GUANG2_4
+  - first:
+      213: -2715681685490003834
+    second: GUANG2_5
+  - first:
+      213: -1923457146413746574
+    second: GUANG2_6
+  - first:
+      213: 4136898582224211860
+    second: GUANG2_7
+  - first:
+      213: -6357658333191520465
+    second: GUANG2_8
+  - first:
+      213: 962289810751180344
+    second: GUANG2_9
+  - first:
+      213: -6171409060595821850
+    second: GUANG2_10
+  - first:
+      213: -209804749089938394
+    second: GUANG2_11
+  - first:
+      213: -1210338601911088952
+    second: GUANG2_12
+  - first:
+      213: 4205328394844145021
+    second: GUANG2_13
+  - first:
+      213: -3788502821860307563
+    second: GUANG2_14
+  - first:
+      213: 4368057605942365769
+    second: GUANG2_15
+  - first:
+      213: -8003716934093447736
+    second: GUANG2_16
+  - first:
+      213: -4198908147866801056
+    second: GUANG2_17
+  - first:
+      213: 8110945265681161399
+    second: GUANG2_18
+  - first:
+      213: 4342542390469303457
+    second: GUANG2_19
+  - first:
+      213: 6323597975264143334
+    second: GUANG2_20
+  - first:
+      213: 2784116915949665457
+    second: GUANG2_21
+  - first:
+      213: 4049901086931316833
+    second: GUANG2_22
+  - first:
+      213: 948580566333448019
+    second: GUANG2_23
+  - first:
+      213: -8815904286410512150
+    second: GUANG2_24
+  - first:
+      213: -5119332745750698273
+    second: GUANG2_25
+  - first:
+      213: -6329436865539948753
+    second: GUANG2_26
+  - first:
+      213: -1498909535841720695
+    second: GUANG2_27
+  - first:
+      213: -1711127156386331248
+    second: GUANG2_28
+  - first:
+      213: 4266279486695764854
+    second: GUANG2_29
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GUANG2_0
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 7569
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b77e0ac07cb61e00800000000000000
+      internalID: 1015205958630930356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_1
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 7469
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0906039b197f3a210800000000000000
+      internalID: 1343189319135813776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_2
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 7429
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab3f5052e3611c40800000000000000
+      internalID: 5481272045148781475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_3
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 7369
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503eee6c906fc3870800000000000000
+      internalID: 8664070305006674693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_4
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 7309
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd34781c10088320800000000000000
+      internalID: 2560296508829482429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_5
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 7259
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680955535e5ff4ad0800000000000000
+      internalID: -2715681685490003834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_6
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 7189
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276725f8ae18e45e0800000000000000
+      internalID: -1923457146413746574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_7
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 7099
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f8a41a757396930800000000000000
+      internalID: 4136898582224211860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_8
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 7059
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f31d62e6f05c7a0800000000000000
+      internalID: -6357658333191520465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_9
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 7069
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e4dc40c7dba5d00800000000000000
+      internalID: 962289810751180344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_10
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 7019
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e21f8b2820ca5aa0800000000000000
+      internalID: -6171409060595821850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_11
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 6989
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624ed4a31bf961df0800000000000000
+      internalID: -209804749089938394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_12
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 6929
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c885274473043fe0800000000000000
+      internalID: -1210338601911088952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_13
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 6829
+        width: 232
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d758c82f4e35c5a30800000000000000
+      internalID: 4205328394844145021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_14
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 6809
+        width: 252
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d837081c88c6bc0800000000000000
+      internalID: -3788502821860307563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_15
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 6859
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e43a8ef357e9c30800000000000000
+      internalID: 4368057605942365769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_16
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 6769
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cdd49c9ad51de090800000000000000
+      internalID: -8003716934093447736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_17
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 6679
+        width: 212
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ce7e9494b7ab5c0800000000000000
+      internalID: -4198908147866801056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_18
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 6679
+        width: 262
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bcdf89debddf8070800000000000000
+      internalID: 8110945265681161399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_19
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 6639
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac9ffddb4fc34c30800000000000000
+      internalID: 4342542390469303457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_20
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 6529
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e7aff9cadee1c750800000000000000
+      internalID: 6323597975264143334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_21
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 6499
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bcf55c859b23a620800000000000000
+      internalID: 2784116915949665457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_22
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 6379
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160720ec493243830800000000000000
+      internalID: 4049901086931316833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_23
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 6359
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35fd421dff80a2d00800000000000000
+      internalID: 948580566333448019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_24
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 6249
+        width: 212
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae868aa92cd97a580800000000000000
+      internalID: -8815904286410512150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_25
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 6219
+        width: 252
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6218abdf974f8b0800000000000000
+      internalID: -5119332745750698273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_26
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 6119
+        width: 182
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fba31a4b25928a0800000000000000
+      internalID: -6329436865539948753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_27
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 6119
+        width: 212
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98665bdf7bdc23be0800000000000000
+      internalID: -1498909535841720695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_28
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 6089
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095811ecaead048e0800000000000000
+      internalID: -1711127156386331248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUANG2_29
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 6019
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6737905e69ed43b30800000000000000
+      internalID: 4266279486695764854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GUANG2_0: 1015205958630930356
+      GUANG2_1: 1343189319135813776
+      GUANG2_10: -6171409060595821850
+      GUANG2_11: -209804749089938394
+      GUANG2_12: -1210338601911088952
+      GUANG2_13: 4205328394844145021
+      GUANG2_14: -3788502821860307563
+      GUANG2_15: 4368057605942365769
+      GUANG2_16: -8003716934093447736
+      GUANG2_17: -4198908147866801056
+      GUANG2_18: 8110945265681161399
+      GUANG2_19: 4342542390469303457
+      GUANG2_2: 5481272045148781475
+      GUANG2_20: 6323597975264143334
+      GUANG2_21: 2784116915949665457
+      GUANG2_22: 4049901086931316833
+      GUANG2_23: 948580566333448019
+      GUANG2_24: -8815904286410512150
+      GUANG2_25: -5119332745750698273
+      GUANG2_26: -6329436865539948753
+      GUANG2_27: -1498909535841720695
+      GUANG2_28: -1711127156386331248
+      GUANG2_29: 4266279486695764854
+      GUANG2_3: 8664070305006674693
+      GUANG2_4: 2560296508829482429
+      GUANG2_5: -2715681685490003834
+      GUANG2_6: -1923457146413746574
+      GUANG2_7: 4136898582224211860
+      GUANG2_8: -6357658333191520465
+      GUANG2_9: 962289810751180344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

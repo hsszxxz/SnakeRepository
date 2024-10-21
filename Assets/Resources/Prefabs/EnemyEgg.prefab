@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c460f8654ac4ae4bb4bf532ba280085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BreakNum: 1
   timeToEnemy: 1
+  distance: 1
 --- !u!50 &7236494117280333166
 Rigidbody2D:
   serializedVersion: 4

@@ -1,8 +1,7 @@
 using sneak;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
+using UnityEditor;
 namespace save
 {
     ///<summary>
@@ -103,11 +102,11 @@ namespace save
             var json = PlayerPrefs.GetString(key, null);
             return JsonUtility.FromJson<T>(json);
         }
-        [UnityEditor.MenuItem("Developer/Delete Player Data Prefs")]
-        public static void DeletPlayerDataPrefs()
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        //[MenuItem("Developer/Delete Player Data Prefs")]
+        //public static void DeletPlayerDataPrefs()
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //}
     }
 }
 
