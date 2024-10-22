@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 430521260471342084}
   - component: {fileID: 7099078228184664076}
   - component: {fileID: 9132778618076515300}
+  - component: {fileID: -8968796040289317471}
   - component: {fileID: 8330620983029848548}
   m_Layer: 0
-  m_Name: enemyBoss
+  m_Name: enemyBoss1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,6 +147,20 @@ MonoBehaviour:
   eggBlood: 2
   generateEnemyEgg:
     positionOffset: []
+  attackDetectDis: 10
+--- !u!114 &-8968796040289317471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff7e837f6a95c45b0841ec50df6b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 0e2b813126988194e950e0d45950a7e2, type: 2}
 --- !u!114 &8330620983029848548
 MonoBehaviour:
   m_ObjectHideFlags: 0

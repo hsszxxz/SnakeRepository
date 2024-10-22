@@ -12,11 +12,11 @@ namespace enemy
     {
         private Rigidbody2D rigid;
         private FollowPlayer followPlayer;
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             rigid = GetComponent<Rigidbody2D>();
             followPlayer = GetComponent<FollowPlayer>();
-            blood = maxBlood;
         }
         public void ShakeEnemyBack(Transform shakeFrom, float backForce)
         {
@@ -24,13 +24,6 @@ namespace enemy
             followPlayer.PathFindingComponentControl(false);
             rigid.AddForce(dir * backForce, ForceMode2D.Impulse);
             StartCoroutine(followPlayer.OpenPathFindingComponet());
-        }
-        private void OnDisable()
-        {
-            if (!Application.isPlaying)
-            {
-                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
-            }
         }
     }
 }

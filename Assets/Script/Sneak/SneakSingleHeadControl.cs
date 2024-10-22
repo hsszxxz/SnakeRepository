@@ -55,8 +55,8 @@ namespace sneak
                  if (headType == HeadType.Head1)
                 {
                     SneakManager.Instance.AddSneakBodyToPrevious(this);
+                    GameObjectPool.Instance.CollectObject(collision.gameObject);
                 }
-                GameObjectPool.Instance.CollectObject(collision.gameObject);
             }
             if (collision.transform.CompareTag("enemybullet"))
             {

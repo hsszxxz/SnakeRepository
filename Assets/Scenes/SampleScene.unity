@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 56337429}
   m_Layer: 0
   m_Name: KUANG (6)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,9 +679,10 @@ GameObject:
   - component: {fileID: 59284812}
   - component: {fileID: 59284813}
   - component: {fileID: 59284814}
+  - component: {fileID: 59284815}
   m_Layer: 6
   m_Name: BINGCHUANG_1
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,6 +800,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.620001, y: 4.1803856}
   m_EdgeRadius: 0
+--- !u!50 &59284815
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59284811}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &92205514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1212,7 @@ GameObject:
   - component: {fileID: 207935364}
   - component: {fileID: 207935363}
   - component: {fileID: 207935366}
+  - component: {fileID: 207935367}
   m_Layer: 6
   m_Name: Bottle1
   m_TagString: building
@@ -1317,6 +1346,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.40700814}
   m_Size: {x: 5.6199994, y: 6.095983}
   m_Direction: 0
+--- !u!50 &207935367
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207935361}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &222505051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,9 +1384,10 @@ GameObject:
   - component: {fileID: 222505052}
   - component: {fileID: 222505053}
   - component: {fileID: 222505054}
+  - component: {fileID: 222505055}
   m_Layer: 6
   m_Name: SHENGKAN_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1448,6 +1505,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 18.7, y: 2.949945}
   m_EdgeRadius: 0
+--- !u!50 &222505055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222505051}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &278866032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,9 +1627,10 @@ GameObject:
   - component: {fileID: 303312130}
   - component: {fileID: 303312131}
   - component: {fileID: 303312132}
+  - component: {fileID: 303312133}
   m_Layer: 6
   m_Name: QIANG (3)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1663,6 +1748,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 29.220001, y: 6.520472}
   m_EdgeRadius: 0
+--- !u!50 &303312133
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303312129}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &304271281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,9 +2211,10 @@ GameObject:
   - component: {fileID: 374682440}
   - component: {fileID: 374682441}
   - component: {fileID: 374682442}
+  - component: {fileID: 374682443}
   m_Layer: 6
   m_Name: SHUGUI_2
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2219,6 +2332,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 33.32, y: 5.3203855}
   m_EdgeRadius: 0
+--- !u!50 &374682443
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374682439}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &391097793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,6 +2630,7 @@ GameObject:
   - component: {fileID: 430966054}
   - component: {fileID: 430966053}
   - component: {fileID: 430966056}
+  - component: {fileID: 430966057}
   m_Layer: 6
   m_Name: Computer
   m_TagString: building
@@ -2620,7 +2761,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.1841177}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2632,6 +2773,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 15.820001, y: 3.3264964}
   m_EdgeRadius: 0
+--- !u!50 &430966057
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430966052}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &463013286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,9 +2811,10 @@ GameObject:
   - component: {fileID: 463013287}
   - component: {fileID: 463013289}
   - component: {fileID: 463013288}
+  - component: {fileID: 463013290}
   m_Layer: 6
   m_Name: ZHUOZI_1
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2763,6 +2932,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &463013290
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463013286}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &468639872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,9 +3161,10 @@ GameObject:
   - component: {fileID: 525943271}
   - component: {fileID: 525943272}
   - component: {fileID: 525943273}
+  - component: {fileID: 525943274}
   m_Layer: 6
   m_Name: YAOGUI_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3085,6 +3282,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.4865217, y: 9.098226}
   m_EdgeRadius: 0
+--- !u!50 &525943274
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525943270}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &538041249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,9 +3320,10 @@ GameObject:
   - component: {fileID: 538041250}
   - component: {fileID: 538041251}
   - component: {fileID: 538041252}
+  - component: {fileID: 538041253}
   m_Layer: 6
   m_Name: QIANG (1)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3216,11 +3441,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 93.32001, y: 8.02058}
   m_EdgeRadius: 0
---- !u!4 &548580421 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-  m_PrefabInstance: {fileID: 8785172047922310360}
+--- !u!50 &538041253
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538041249}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &593582718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,9 +3479,10 @@ GameObject:
   - component: {fileID: 593582719}
   - component: {fileID: 593582720}
   - component: {fileID: 593582721}
+  - component: {fileID: 593582722}
   m_Layer: 6
   m_Name: ZIYI_6
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3352,6 +3600,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 17.7, y: 1.7201246}
   m_EdgeRadius: 0
+--- !u!50 &593582722
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593582718}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &594175135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,9 +3713,10 @@ GameObject:
   - component: {fileID: 648756806}
   - component: {fileID: 648756807}
   - component: {fileID: 648756808}
+  - component: {fileID: 648756809}
   m_Layer: 6
   m_Name: ZIYI_3
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3558,6 +3834,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.795795, y: 5.3203855}
   m_EdgeRadius: 0
+--- !u!50 &648756809
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648756805}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &651242025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3679,9 +3982,10 @@ GameObject:
   - component: {fileID: 668142429}
   - component: {fileID: 668142430}
   - component: {fileID: 668142431}
+  - component: {fileID: 668142432}
   m_Layer: 6
   m_Name: AIGUI_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3799,6 +4103,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 14.02, y: 6.120443}
   m_EdgeRadius: 0
+--- !u!50 &668142432
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668142428}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &713618238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,6 +4265,7 @@ GameObject:
   - component: {fileID: 754782095}
   - component: {fileID: 754782094}
   - component: {fileID: 754782097}
+  - component: {fileID: 754782098}
   m_Layer: 6
   m_Name: Bottle2
   m_TagString: building
@@ -4067,6 +4399,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -2.319674}
   m_Size: {x: 5.6199994, y: 5.980679}
   m_Direction: 0
+--- !u!50 &754782098
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754782092}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &817313192
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,9 +4571,10 @@ GameObject:
   - component: {fileID: 886565281}
   - component: {fileID: 886565282}
   - component: {fileID: 886565283}
+  - component: {fileID: 886565284}
   m_Layer: 6
   m_Name: QIANG (4)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4378,6 +4738,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.707954, y: 7.3205304}
   m_EdgeRadius: 0
+--- !u!50 &886565284
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886565279}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &906748878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,9 +4777,10 @@ GameObject:
   - component: {fileID: 906748880}
   - component: {fileID: 906748881}
   - component: {fileID: 906748882}
+  - component: {fileID: 906748883}
   m_Layer: 6
   m_Name: QIANG (2)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4556,6 +4944,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.896397, y: 7.4205375}
   m_EdgeRadius: 0
+--- !u!50 &906748883
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906748878}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &908710119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4772,7 +5187,6 @@ GameObject:
   - component: {fileID: 946657839}
   - component: {fileID: 946657838}
   - component: {fileID: 946657837}
-  - component: {fileID: 946657840}
   - component: {fileID: 946657841}
   - component: {fileID: 946657842}
   - component: {fileID: 946657843}
@@ -4835,22 +5249,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &946657840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 946657836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fff7e837f6a95c45b0841ec50df6b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  datas:
-  - {fileID: 11400000, guid: 0e2b813126988194e950e0d45950a7e2, type: 2}
-  bossTransform:
-  - {fileID: 548580421}
 --- !u!114 &946657841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4917,16 +5315,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fbf0c142efbd144b4d34df715d5073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearMinPoints:
-  - {x: -5, y: 3}
-  nearMaxPoints:
-  - {x: 3, y: 5}
-  nearEnemyNum: 01000000
+  nearMinPoints: []
+  nearMaxPoints: []
+  nearEnemyNum: 
   remoteMinPoints:
-  - {x: -10, y: -10}
+  - {x: -5, y: 3}
   remoteMaxPoints:
-  - {x: -5, y: -5}
+  - {x: 3, y: 5}
   remoteEnemyNum: 01000000
+  enemyBoss1Position: {x: 40, y: 0, z: 0}
+  enemyBoss2Position: {x: 50, y: 0, z: 0}
+  enemyDebate: 
 --- !u!114 &946657846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5039,9 +5438,10 @@ GameObject:
   - component: {fileID: 993666605}
   - component: {fileID: 993666604}
   - component: {fileID: 993666603}
+  - component: {fileID: 993666609}
   m_Layer: 6
   m_Name: KUANG (4)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5389,6 +5789,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8668537, y: 29.338005}
   m_EdgeRadius: 0
+--- !u!50 &993666609
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993666600}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1001940327
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,9 +5827,10 @@ GameObject:
   - component: {fileID: 1001940328}
   - component: {fileID: 1001940329}
   - component: {fileID: 1001940330}
+  - component: {fileID: 1001940331}
   m_Layer: 6
   m_Name: BINGCHUANG_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5520,6 +5948,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.820001, y: 4.284204}
   m_EdgeRadius: 0
+--- !u!50 &1001940331
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001940327}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1003254772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,9 +6233,10 @@ GameObject:
   - component: {fileID: 1143276322}
   - component: {fileID: 1143276323}
   - component: {fileID: 1143276324}
+  - component: {fileID: 1143276325}
   m_Layer: 6
   m_Name: CHUANG (1)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5898,6 +6354,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16.42, y: 11.686944}
   m_EdgeRadius: 0
+--- !u!50 &1143276325
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143276321}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1162695027
 GameObject:
   m_ObjectHideFlags: 0
@@ -5993,9 +6476,10 @@ GameObject:
   - component: {fileID: 1162788853}
   - component: {fileID: 1162788854}
   - component: {fileID: 1162788855}
+  - component: {fileID: 1162788856}
   m_Layer: 6
   m_Name: BINGCHUANG_2
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6113,6 +6597,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.620001, y: 6.2204504}
   m_EdgeRadius: 0
+--- !u!50 &1162788856
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162788852}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1226378700
 GameObject:
   m_ObjectHideFlags: 0
@@ -6377,9 +6888,10 @@ GameObject:
   - component: {fileID: 1303881690}
   - component: {fileID: 1303881691}
   - component: {fileID: 1303881692}
+  - component: {fileID: 1303881693}
   m_Layer: 6
   m_Name: CHUANGpng_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6497,6 +7009,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.169404, y: 5.120371}
   m_EdgeRadius: 0
+--- !u!50 &1303881693
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303881689}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1306364523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,6 +7048,7 @@ GameObject:
   - component: {fileID: 1306364526}
   - component: {fileID: 1306364525}
   - component: {fileID: 1306364528}
+  - component: {fileID: 1306364529}
   m_Layer: 6
   m_Name: Bottle3
   m_TagString: building
@@ -6642,6 +7182,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -2.3696713}
   m_Size: {x: 5.6199994, y: 5.980679}
   m_Direction: 0
+--- !u!50 &1306364529
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306364523}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1345168722
 GameObject:
   m_ObjectHideFlags: 0
@@ -6653,9 +7220,10 @@ GameObject:
   - component: {fileID: 1345168723}
   - component: {fileID: 1345168724}
   - component: {fileID: 1345168725}
+  - component: {fileID: 1345168726}
   m_Layer: 6
   m_Name: SHAFA_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6773,6 +7341,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.92, y: 9.620697}
   m_EdgeRadius: 0
+--- !u!50 &1345168726
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345168722}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1347317946
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,9 +7583,10 @@ GameObject:
   - component: {fileID: 1389705518}
   - component: {fileID: 1389705519}
   - component: {fileID: 1389705520}
+  - component: {fileID: 1389705521}
   m_Layer: 6
   m_Name: ZIYI_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7108,6 +7704,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.12, y: 6.4331403}
   m_EdgeRadius: 0
+--- !u!50 &1389705521
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389705517}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1405373570
 GameObject:
   m_ObjectHideFlags: 0
@@ -7254,9 +7877,10 @@ GameObject:
   - component: {fileID: 1417834483}
   - component: {fileID: 1417834485}
   - component: {fileID: 1417834484}
+  - component: {fileID: 1417834486}
   m_Layer: 6
   m_Name: KUANG_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7420,6 +8044,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0581694, y: 23.821724}
   m_EdgeRadius: 0
+--- !u!50 &1417834486
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417834481}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1466720632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7547,9 +8198,10 @@ GameObject:
   - component: {fileID: 1542795605}
   - component: {fileID: 1542795606}
   - component: {fileID: 1542795607}
+  - component: {fileID: 1542795608}
   m_Layer: 6
   m_Name: SHUGUI_1
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7667,6 +8319,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.634403, y: 8.5206175}
   m_EdgeRadius: 0
+--- !u!50 &1542795608
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542795604}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1558124892
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,9 +8443,10 @@ GameObject:
   - component: {fileID: 1566706364}
   - component: {fileID: 1566706363}
   - component: {fileID: 1566706362}
+  - component: {fileID: 1566706365}
   m_Layer: 6
   m_Name: KUANG (3)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7976,6 +8656,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.610878, y: 23.721718}
   m_EdgeRadius: 0
+--- !u!50 &1566706365
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566706359}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1575631354
 GameObject:
   m_ObjectHideFlags: 0
@@ -8068,9 +8775,10 @@ GameObject:
   - component: {fileID: 1588781819}
   - component: {fileID: 1588781820}
   - component: {fileID: 1588781821}
+  - component: {fileID: 1588781822}
   m_Layer: 6
   m_Name: ZIYI_4
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8188,6 +8896,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.6000004, y: 1.7201246}
   m_EdgeRadius: 0
+--- !u!50 &1588781822
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588781818}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1591136069
 GameObject:
   m_ObjectHideFlags: 0
@@ -8362,9 +9097,10 @@ GameObject:
   - component: {fileID: 1602845796}
   - component: {fileID: 1602845798}
   - component: {fileID: 1602845797}
+  - component: {fileID: 1602845799}
   m_Layer: 6
   m_Name: ZHUOZI_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8482,6 +9218,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1602845799
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602845795}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1639629180
 GameObject:
   m_ObjectHideFlags: 0
@@ -8497,9 +9260,10 @@ GameObject:
   - component: {fileID: 1639629185}
   - component: {fileID: 1639629184}
   - component: {fileID: 1639629183}
+  - component: {fileID: 1639629188}
   m_Layer: 6
   m_Name: KUANG (5)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8801,6 +9565,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8629303, y: 14.762447}
   m_EdgeRadius: 0
+--- !u!50 &1639629188
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639629180}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1677853270
 GameObject:
   m_ObjectHideFlags: 0
@@ -8896,9 +9687,10 @@ GameObject:
   - component: {fileID: 1687339254}
   - component: {fileID: 1687339255}
   - component: {fileID: 1687339256}
+  - component: {fileID: 1687339257}
   m_Layer: 6
   m_Name: TUICHE_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9016,6 +9808,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.32, y: 3.0202186}
   m_EdgeRadius: 0
+--- !u!50 &1687339257
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687339253}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1730128543
 GameObject:
   m_ObjectHideFlags: 0
@@ -9096,9 +9915,10 @@ GameObject:
   - component: {fileID: 1743617666}
   - component: {fileID: 1743617669}
   - component: {fileID: 1743617667}
+  - component: {fileID: 1743617670}
   m_Layer: 6
   m_Name: KUANG (1)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9262,6 +10082,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8999424, y: 27.021957}
   m_EdgeRadius: 0
+--- !u!50 &1743617670
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743617664}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1763819553
 GameObject:
   m_ObjectHideFlags: 0
@@ -9273,9 +10120,10 @@ GameObject:
   - component: {fileID: 1763819554}
   - component: {fileID: 1763819556}
   - component: {fileID: 1763819555}
+  - component: {fileID: 1763819557}
   m_Layer: 6
   m_Name: CHUANG_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9393,6 +10241,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1763819557
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763819553}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1767335385
 GameObject:
   m_ObjectHideFlags: 0
@@ -9489,6 +10364,7 @@ GameObject:
   - component: {fileID: 1791065469}
   - component: {fileID: 1791065471}
   - component: {fileID: 1791065472}
+  - component: {fileID: 1791065473}
   m_Layer: 6
   m_Name: Wall
   m_TagString: building
@@ -9655,6 +10531,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 32.072174, y: 7.42311}
   m_EdgeRadius: 0
+--- !u!50 &1791065473
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791065468}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1805460156
 GameObject:
   m_ObjectHideFlags: 0
@@ -9666,9 +10569,10 @@ GameObject:
   - component: {fileID: 1805460157}
   - component: {fileID: 1805460159}
   - component: {fileID: 1805460158}
+  - component: {fileID: 1805460160}
   m_Layer: 6
   m_Name: PINFENG_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9786,6 +10690,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1805460160
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805460156}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1810593695
 GameObject:
   m_ObjectHideFlags: 0
@@ -9964,9 +10895,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1821058325}
   - component: {fileID: 1821058326}
+  - component: {fileID: 1821058327}
   m_Layer: 0
   m_Name: QIANG_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10038,6 +10970,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1821058327
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821058324}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1852641583
 GameObject:
   m_ObjectHideFlags: 0
@@ -10208,9 +11167,10 @@ GameObject:
   - component: {fileID: 1875123112}
   - component: {fileID: 1875123113}
   - component: {fileID: 1875123114}
+  - component: {fileID: 1875123115}
   m_Layer: 6
   m_Name: ZHUTAI_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10319,6 +11279,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5200001, y: 4.020291}
   m_Direction: 0
+--- !u!50 &1875123115
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875123111}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1982787512
 GameObject:
   m_ObjectHideFlags: 0
@@ -10501,9 +11488,10 @@ GameObject:
   - component: {fileID: 2046097615}
   - component: {fileID: 2046097616}
   - component: {fileID: 2046097617}
+  - component: {fileID: 2046097618}
   m_Layer: 6
   m_Name: SHUGUI_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10621,6 +11609,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.32, y: 9.820711}
   m_EdgeRadius: 0
+--- !u!50 &2046097618
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046097614}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2068725392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10632,9 +11647,10 @@ GameObject:
   - component: {fileID: 2068725393}
   - component: {fileID: 2068725394}
   - component: {fileID: 2068725395}
+  - component: {fileID: 2068725396}
   m_Layer: 6
   m_Name: ZIYI_1
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10752,6 +11768,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 27.5, y: 4.42032}
   m_EdgeRadius: 0
+--- !u!50 &2068725396
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068725392}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2082812091
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,9 +11809,10 @@ GameObject:
   - component: {fileID: 2082812097}
   - component: {fileID: 2082812096}
   - component: {fileID: 2082812094}
+  - component: {fileID: 2082812099}
   m_Layer: 6
   m_Name: KUANG (2)_0
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11024,6 +12068,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7849579, y: 8.755285}
   m_EdgeRadius: 0
+--- !u!50 &2082812099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082812091}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2100544173
 GameObject:
   m_ObjectHideFlags: 0
@@ -11155,9 +12226,10 @@ GameObject:
   - component: {fileID: 2115549989}
   - component: {fileID: 2115549991}
   - component: {fileID: 2115549990}
+  - component: {fileID: 2115549992}
   m_Layer: 6
   m_Name: ZIYI_12
-  m_TagString: Untagged
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11275,6 +12347,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2115549992
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115549988}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2122763013
 GameObject:
   m_ObjectHideFlags: 0
@@ -11480,79 +12579,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129923421}
   m_CullTransparentMesh: 1
---- !u!1001 &8785172047922310360
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934678862976890706, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1940787177242264529, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: m_Name
-      value: enemyBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132778618076515300, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: eggBlood
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132778618076515300, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: maxBlood
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132778618076515300, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: generateEnemyEgg.num
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132778618076515300, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
-      propertyPath: generateEnemyEgg.possitionOffset.x
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ffeeed716a9cc19448be8660e9c024cb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11560,7 +12586,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 946657839}
   - {fileID: 651242026}
-  - {fileID: 8785172047922310360}
   - {fileID: 2014228922}
   - {fileID: 355059033}
   - {fileID: 1279193901}

@@ -9,6 +9,8 @@ namespace bullet
     [CreateAssetMenu(menuName =("BulletData"))]
     public class BulletData : ScriptableObject
     {
+        [Tooltip("子弹贴图")]
+        public Sprite bulletSprite;
         public GameObject prafabs;
         [Tooltip("初始位置偏移量")]
         public Vector3 P_Offset = Vector3.zero;//初始位置偏移量

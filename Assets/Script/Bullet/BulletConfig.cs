@@ -1,32 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using enemy;
 namespace bullet
 {
     ///<summary>
     ///
     ///<summary>
-    public class BulletConfig : MonoSingleton<BulletConfig>
+    public class BulletConfig:MonoBehaviour
     {
-        public BulletData[] datas;
-        public Transform[] bossTransform;
-        private List<Transform> shooters = new List<Transform>();
+        public BulletData data;
+        private Transform shooter;
         private void Start()
         {
-            for(int i =0; i< datas.Length;i++)
-            {
-                datas[i].ResetTempData(bossTransform[i]);
-                Transform shooter = new GameObject(bossTransform[i].name + "shooter").transform;
-                shooter.position = bossTransform[i].position;
-                shooters.Add(shooter);
-            }
+            data.ResetTempData(transform);
+            shooter = new GameObject(transform.name + "shooter").transform;
+            shooter.position = transform.position;
         }
         private void Update()
         {
-            for (int i = 0; i < datas.Length; i++)
-            {
-                Shoot(datas[i], shooters[i]);
-            }
+            Shoot(data, shooter);
         }
         private void Shoot(BulletData data, Transform shooter)
         {
@@ -39,6 +32,7 @@ namespace bullet
                 for (int j = 0; j < data.Count; j++)
                 {
                     GameObject bullet = GameObjectPool.Instance.CreateObject(shooter.name + "bullet", data.prafabs, data.P_Offset + shooter.position, Quaternion.Euler(data.R_Offset));
+                    bullet.GetComponent<SpriteRenderer>().sprite = data.bulletSprite;
                     bullet.transform.tag = "enemybullet";
                     BulletMotor motor = bullet.GetComponent<BulletMotor>();
                     motor.bulletSpeed = data.speed;

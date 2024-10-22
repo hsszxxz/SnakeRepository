@@ -2,6 +2,7 @@ using sneak;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using enemy;
 namespace save
 {
     ///<summary>
@@ -23,13 +24,32 @@ namespace save
             public int sneakBodyLength;
             public Vector3 head1position;
         }
+        [System.Serializable]
+        class BossData
+        {
+            public List<bool> debateCondition;
+        }
         class BagData
         {
             //id是x
             //数量是y
             public List<Vector2 >items = new List<Vector2>();
         }
-        public static void SaveBag()
+        private static void SaveEnemyBoss()
+        {
+            List<bool> debate = EnemyManager.Instance.enemyDebate;
+            BossData data = new BossData()
+            {
+                debateCondition = debate
+            };
+            SavePlayerPrefs("boss",data);
+        }
+        private static void LoadEnemyBoss()
+        {
+            BossData bossData = LoadFromPlayerPrefs<BossData>("boss");
+            EnemyManager.Instance.BossInit(bossData.debateCondition);
+        }
+        private static void SaveBag()
         {
             List<Vector2> itemsValue = new List<Vector2>();
             foreach( ItemScript temp in ItemManager.Instance.datas)
@@ -42,7 +62,7 @@ namespace save
             };
             SavePlayerPrefs("bag", bagData);
         }
-        public static void LoadBag()
+        private static void LoadBag()
         {
             BagData data = LoadFromPlayerPrefs<BagData>("bag");
             Debug.Log(data.items.Count);
@@ -56,13 +76,15 @@ namespace save
         {
             SaveBag();
             SaveSnake();
+            SaveEnemyBoss();
         }
         public static void LoadAll()
         {
             LoadBag();
             LoadSnake();
+            LoadEnemyBoss();
         }
-        public static void SaveSnake()
+        private static void SaveSnake()
         {
             GameObject snake = SneakManager.Instance.sneakBodies;
             Vector3 position = new Vector3(0,1000,0);
@@ -79,7 +101,7 @@ namespace save
             };
             SavePlayerPrefs("snake", sneakDate);
         }
-        public static void LoadSnake()
+        private static void LoadSnake()
         {
             GameObject snake = SneakManager.Instance.sneakBodies;
             SnakeObjectData snakeObjectData = LoadFromPlayerPrefs<SnakeObjectData>("snake");

@@ -1,3 +1,4 @@
+using bullet;
 using NUnit.Framework;
 using Pathfinding;
 using sneak;
@@ -17,7 +18,11 @@ namespace enemy
         public int blood;
         [Tooltip("怪碰到哪些tag的碰撞体会受到伤害")]
         public List<string> colliderHurtTags ;
-        private void Start()
+        protected virtual void Start()
+        {
+            blood = maxBlood;
+        }
+        public virtual void EnemyInit()
         {
             blood = maxBlood;
         }
@@ -37,6 +42,7 @@ namespace enemy
                 if (blood <= 0)
                 {
                     GameObjectPool.Instance.CollectObject(gameObject);
+                    GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
                 }
             }
         }
