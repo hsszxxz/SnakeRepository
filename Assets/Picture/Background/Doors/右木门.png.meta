@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e14f599e60ee8ed49b5ed7fbb32498dd
+guid: 6aebe5f437dfd014da6eb7a8649d0b75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7717427365905990012
-    second: QIANG (2)_0
-  - first:
-      213: -7424752358574447344
-    second: QIANG (2)_1
+      213: -5259782409466764987
+    second: "\u53F3\u6728\u95E8_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QIANG (2)_0
+      name: "\u53F3\u6728\u95E8_0"
       rect:
         serializedVersion: 2
-        x: 8309
-        y: 4589
-        width: 3332
-        height: 742
+        x: 334
+        y: 0
+        width: 370
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,29 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48e7b4b03b036e490800000000000000
-      internalID: -7717427365905990012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: QIANG (2)_1
-      rect:
-        serializedVersion: 2
-        x: 11779
-        y: 4589
-        width: 22
-        height: 732
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0152de1611bf5f890800000000000000
-      internalID: -7424752358574447344
+      spriteID: 541a2ef14cf7107b0800000000000000
+      internalID: -5259782409466764987
       vertices: []
       indices: 
       edges: []

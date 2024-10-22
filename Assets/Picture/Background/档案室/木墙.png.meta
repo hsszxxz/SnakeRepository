@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 05d6518e42fb1b24f8fb2b95ae7277ad
+guid: eb0532b846a333e429a574ef2948761f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2354857543475234251
-    second: QIANG (4)_0
+      213: -6101742526747549843
+    second: "\u6728\u5899_0"
+  - first:
+      213: 4551611350176230130
+    second: "\u6728\u5899_1"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +101,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QIANG (4)_0
+      name: "\u6728\u5899_0"
       rect:
         serializedVersion: 2
-        x: 7149
-        y: 2239
-        width: 7462
-        height: 732
+        x: 8309
+        y: 4589
+        width: 3332
+        height: 742
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc58d7f85722ea020800000000000000
-      internalID: 2354857543475234251
+      spriteID: d6f51561081425ba0800000000000000
+      internalID: -6101742526747549843
       vertices: []
       indices: 
       edges: []
@@ -121,14 +124,16 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u6728\u5899_0": -6101742526747549843
+      "\u6728\u5899_1": 4551611350176230130
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

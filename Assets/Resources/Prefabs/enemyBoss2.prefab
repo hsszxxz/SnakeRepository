@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5246049438148154695}
   - component: {fileID: -3057961582919113009}
   - component: {fileID: -5483361519024470760}
+  - component: {fileID: 7989989370841992190}
   m_Layer: 0
   m_Name: enemyBoss2
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   blood: 0
   colliderHurtTags:
   - playerbullet
-  secondBlood: 0
+  secondBlood: 2
   secondDis: 0
   secondSpace: 0
   attackDetectDis: 1
@@ -230,7 +231,7 @@ MonoBehaviour:
   centerOffsetCompatibility: NaN
   repathRateCompatibility: NaN
   canSearchCompability: 0
-  orientation: 0
+  orientation: 1
   enableRotation: 1
   autoRepath:
     mode: 2
@@ -275,3 +276,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 0e2b813126988194e950e0d45950a7e2, type: 2}
+--- !u!58 &7989989370841992190
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5

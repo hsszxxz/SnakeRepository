@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: baaf8c582fd46714ca66637ab6c39e4b
+guid: 9eab055cc70b1b64fadb09b728b6f81c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -445280228662366673
-    second: peiyangcang111_0
-  - first:
-      213: 633415258127727551
-    second: peiyangcang111_1
+      213: -4869846510449832110
+    second: "\u5DE6\u673A\u68B0\u95E8_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: peiyangcang111_0
+      name: "\u5DE6\u673A\u68B0\u95E8_0"
       rect:
         serializedVersion: 2
-        x: 39
-        y: 1639
-        width: 4742
-        height: 1061
+        x: 0
+        y: 0
+        width: 327
+        height: 586
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2e2311cdfb02d9f0800000000000000
-      internalID: -445280228662366673
+      spriteID: 25f46f97664da6cb0800000000000000
+      internalID: -4869846510449832110
       vertices: []
       indices: 
       edges: []
@@ -124,15 +121,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1f128c3ca08af0546b154eb6092748b0
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      peiyangcang111_0: -445280228662366673
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

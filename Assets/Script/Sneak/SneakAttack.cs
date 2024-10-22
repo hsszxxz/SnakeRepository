@@ -26,7 +26,6 @@ namespace sneak
                     {
                         SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
                         Attack(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                        Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                     }
                 }
             }
