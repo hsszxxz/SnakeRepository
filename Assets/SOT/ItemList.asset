@@ -17,7 +17,9 @@ MonoBehaviour:
     name: star
     description: 6666
     img: {fileID: -5530124188274321961, guid: 0828213b3e562ed41a45863b8df386ab, type: 3}
+    detailImg: {fileID: 4589233712052125292, guid: b6437ee6fbd061041a5590b9e4976686, type: 3}
   - id: 2
     name: 555
     description: iii
     img: {fileID: -7918947902851932483, guid: 0dae0de73d3ff7b48934642c8a5df5e1, type: 3}
+    detailImg: {fileID: 733467804461794757, guid: b6437ee6fbd061041a5590b9e4976686, type: 3}
