@@ -22,7 +22,8 @@ public class MenuUIWindow : UIWindow
     }
     private void LoadGame()
     {
-
+        ShutAndOpen(false) ;
+        UIManager.Instance.GetUIWindow<SaveUIWindow>().ShutAndOpen(true);
     }
 }
 
