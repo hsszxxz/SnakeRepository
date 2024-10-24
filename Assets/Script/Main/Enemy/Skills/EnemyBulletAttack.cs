@@ -30,13 +30,20 @@ namespace enemy
         private void Update()
         {
             nowTime += Time.deltaTime;
-            if (Vector3.Distance(attackTarge.position,transform.position)<=distance)
+            if (attackTarge != null)
             {
-                if (nowTime>spaceTime)
+                if (Vector3.Distance(attackTarge.position, transform.position) <= distance)
                 {
-                    nowTime = 0;
-                    Attack(attackTarge.position);
+                    if (nowTime > spaceTime)
+                    {
+                        nowTime = 0;
+                        Attack(attackTarge.position);
+                    }
                 }
+            }
+            else
+            {
+                attackTarge = enemyBase.FindTarget();
             }
         }
     }

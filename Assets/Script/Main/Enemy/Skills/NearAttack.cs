@@ -24,17 +24,24 @@ namespace enemy
         private void Update ()
         {
             currentTime += Time.deltaTime;
-            if (Vector2.Distance(transform.position,target.position)<=distance&& currentTime>=spaceTime)
+            if (target != null)
             {
-                currentTime = 0;
-                if (SneakManager.Instance.bodies.Count >= 3)
+                if (Vector2.Distance(transform.position, target.position) <= distance && currentTime >= spaceTime)
                 {
-                    SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
+                    currentTime = 0;
+                    if (SneakManager.Instance.bodies.Count >= 3)
+                    {
+                        SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
+                    }
+                    else
+                    {
+                        Debug.LogError("ƒ„À¿¡À");
+                    }
                 }
-                else
-                {
-                    Debug.LogError("ƒ„À¿¡À");
-                }
+            }
+            else
+            {
+                target = GetComponent<EnemyBase>().FindTarget();
             }
         }
     }

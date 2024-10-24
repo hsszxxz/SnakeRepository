@@ -28,7 +28,7 @@ namespace save
         [System.Serializable]
         class BossData
         {
-            public List<bool> debateCondition;
+            public List<bool> debateCondition = new List<bool>();
         }
         class BagData
         {
@@ -66,7 +66,6 @@ namespace save
         private static void LoadBag(int index)
         {
             BagData data = LoadFromPlayerPrefs<BagData>("bag" + index.ToString());
-            Debug.Log(data.items.Count);
             ItemManager.Instance.CleanAllItems();
             foreach ( Vector2 temp in data.items )
             {
@@ -155,6 +154,29 @@ namespace save
             else
             {
                 return JsonUtility.FromJson<T>(json);
+            }
+        }
+        class SaveItem
+        {
+            public List<string> items;
+        };
+        public static void SaveSaveItems(List<string>saveItems)
+        {
+            SaveItem index1 = new SaveItem()
+            {
+                items = saveItems
+            };
+            SavePlayerPrefs("item", index1);
+        }
+        public static List<string> LoadItems()
+        {
+            if (PlayerPrefs.HasKey("item"))
+            {
+                return LoadFromPlayerPrefs<SaveItem>("item").items;
+            }
+            else
+            {
+                return null;
             }
         }
         [MenuItem("Developer/Delete Player Data Prefs")]
