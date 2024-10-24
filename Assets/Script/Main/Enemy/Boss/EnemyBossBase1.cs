@@ -2,6 +2,7 @@ using bullet;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 namespace enemy
 {
     ///<summary>
@@ -18,10 +19,13 @@ namespace enemy
         public float attackDetectDis;
         private BulletConfig bulletConfig;
         private bool isAttack = false;
+        private BloodUIWindow bloodUIWindow;
+        public Sprite bloodBackSprite;
         protected override void Start()
         {
             base.Start();
             bulletConfig =GetComponent<BulletConfig>();
+            bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
         }
         public override void EnemyInit()
         {
@@ -32,10 +36,19 @@ namespace enemy
         }
         private void Update()
         {
-            if ( Vector2.Distance(transform.position,FindTarget().position)<=attackDetectDis &&!isAttack)
+            if ( Vector2.Distance(transform.position,FindTarget().position)<=attackDetectDis )
             {
-                bulletConfig.enabled = true;
-                isAttack = true;
+                if (!isAttack)
+                {
+                    bulletConfig.enabled = true;
+                    isAttack = true;
+                    bloodUIWindow.ShutAndOpen(true);
+                    bloodUIWindow.bloodBack.sprite = bloodBackSprite;
+                }
+            }
+            if (isAttack)
+            {
+                bloodUIWindow.BloodLineChange(blood,maxBlood);
             }
         }
         protected override void OnCollisionEnter2D(Collision2D collision)

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CHUANGpng_0: -8727428355305281932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

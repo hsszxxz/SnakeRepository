@@ -13,9 +13,13 @@ namespace interection
         public float distance;
         public GameObject tiShiPanel;
         private Animation animation;
-        private void Start()
+        protected virtual void Start()
         {
             animation = GetComponent<Animation>();
+        }
+        protected virtual void InterectMethod()
+        {
+            animation.Play();
         }
         private void Update()
         {
@@ -26,7 +30,7 @@ namespace interection
                     tiShiPanel.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
-                        animation.Play();
+                        InterectMethod();
                     }
                 }
                 else
@@ -39,7 +43,7 @@ namespace interection
                 tiShiPanel.SetActive(false);
             }
         }
-        private Transform FindTarget()
+        protected Transform FindTarget()
         {
             Transform head1Trans = SneakManager.Instance.head1.transform;
             Transform head2Trans = SneakManager.Instance.head2.transform;
