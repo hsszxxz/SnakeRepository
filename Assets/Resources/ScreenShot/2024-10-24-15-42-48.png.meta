@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e47cdee36744e94d80ca615c0a706b0
+guid: 99a368afa329b7a4894cd243af1fb33a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8727428355305281932
-    second: CHUANGpng_0
+      213: 6864425941891899861
+    second: 2024-10-24-15-42-48_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CHUANGpng_0
+      name: 2024-10-24-15-42-48_0
       rect:
         serializedVersion: 2
-        x: 8789
-        y: 5909
-        width: 1042
-        height: 512
+        x: 0
+        y: 0
+        width: 1099
+        height: 618
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4766b579622f1e680800000000000000
-      internalID: -8727428355305281932
+      spriteID: 5d1617d5607534f50800000000000000
+      internalID: 6864425941891899861
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      CHUANGpng_0: -8727428355305281932
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

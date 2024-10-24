@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 namespace enemy
@@ -32,7 +31,11 @@ namespace enemy
         [HideInInspector]
         public Dictionary<string,EnemyBase> bossDic = new Dictionary<string,EnemyBase>();
         [HideInInspector]
-        public List<bool> enemyDebate = new List<bool>{ false, false };
+        public List<bool> enemyDebate;
+        public override void Init()
+        {
+            enemyDebate = new List<bool> { false, false };
+        }
         private void Start()
         {
             if (!GenerateMethod.InitRandomObject(nearEnemyNum, nearMinPoints, nearMaxPoints, "Prefabs/Enemy", "enemy"))

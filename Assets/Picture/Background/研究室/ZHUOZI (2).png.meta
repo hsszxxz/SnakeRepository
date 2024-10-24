@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e47cdee36744e94d80ca615c0a706b0
+guid: 51f37d2148cc1bb468a0d012fd67d6aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8727428355305281932
-    second: CHUANGpng_0
+      213: 7939634998016246478
+    second: ZHUOZI (2)_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CHUANGpng_0
+      name: ZHUOZI (2)_0
       rect:
         serializedVersion: 2
-        x: 8789
-        y: 5909
-        width: 1042
-        height: 512
+        x: 723
+        y: 146
+        width: 108
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4766b579622f1e680800000000000000
-      internalID: -8727428355305281932
+      spriteID: ec28407f6ff3f2e60800000000000000
+      internalID: 7939634998016246478
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CHUANGpng_0: -8727428355305281932
+      ZHUOZI (2)_0: 7939634998016246478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

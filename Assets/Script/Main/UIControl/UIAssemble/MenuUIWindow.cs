@@ -11,8 +11,19 @@ public class MenuUIWindow : UIWindow
     private void Start()
     {
         continueGame.onClick.AddListener(ContinueGame);
-        quitGame.onClick.AddListener(() => {Application.Quit();});
+        quitGame.onClick.AddListener(QuitGame);
         loadGame.onClick.AddListener(LoadGame);
+    }
+    private void QuitGame()
+    {
+        List<string> recordList = new List<string>();
+        foreach(int key in SaveManager.Instance.saveRecord.Keys)
+        {
+            string endRecord = key.ToString()+","+ SaveManager.Instance.saveRecord[key];
+            recordList.Add(endRecord);
+        }
+        SaveSystem.SaveSaveItems(recordList);
+        Application.Quit();
     }
     private void ContinueGame()
     {
