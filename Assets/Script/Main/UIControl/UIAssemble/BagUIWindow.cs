@@ -17,8 +17,6 @@ public class BagUIWindow:UIWindow
     public Image detailImage;
     [Tooltip("放文字的位置")]
     public Text detailText;
-    [Tooltip("放大图片")]
-    public Button detailImag;
 
     [HideInInspector]
     public Dictionary<int,RectTransform>bagItemsPanels = new Dictionary<int,RectTransform>() ;
@@ -57,36 +55,13 @@ public class BagUIWindow:UIWindow
         }
     }
     private int maxPage;
-    private Vector3 detailImagPrimScale;
-    private Vector3 detailImagPrimPos;
+
     private void Start()
     {
         close.onClick.AddListener(CloseBag);
         InitBag();
         //turnLeft.onClick.AddListener(TurnLeftPage);
         //turnRight.onClick.AddListener(TurnRightPage);
-        detailImag.onClick.AddListener(CheckDetailImag);
-        detailImagPrimScale = detailImag.transform.localScale;
-        detailImagPrimPos = detailImag.transform.localPosition;
-    }
-    private void CheckDetailImag()
-    {
-        detailImag.transform.localScale = new Vector3(1,1,1);
-        detailImag.transform.localPosition = Vector3.zero;
-        StartCoroutine(CloseDetailImag());
-    }
-    IEnumerator CloseDetailImag()
-    {
-        while (true)
-        {
-            if (Input.anyKeyDown)
-            {
-                break;
-            }
-            yield return null;
-        }
-        detailImag.transform.localScale = detailImagPrimScale;
-        detailImag.transform.localPosition = detailImagPrimPos;
     }
     private void InitBag()
     {

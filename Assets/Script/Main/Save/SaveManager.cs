@@ -82,6 +82,7 @@ namespace save
                             saveRecord.Add(currentSaveIndex,pictureName);
                         }
                         GameObject saveItem = Instantiate(Resources.Load("Prefabs/SaveItem") as GameObject, items.transform);
+                        Debug.Log(saveItem);
                         saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/" + pictureName), pictureName, currentSaveIndex);
                         itemGo.Add(currentSaveIndex,saveItem);
                     }

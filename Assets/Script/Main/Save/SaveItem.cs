@@ -12,14 +12,24 @@ namespace save
     {
         [HideInInspector]
         public int saveIndex;
-        private Image image;
-        private Text text;
+        private Image image
+        {
+            get
+            {
+                return GetComponent<Image>();
+            }
+        }
+        private Text text
+        {
+            get
+            {
+                return GetComponentInChildren<Text>();
+            }
+        }
         private Button button;
         public GameObject selection;
         private void Awake()
         {
-            image = GetComponent<Image>();
-            text = GetComponentInChildren<Text>();
             button = GetComponent<Button>();
             button.onClick.AddListener(SelectSave);
         }

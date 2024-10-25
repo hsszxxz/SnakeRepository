@@ -19,7 +19,8 @@ public class SaveUIWindow:UIWindow
     }
     private void SelectSave()
     {
-        ShutAndOpen(false );
+        ShutAndOpen(false);
+        UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(true);
         Time.timeScale = 1.0f;
         if (saveIndex!=0)
         {

@@ -1,3 +1,4 @@
+using ns;
 using save;
 using System.Collections;
 using UnityEngine;
@@ -10,12 +11,16 @@ public class UIControler : MonoBehaviour
     public Button maker;
     public Button quit;
     public GameObject Makers;
+    public GameObject DontDestroyGo;
+    private LateLoadGame lateLoadGame;
     private void Start()
     {
         startGame.onClick.AddListener(StartGame);
         continueGame.onClick.AddListener(ContinueGame);
         maker.onClick.AddListener(ShowMakers);
         quit.onClick.AddListener(() => { Application.Quit(); });
+        lateLoadGame = DontDestroyGo.GetComponent<LateLoadGame>();
+        DontDestroyOnLoad(DontDestroyGo);
     }
     private void StartGame()
     {
@@ -29,8 +34,14 @@ public class UIControler : MonoBehaviour
         else
         {
             SceneManager.LoadScene("MainScene");
-            SaveSystem.LoadAll(SaveSystem.LoadIndex());
+            lateLoadGame.StartCoroutine(LateLoad());
         }
+    }
+    IEnumerator LateLoad()
+    {
+        yield return null;
+        SaveManager.Instance.currentSaveIndex = SaveSystem.LoadIndex();
+        SaveSystem.LoadAll(SaveSystem.LoadIndex());
     }
     private void ShowMakers()
     {

@@ -12,6 +12,8 @@ public class ItemScript : MonoBehaviour
     private ItemDataBase data;
 
     private Button button;
+    private GameObject detailImage;
+    private BagUIWindow bagUIWindow;
     private void Awake()
     {
         button = GetComponent<Button>();
@@ -19,12 +21,40 @@ public class ItemScript : MonoBehaviour
         button.onClick.AddListener(ShowDetails);
     }
 
+    private void Start()
+    {
+        bagUIWindow = UIManager.Instance.GetUIWindow<BagUIWindow>();
+        detailImage = bagUIWindow.detailImage.gameObject;
+    }
     private void ShowDetails()
     {
-        BagUIWindow bagUIWindow = UIManager.Instance.GetUIWindow<BagUIWindow>();
         bagUIWindow.detailText.text = data.description;
-        bagUIWindow.detailImage.sprite = data.detailImg;
+        detailImage.GetComponent<Image>(). sprite = data.img;
+        detailImage.GetComponent<Button>().onClick.RemoveAllListeners();
+        detailImage.GetComponent<Button>().onClick.AddListener(DectImg);
         bagUIWindow.detailImage.SetNativeSize();
+    }
+    private void DectImg()
+    {
+        StartCoroutine(CloseDetailImag(detailImage.transform.localPosition));
+        detailImage.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        detailImage.transform.localPosition = Vector3.zero;
+        detailImage.GetComponent<Image>().sprite = data.detailImgWithDescribe;
+        detailImage.GetComponent<Image>(). SetNativeSize();
+    }
+    IEnumerator CloseDetailImag(Vector3 detailImagPrimPos)
+    {
+        while (true)
+        {
+            if (Input.anyKeyDown)
+            {
+                break;
+            }
+            yield return null;
+        }
+        detailImage.transform.localPosition = detailImagPrimPos;
+        detailImage.GetComponent <Image>().sprite = data.img;
+        detailImage.GetComponent<Image>().SetNativeSize();
     }
     public void InitItem(ItemDataBase dataBase)
     {

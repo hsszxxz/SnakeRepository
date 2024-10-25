@@ -57,7 +57,6 @@ namespace sneak
         {
             if (SneakManager.Instance.bodies.Count >= 3)
             {
-                Debug.Log(gameObject);
                 SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
             }
             else

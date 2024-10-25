@@ -41,6 +41,7 @@ public class ItemManager : MonoSingleton<ItemManager>
                     itemGo.transform.SetParent(UIManager.Instance.GetUIWindow<BagUIWindow>().bagItemsPanels[transformIndex]);
                 itemGo.transform.localScale = new Vector3(1, 1, 1);
                 itemGo.transform.localRotation = Quaternion.identity;
+                itemGo.GetComponent<RectTransform>().localPosition = new Vector3(0,0, 0); 
                 ItemScript item = itemGo.GetComponent<ItemScript>();
                 item.InitItem(data);
                 datas.Add(item);
