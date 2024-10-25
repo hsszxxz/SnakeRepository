@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   datas:
   - id: 1
-    name: star
-    description: 6666
-    img: {fileID: -5530124188274321961, guid: 0828213b3e562ed41a45863b8df386ab, type: 3}
-    detailImg: {fileID: 4589233712052125292, guid: b6437ee6fbd061041a5590b9e4976686, type: 3}
+    name: bottle
+    description: "\u9488\u8FD8\u5728\u624B\u4E0A\u7684\u540A\u74F6\uFF0C\u4E0A\u9762\u6807\u8BB0\u7684\u201C\u6CE2\u201D\u548C\u201C\u7C92\u201D\u4F3C\u4E4E\u662F\u4F60\u4EEC\u7684\u540D\u5B57\u3002"
+    img: {fileID: 21300000, guid: 332f3267e85b43b4aa97548ee2f19671, type: 3}
+    detailImg: {fileID: 21300000, guid: 332f3267e85b43b4aa97548ee2f19671, type: 3}
+    detailImgWithDescribe: {fileID: 21300000, guid: cb11e391c5a77fe4c914c2f2d7f10ffb, type: 3}
   - id: 2
-    name: 555
-    description: iii
-    img: {fileID: -7918947902851932483, guid: 0dae0de73d3ff7b48934642c8a5df5e1, type: 3}
-    detailImg: {fileID: 733467804461794757, guid: b6437ee6fbd061041a5590b9e4976686, type: 3}
+    name: flower
+    description: "\u4E00\u7247\u5E26\u7740\u6DE1\u6DE1\u9999\u6C14\u7684\u83CA\u82B1\u82B1\u74E3\u3002"
+    img: {fileID: 21300000, guid: 7cff51b0126db5842b0b283fd3a57e79, type: 3}
+    detailImg: {fileID: 21300000, guid: 7cff51b0126db5842b0b283fd3a57e79, type: 3}
+    detailImgWithDescribe: {fileID: 21300000, guid: 46a406717a468b74c92ea3a882ae0324, type: 3}

@@ -23,9 +23,9 @@ namespace interection
         }
         private void Update()
         {
-            if (FindTarget()!=null)
+            if (FindSneakPosition.FindTarget(transform)!=null)
             {
-                if(Vector2.Distance(FindTarget().position,transform.position)<=distance)
+                if(Vector2.Distance(FindSneakPosition.FindTarget(transform).position,transform.position)<=distance)
                 {
                     tiShiPanel.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.Space))
@@ -42,16 +42,6 @@ namespace interection
             {
                 tiShiPanel.SetActive(false);
             }
-        }
-        protected Transform FindTarget()
-        {
-            Transform head1Trans = SneakManager.Instance.head1.transform;
-            Transform head2Trans = SneakManager.Instance.head2.transform;
-            if (head1Trans == null || head2Trans == null)
-                return null;
-            float distance1 = Vector2.Distance(transform.position, head1Trans.position);
-            float distance2 = Vector2.Distance(transform.position, head2Trans.position);
-            return (distance1 > distance2) ? head2Trans : head1Trans;
         }
     }
 }

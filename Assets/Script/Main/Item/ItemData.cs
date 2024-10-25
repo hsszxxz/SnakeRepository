@@ -17,6 +17,7 @@ public class ItemDataBase
     public string description;
     public Sprite img;
     public Sprite detailImg;
+    public Sprite detailImgWithDescribe;
 }
 
 

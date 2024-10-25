@@ -166,10 +166,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   nextBody: {fileID: 0}
   type: 0
   headType: 1
   moveForce: 2
+  shineColor: {r: 0.18431373, g: 0.29803923, b: 0.5529412, a: 1}
 --- !u!114 &1527623571039254316
 MonoBehaviour:
   m_ObjectHideFlags: 0

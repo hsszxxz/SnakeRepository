@@ -18,32 +18,55 @@ namespace enemy
         public int blood;
         [Tooltip("怪碰到哪些tag的碰撞体会受到伤害")]
         public List<string> colliderHurtTags ;
+        private SpriteRenderer spriteRenderer;
+        [HideInInspector]
+        public Transform targetSneak
+        {
+            get
+            {
+                if (target==null)
+                {
+                    target = FindSneakPosition.FindTarget(transform);
+                }
+                return target;
+            }
+        }
+        private Transform target;
+        private void GetAttacked()
+        {
+            StartCoroutine(LightAgain());
+            GotInjured();
+        }
+        IEnumerator  LightAgain()
+        {
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.color = Color.white;
+        }
+        protected virtual void GotInjured()
+        {
+            blood -= 1;
+            if (blood <= 0)
+            {
+                GameObjectPool.Instance.CollectObject(gameObject);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
+            }
+        }
         protected virtual void Start()
         {
             blood = maxBlood;
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            EventSystemCenter.Instance.AddEventListener("enemyInjure", GetAttacked);
         }
         public virtual void EnemyInit()
         {
             blood = maxBlood;
         }
-        public Transform FindTarget()
-        {
-            Transform head1Trans = SneakManager.Instance.head1.transform;
-            Transform head2Trans = SneakManager.Instance.head2.transform;
-            float distance1 = Vector2.Distance(transform.position, head1Trans.position);
-            float distance2 = Vector2.Distance(transform.position,head2Trans.position);
-            return (distance1 > distance2) ? head2Trans : head1Trans;
-        }
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
             if (colliderHurtTags.Contains(collision.transform.tag))
             {
-                blood -= 1;
-                if (blood <= 0)
-                {
-                    GameObjectPool.Instance.CollectObject(gameObject);
-                    GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
-                }
+                EventSystemCenter.Instance.EventTrigger("enemyInjure");
             }
         }
     }

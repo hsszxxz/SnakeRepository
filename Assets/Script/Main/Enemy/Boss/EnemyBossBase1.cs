@@ -36,7 +36,7 @@ namespace enemy
         }
         private void Update()
         {
-            if ( Vector2.Distance(transform.position,FindTarget().position)<=attackDetectDis )
+            if ( Vector2.Distance(transform.position,targetSneak.position)<=attackDetectDis )
             {
                 if (!isAttack)
                 {
@@ -51,22 +51,19 @@ namespace enemy
                 bloodUIWindow.BloodLineChange(blood,maxBlood);
             }
         }
-        protected override void OnCollisionEnter2D(Collision2D collision)
+        protected override void GotInjured()
         {
-            if(collision.transform.CompareTag("playerbullet"))
+            blood -= 1;
+            if (blood <= eggBlood && isEgg)
             {
-                blood -= 1;
-                if (blood <= eggBlood && isEgg)
-                {
-                    generateEnemyEgg.Excute(transform.position);
-                    isEgg = false;
-                }
-                if (blood <= 0)
-                {
-                    EnemyManager.Instance.bossDic.Remove("boss1");
-                    EnemyManager.Instance.enemyDebate[0] = true;
-                    Destroy(gameObject);
-                }
+                generateEnemyEgg.Excute(transform.position);
+                isEgg = false;
+            }
+            if (blood <= 0)
+            {
+                EnemyManager.Instance.bossDic.Remove("boss1");
+                EnemyManager.Instance.enemyDebate[0] = true;
+                Destroy(gameObject);
             }
         }
     }

@@ -10,6 +10,14 @@ public class ItemManager : MonoSingleton<ItemManager>
     [HideInInspector]
     public List<ItemScript> datas = new List<ItemScript>();
     public ItemData itemDatas;
+    public ItemDataBase IdToData(int id)
+    {
+        foreach (ItemDataBase item in itemDatas.datas)
+        {
+            if (item.id == id) return item;
+        }
+        return null;
+    }
     public void AddObject(int id,int num=1)
     {
         bool flag = true;
@@ -24,20 +32,18 @@ public class ItemManager : MonoSingleton<ItemManager>
         }
         if (flag)
         {
-            foreach (ItemDataBase data in itemDatas.datas)
+            ItemDataBase data = IdToData(id);
+            if (data != null)
             {
-                if (data.id==id)
-                {
-                    GameObject itemGo = Instantiate(Resources.Load("Prefabs/Item") as GameObject);
-                    int transformIndex =UIManager.Instance.GetUIWindow<BagUIWindow>().AddItemsToPage(itemGo.GetComponent<RectTransform>());
-                    if (transformIndex != -1)
-                        itemGo.transform.SetParent(UIManager.Instance.GetUIWindow<BagUIWindow>().bagItemsPanels[transformIndex]);
-                    itemGo.transform.localScale = new Vector3(1, 1, 1);
-                    itemGo.transform.localRotation = Quaternion.identity;
-                    ItemScript item = itemGo.GetComponent<ItemScript>();
-                    item.InitItem(data);
-                    datas.Add(item);
-                }
+                GameObject itemGo = Instantiate(Resources.Load("Prefabs/Item") as GameObject);
+                int transformIndex = UIManager.Instance.GetUIWindow<BagUIWindow>().AddItemsToPage(itemGo.GetComponent<RectTransform>());
+                if (transformIndex != -1)
+                    itemGo.transform.SetParent(UIManager.Instance.GetUIWindow<BagUIWindow>().bagItemsPanels[transformIndex]);
+                itemGo.transform.localScale = new Vector3(1, 1, 1);
+                itemGo.transform.localRotation = Quaternion.identity;
+                ItemScript item = itemGo.GetComponent<ItemScript>();
+                item.InitItem(data);
+                datas.Add(item);
             }
         }
     }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ShowUIWindow:UIWindow
 {
     public Image itemImage;
-    public Text describe;
     public Button cancel;
     private void Start()
     {
@@ -14,13 +13,13 @@ public class ShowUIWindow:UIWindow
     private void CloseWindow()
     {
         Time.timeScale = 1.0f;
+        UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(true);
         ShutAndOpen(false);
     }
     public void ShowItem(ItemDataBase item)
     {
         Time.timeScale = 0f;
-        itemImage.sprite = item.img;
-        describe.text = item.description;
+        itemImage.sprite = item.detailImgWithDescribe;
     }
 }
 

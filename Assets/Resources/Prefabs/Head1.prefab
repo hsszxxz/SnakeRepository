@@ -102,10 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   nextBody: {fileID: 0}
   type: 0
   headType: 0
   moveForce: 2
+  shineColor: {r: 0.19215688, g: 0.3019608, b: 0.54901963, a: 1}
 --- !u!50 &4763254426224505273
 Rigidbody2D:
   serializedVersion: 4
@@ -196,3 +198,5 @@ MonoBehaviour:
   angle: 120
   range: 10
   backForce: 1
+  addMoveForce: 0
+  addSpeedTime: 0

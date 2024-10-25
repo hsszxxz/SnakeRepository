@@ -17,6 +17,8 @@ namespace sneak
         private SneakBody previousValue;
         private SpringJoint2D springJoint;
         [HideInInspector]
+        public SpriteRenderer spriteRenderer;
+        [HideInInspector]
         public SneakBody previousBody
         {
             get
@@ -47,6 +49,7 @@ namespace sneak
             collider = GetComponent<Collider2D>();
             hingeJoint = GetComponent<HingeJoint2D>();
             springJoint = GetComponent<SpringJoint2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             Init();
         }
         protected abstract void Init();

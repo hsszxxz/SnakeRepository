@@ -21,7 +21,7 @@ namespace enemy
             seeker = GetComponent<Seeker>();
             aipath = GetComponent<AIPath>();
             enemyBase = GetComponent<EnemyBase>();
-            destinationSetter.target = enemyBase.FindTarget();
+            destinationSetter.target = enemyBase.targetSneak;
         }
         public IEnumerator OpenPathFindingComponet()
         {

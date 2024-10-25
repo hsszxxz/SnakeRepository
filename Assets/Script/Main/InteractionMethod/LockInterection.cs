@@ -38,8 +38,10 @@ namespace interection
             {
                 tiShiPanel.GetComponentInChildren<Text>().text = "无法打开！";
             }
-            airWall.SetActive(!isOpen);
-
+            else
+            {
+                airWall.SetActive(false);
+            }
         }
     }
 }

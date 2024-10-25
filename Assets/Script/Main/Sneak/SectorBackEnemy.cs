@@ -30,7 +30,7 @@ namespace sneak
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                DetectObjectInSector(new List<string> { "enemy" });
+                DetectObjectInSector(new List<string> { "enemy" ,"enemybullet"});
             }
         }
         private void Accelerate()
@@ -58,12 +58,19 @@ namespace sneak
                 Vector2 toCollider = colliderPos - postion;
                 float angleToCollider = Vector2.Angle(direction, toCollider);
 
-                if (angleToCollider < angle/2)
+                if (angleToCollider < angle/2 )
                 {
-                    IEnemyBackable backable = collider.gameObject.GetComponent<IEnemyBackable>();
-                    if (backable != null)
+                    if (collider.tag == "enemy")
                     {
-                        backable.ShakeEnemyBack(transform, backForce);
+                        IEnemyBackable backable = collider.gameObject.GetComponent<IEnemyBackable>();
+                        if (backable != null)
+                        {
+                            backable.ShakeEnemyBack(transform, backForce);
+                        }
+                    }
+                    else if (collider.tag =="enemybullet")
+                    {
+                        GameObjectPool.Instance.CollectObject(collider.gameObject);
                     }
                 }
             }

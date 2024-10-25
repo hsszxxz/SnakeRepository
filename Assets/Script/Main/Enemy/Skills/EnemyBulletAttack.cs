@@ -9,7 +9,6 @@ namespace enemy
     [RequireComponent(typeof(EnemyBase))]
     public class EnemyBulletAttack : BulletAttackMethod
     {
-        private Transform attackTarge;
         private EnemyBase enemyBase;
         [Tooltip("隔玩家多少距离开始攻击")]
         public float distance;
@@ -25,25 +24,17 @@ namespace enemy
         private void Start()
         {
             enemyBase = GetComponent<EnemyBase>();
-            attackTarge = enemyBase.FindTarget();
         }
         private void Update()
         {
             nowTime += Time.deltaTime;
-            if (attackTarge != null)
+            if (Vector3.Distance(enemyBase.targetSneak.position, transform.position) <= distance)
             {
-                if (Vector3.Distance(attackTarge.position, transform.position) <= distance)
+                if (nowTime > spaceTime)
                 {
-                    if (nowTime > spaceTime)
-                    {
-                        nowTime = 0;
-                        Attack(attackTarge.position);
-                    }
+                    nowTime = 0;
+                    Attack(enemyBase.targetSneak.position);
                 }
-            }
-            else
-            {
-                attackTarge = enemyBase.FindTarget();
             }
         }
     }

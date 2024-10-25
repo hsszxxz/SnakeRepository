@@ -35,30 +35,27 @@ namespace enemy
         }
         private void Update()
         {
-            if (Vector2.Distance(transform.position, FindTarget().position) <= attackDetectDis && !isAttack)
+            if (Vector2.Distance(transform.position, targetSneak.position) <= attackDetectDis && !isAttack)
             {
                 bulletConfig.enabled = true;
                 isAttack = true;
             }
         }
-        protected override void OnCollisionEnter2D(Collision2D collision)
+        protected override void GotInjured()
         {
-            if (collision.transform.CompareTag("playerbullet"))
+            blood -= 1;
+            if (blood <= 0)
             {
-                blood -= 1;
-                if (blood <= 0)
-                {
-                    EnemyManager.Instance.bossDic.Remove("boss2");
-                    EnemyManager.Instance.enemyDebate[1] = true;
-                    Destroy(gameObject);
-                }
-                else if (blood <=secondBlood && isSecond)
-                {
-                    isSecond = false;
-                    GetComponent<FollowPlayer>().PathFindingComponentControl(false);
-                    GetComponent<NearAttack>().distance = secondDis;
-                    GetComponent<NearAttack>().spaceTime = secondSpace;
-                }
+                EnemyManager.Instance.bossDic.Remove("boss2");
+                EnemyManager.Instance.enemyDebate[1] = true;
+                Destroy(gameObject);
+            }
+            else if (blood <= secondBlood && isSecond)
+            {
+                isSecond = false;
+                GetComponent<FollowPlayer>().PathFindingComponentControl(false);
+                GetComponent<NearAttack>().distance = secondDis;
+                GetComponent<NearAttack>().spaceTime = secondSpace;
             }
         }
     }

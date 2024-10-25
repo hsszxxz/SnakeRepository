@@ -15,34 +15,21 @@ namespace enemy
         [Tooltip("隔多少秒攻击一次")]
         public float spaceTime;
         private float currentTime;
-        private Transform target;
+        private EnemyBase enemyBase;
         private void Start ()
         {
-            target = GetComponent<EnemyBase>().FindTarget();
+            enemyBase = GetComponent<EnemyBase>();
             currentTime = 0;
         }
         private void Update ()
         {
             currentTime += Time.deltaTime;
-            if (target != null)
+            if (Vector2.Distance(transform.position, enemyBase.targetSneak.position) <= distance && currentTime >= spaceTime)
             {
-                if (Vector2.Distance(transform.position, target.position) <= distance && currentTime >= spaceTime)
-                {
-                    currentTime = 0;
-                    if (SneakManager.Instance.bodies.Count >= 3)
-                    {
-                        SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-                    }
-                    else
-                    {
-                        Debug.LogError("你死了");
-                    }
-                }
+                currentTime = 0;
+                EventSystemCenter.Instance.EventTrigger("playerInjure");
             }
-            else
-            {
-                target = GetComponent<EnemyBase>().FindTarget();
-            }
+            
         }
     }
 }

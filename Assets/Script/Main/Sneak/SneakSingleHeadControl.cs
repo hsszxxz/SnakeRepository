@@ -21,6 +21,7 @@ namespace sneak
         public HeadType headType;
         private Dictionary<HeadType, List<KeyCode>> keyValuePairs;
         public float moveForce;
+        public Color shineColor;
         private void Update()
         {
             HeadMove(headType);
@@ -47,6 +48,35 @@ namespace sneak
             };
             type = headType;
             transform.tag = headType.ToString();
+            if (headType == HeadType.Head2)
+            {
+                EventSystemCenter.Instance.AddEventListener("playerInjure", GetInjuer);
+            }
+        }
+        private void GetInjuer()
+        {
+            if (SneakManager.Instance.bodies.Count >= 3)
+            {
+                Debug.Log(gameObject);
+                SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
+            }
+            else
+            {
+                Debug.LogError("ƒ„À¿¡À");
+            }
+            StartCoroutine(LightAgain());
+        }
+        IEnumerator LightAgain()
+        {
+            foreach (SneakBody body in SneakManager.Instance.bodies)
+            {
+                body.spriteRenderer.color = shineColor;
+            }
+            yield return new WaitForSeconds(0.2f);
+            foreach (SneakBody body in SneakManager.Instance.bodies)
+            {
+                body.spriteRenderer.color = Color.white;
+            }
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -60,14 +90,7 @@ namespace sneak
             }
             if (collision.transform.CompareTag("enemybullet"))
             {
-                if (SneakManager.Instance.bodies.Count>= 3)
-                {
-                    SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-                }
-                else
-                {
-                    Debug.LogError("ƒ„À¿¡À");
-                }
+                EventSystemCenter.Instance.EventTrigger("playerInjure");
             }
         }
     }

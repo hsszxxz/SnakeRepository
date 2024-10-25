@@ -108,6 +108,7 @@ namespace save
             LoadBag(index);
             LoadSnake(index);
             LoadEnemyBoss(index);
+            EventSystemCenter.Instance.ClearAllListeners();
         }
         private static void SaveSnake(int index)
         {
