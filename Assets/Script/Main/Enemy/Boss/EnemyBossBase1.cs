@@ -21,11 +21,14 @@ namespace enemy
         private bool isAttack = false;
         private BloodUIWindow bloodUIWindow;
         public Sprite bloodBackSprite;
+        private GameObject key;
         protected override void Start()
         {
             base.Start();
             bulletConfig =GetComponent<BulletConfig>();
             bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
+            key = GameObject.Find("8Ô¿³×");
+            key.SetActive(false);
         }
         public override void EnemyInit()
         {
@@ -63,6 +66,9 @@ namespace enemy
             {
                 EnemyManager.Instance.bossDic.Remove("boss1");
                 EnemyManager.Instance.enemyDebate[0] = true;
+                bloodUIWindow.ShutAndOpen(false);
+                key.gameObject.SetActive(true);
+                key.transform.position = transform.position;
                 Destroy(gameObject);
             }
         }

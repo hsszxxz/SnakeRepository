@@ -21,9 +21,12 @@ namespace enemy
         public float attackDetectDis;
         private BulletConfig bulletConfig;
         private bool isAttack = false;
+        private BloodUIWindow bloodUIWindow;
+        public Sprite bloodBackSprite;
         protected override void Start()
         {
             base.Start();
+            bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
             bulletConfig = GetComponent<BulletConfig>();
         }
         public override void EnemyInit()
@@ -37,8 +40,13 @@ namespace enemy
         {
             if (Vector2.Distance(transform.position, targetSneak.position) <= attackDetectDis && !isAttack)
             {
-                bulletConfig.enabled = true;
                 isAttack = true;
+                bloodUIWindow.ShutAndOpen(true);
+                bloodUIWindow.bloodBack.sprite = bloodBackSprite;
+            }
+            if (isAttack)
+            {
+                bloodUIWindow.BloodLineChange(blood, maxBlood);
             }
         }
         protected override void GotInjured()
@@ -48,6 +56,7 @@ namespace enemy
             {
                 EnemyManager.Instance.bossDic.Remove("boss2");
                 EnemyManager.Instance.enemyDebate[1] = true;
+                bloodUIWindow.ShutAndOpen(false);
                 Destroy(gameObject);
             }
             else if (blood <= secondBlood && isSecond)
@@ -56,6 +65,7 @@ namespace enemy
                 GetComponent<FollowPlayer>().PathFindingComponentControl(false);
                 GetComponent<NearAttack>().distance = secondDis;
                 GetComponent<NearAttack>().spaceTime = secondSpace;
+                bulletConfig.enabled = true;
             }
         }
     }

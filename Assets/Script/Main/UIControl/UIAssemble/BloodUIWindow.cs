@@ -6,9 +6,9 @@ public class BloodUIWindow : UIWindow
 {
     public Image bloodBack;
     public Image bloodIn;
-    public void BloodLineChange(float current , float max)
+    public void BloodLineChange(int current , int max)
     {
-         bloodIn.fillAmount = (current-max)/max;
+         bloodIn.fillAmount = 1-(float)(max-current)/max;
     }
 
 }

@@ -34,7 +34,10 @@ namespace enemy
         private Transform target;
         private void GetAttacked()
         {
-            StartCoroutine(LightAgain());
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(LightAgain());
+            }
             GotInjured();
         }
         IEnumerator  LightAgain()

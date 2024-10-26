@@ -41,6 +41,7 @@ public class ItemScript : MonoBehaviour
         detailImage.transform.localPosition = Vector3.zero;
         detailImage.GetComponent<Image>().sprite = data.detailImgWithDescribe;
         detailImage.GetComponent<Image>(). SetNativeSize();
+        bagUIWindow.detailText.gameObject.SetActive(false);
     }
     IEnumerator CloseDetailImag(Vector3 detailImagPrimPos)
     {
@@ -55,6 +56,7 @@ public class ItemScript : MonoBehaviour
         detailImage.transform.localPosition = detailImagPrimPos;
         detailImage.GetComponent <Image>().sprite = data.img;
         detailImage.GetComponent<Image>().SetNativeSize();
+        bagUIWindow.detailText.gameObject.SetActive(true);
     }
     public void InitItem(ItemDataBase dataBase)
     {

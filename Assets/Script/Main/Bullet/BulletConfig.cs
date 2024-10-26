@@ -15,6 +15,7 @@ namespace bullet
         {
             data.ResetTempData(transform);
             shooter = new GameObject(transform.name + "shooter").transform;
+            shooter.transform.parent = transform;
             shooter.position = transform.position;
         }
         private void Update()
@@ -32,6 +33,7 @@ namespace bullet
                 for (int j = 0; j < data.Count; j++)
                 {
                     GameObject bullet = GameObjectPool.Instance.CreateObject(shooter.name + "bullet", data.prafabs, data.P_Offset + shooter.position, Quaternion.Euler(data.R_Offset));
+                    bullet.layer = LayerMask.NameToLayer("EnemyBullet");
                     bullet.GetComponent<SpriteRenderer>().sprite = data.bulletSprite;
                     bullet.transform.tag = "enemybullet";
                     BulletMotor motor = bullet.GetComponent<BulletMotor>();
