@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a93b797fb0127e648bfe51716a08889e
+guid: 1e6e593311a401744a4ff0c9c8125a45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3596961558501618729
-    second: 2024-10-25-23-00-02_0
+      213: -8162569603509826893
+    second: GUAI1_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2024-10-25-23-00-02_0
+      name: GUAI1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1099
-        height: 618
+        x: 6
+        y: 6
+        width: 78
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7db86c22586051ec0800000000000000
-      internalID: -3596961558501618729
+      spriteID: 3ba4568513ab8be80800000000000000
+      internalID: -8162569603509826893
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GUAI1_0: -8162569603509826893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,6 +16,7 @@ namespace bullet
             data.ResetTempData(transform);
             shooter = new GameObject(transform.name + "shooter").transform;
             shooter.transform.parent = transform;
+            shooter.rotation = Quaternion.identity;
             shooter.position = transform.position;
         }
         private void Update()

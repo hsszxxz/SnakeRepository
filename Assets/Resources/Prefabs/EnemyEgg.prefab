@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1228986095908773298}
   - component: {fileID: 7236494117280333166}
   - component: {fileID: 9205030307970965699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyEgg
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

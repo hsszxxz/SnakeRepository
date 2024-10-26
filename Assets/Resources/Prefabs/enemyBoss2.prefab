@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -3057961582919113009}
   - component: {fileID: -5483361519024470760}
   - component: {fileID: 7989989370841992190}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enemyBoss2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
