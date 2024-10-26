@@ -32,24 +32,34 @@ namespace enemy
         private int breakNumValue;
         [Tooltip("几秒之后会变成Enemy")]
         public float timeToEnemy;
+        [Tooltip("几秒之后裂")]
+        public float timeToBreak;
         [Tooltip("距离玩家多少距离开始计时")]
         public float distance;
+        public Sprite breakEgg;
 
         private float currentTime;
         private int resetBreakNum;
         private float resetTimeToEnemy;
+        private bool isBreak;
         private void Start()
         {
             rigid = GetComponent<Rigidbody2D>();
             resetBreakNum = breakNum;
             resetTimeToEnemy = timeToEnemy;
             breakNum = BreakNum;
+            isBreak = false;
         }
         private void Update()
         {
             if (Vector2.Distance(FindTarget().position,transform.position) <= distance)
             {
                 currentTime += Time.deltaTime;
+            }
+            if (currentTime > timeToBreak&&!isBreak)
+            {
+                isBreak = true;
+                transform.GetComponent<SpriteRenderer>().sprite = breakEgg;
             }
             if (currentTime > timeToEnemy)
             {

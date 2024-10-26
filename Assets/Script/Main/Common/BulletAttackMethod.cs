@@ -12,7 +12,12 @@ public class BulletAttackMethod : MonoBehaviour
     protected virtual void Attack(Vector3 targetPos)
     {
         Vector2 direction = Quaternion.Euler(20, 0, 0) * (targetPos - transform.position).normalized;
-        GameObject bullet = GameObjectPool.Instance.CreateObject(bulletTag, Resources.Load("Prefabs/Bullet") as GameObject, transform.position, Quaternion.identity);
+        float angle = Vector2.Angle(Vector2.up,direction);
+        if (targetPos.x> transform.position.x)
+        {
+            angle = -angle;
+        }
+        GameObject bullet = GameObjectPool.Instance.CreateObject(bulletTag, Resources.Load("Prefabs/Bullet") as GameObject, transform.position,Quaternion.Euler(0,0,angle));
         bullet.transform.tag = bulletTag;
         bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
         bullet.layer = LayerMask.NameToLayer(layerName);

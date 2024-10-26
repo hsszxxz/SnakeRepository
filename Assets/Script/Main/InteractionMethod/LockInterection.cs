@@ -11,7 +11,6 @@ namespace interection
     public class LockInterection : InteractWithDoor
     {
         public bool FirstBossLock;
-        public bool SecondBossLock;
         public GameObject airWall;
         protected override void Start()
         {
@@ -19,28 +18,17 @@ namespace interection
         }
         protected override void InterectMethod()
         {
-            bool isOpen = true;
             if (FirstBossLock)
             {
-                if (!EnemyManager.Instance.enemyDebate[0])
+                if (ItemManager.Instance.IdInBag(8))
                 {
-                    isOpen = false;
+                    airWall.SetActive(false);
+                    tiShiPanel.GetComponentInChildren<Text>().text = "允许通行";
                 }
-            }
-            if (SecondBossLock)
-            {
-                if (!EnemyManager.Instance.enemyDebate[1])
+                else
                 {
-                    isOpen = false;
+                    tiShiPanel.GetComponentInChildren<Text>().text = "无法打开！";
                 }
-            }
-            if (!isOpen)
-            {
-                tiShiPanel.GetComponentInChildren<Text>().text = "无法打开！";
-            }
-            else
-            {
-                airWall.SetActive(false);
             }
         }
     }

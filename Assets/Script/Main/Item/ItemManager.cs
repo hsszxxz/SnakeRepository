@@ -18,6 +18,15 @@ public class ItemManager : MonoSingleton<ItemManager>
         }
         return null;
     }
+    public bool IdInBag(int id)
+    {
+        foreach (ItemScript item in datas)
+        {
+            if (id== item.id)
+                return true;
+        }
+        return false;
+    }
     public void AddObject(int id,int num=1)
     {
         bool flag = true;

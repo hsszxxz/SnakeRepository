@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79341c1183cfddb40b329528f6f2af5a, type: 3}
   m_Name: Bullet1
   m_EditorClassIdentifier: 
-  bulletSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  bulletSprite: {fileID: -4660371837023906239, guid: e7011a2dee13a754b859ec36255dc7df, type: 3}
   prafabs: {fileID: 5296609587309178213, guid: 9fefe6301c0a8664cbd845f082f7ce97, type: 3}
   P_Offset: {x: 0, y: 0, z: 0}
   R_Offset: {x: 0, y: 0, z: 0}

@@ -8,7 +8,7 @@ namespace enemy
     ///<summary>
     ///
     ///<summary>
-    public class EnemyBossBase2 : EnemyBase
+    public class EnemyBossBase2 : EnemyBoosBase
     {
         [Tooltip("还剩多少血时进入二阶段")]
         public float secondBlood;
@@ -17,37 +17,15 @@ namespace enemy
         [Tooltip("二阶段攻击间隔")]
         public float secondSpace;
         private bool isSecond = true;
-        [Tooltip("玩家距离boss多少距离时开启弹幕")]
-        public float attackDetectDis;
-        private BulletConfig bulletConfig;
-        private bool isAttack = false;
-        private BloodUIWindow bloodUIWindow;
-        public Sprite bloodBackSprite;
         protected override void Start()
         {
+            enemyInjureName = "enemyInjure2";
             base.Start();
-            bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
-            bulletConfig = GetComponent<BulletConfig>();
         }
         public override void EnemyInit()
         {
             base.EnemyInit();
             isSecond = true;
-            bulletConfig.enabled = false;
-            isAttack = false;
-        }
-        private void Update()
-        {
-            if (Vector2.Distance(transform.position, targetSneak.position) <= attackDetectDis && !isAttack)
-            {
-                isAttack = true;
-                bloodUIWindow.ShutAndOpen(true);
-                bloodUIWindow.bloodBack.sprite = bloodBackSprite;
-            }
-            if (isAttack)
-            {
-                bloodUIWindow.BloodLineChange(blood, maxBlood);
-            }
         }
         protected override void GotInjured()
         {

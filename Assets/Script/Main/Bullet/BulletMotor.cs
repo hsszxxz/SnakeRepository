@@ -25,7 +25,7 @@ namespace bullet
         }
         private void BulletsMove()
         {
-            transform.Translate(direction * bulletSpeed * Time.deltaTime);
+            transform.position += direction * bulletSpeed * Time.deltaTime;
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {

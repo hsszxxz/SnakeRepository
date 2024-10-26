@@ -18,7 +18,8 @@ namespace enemy
         public int blood;
         [Tooltip("怪碰到哪些tag的碰撞体会受到伤害")]
         public List<string> colliderHurtTags ;
-        private SpriteRenderer spriteRenderer;
+        protected SpriteRenderer spriteRenderer;
+        protected string enemyInjureName = null;
         [HideInInspector]
         public Transform targetSneak
         {
@@ -38,16 +39,6 @@ namespace enemy
             {
                 StartCoroutine(LightAgain());
             }
-            GotInjured();
-        }
-        IEnumerator  LightAgain()
-        {
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.2f);
-            spriteRenderer.color = Color.white;
-        }
-        protected virtual void GotInjured()
-        {
             blood -= 1;
             if (blood <= 0)
             {
@@ -55,11 +46,16 @@ namespace enemy
                 GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
             }
         }
+        IEnumerator  LightAgain()
+        {
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.color = Color.white;
+        }
         protected virtual void Start()
         {
             blood = maxBlood;
             spriteRenderer = GetComponent<SpriteRenderer>();
-            EventSystemCenter.Instance.AddEventListener("enemyInjure", GetAttacked);
         }
         public virtual void EnemyInit()
         {
@@ -69,7 +65,7 @@ namespace enemy
         {
             if (colliderHurtTags.Contains(collision.transform.tag))
             {
-                EventSystemCenter.Instance.EventTrigger("enemyInjure");
+               GetAttacked();
             }
         }
     }

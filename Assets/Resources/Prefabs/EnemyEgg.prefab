@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -5979647838803754372, guid: 0ecd63815bbecb3468ceca6bb0e0d8c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BreakNum: 1
-  timeToEnemy: 1
+  timeToEnemy: 3
+  timeToBreak: 2
   distance: 1
+  breakEgg: {fileID: -8017597318337121140, guid: 0d00c23dcbb8cd845bb96535d2c7b72b, type: 3}
 --- !u!50 &7236494117280333166
 Rigidbody2D:
   serializedVersion: 4

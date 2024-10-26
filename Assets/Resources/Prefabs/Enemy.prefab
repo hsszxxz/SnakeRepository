@@ -166,7 +166,6 @@ MonoBehaviour:
   maxBlood: 1
   blood: 0
   colliderHurtTags:
-  - building
   - playerbullet
 --- !u!114 &4994187687907434411
 MonoBehaviour:

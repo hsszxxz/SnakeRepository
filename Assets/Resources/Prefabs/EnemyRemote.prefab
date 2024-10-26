@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 3
-  bulletSprite: {fileID: 8177471321811730583, guid: 87aaca0a643d54397ba969dab4fc8875, type: 3}
+  bulletSprite: {fileID: -4660371837023906239, guid: e7011a2dee13a754b859ec36255dc7df, type: 3}
   distance: 5
   spaceTime: 2
 --- !u!61 &1729478062827233909

@@ -20,6 +20,7 @@ namespace sneak
         public float addMoveForce;
         [Tooltip("加速多长时间")]
         public float addSpeedTime;
+        public GameObject sectorArea;
 
         private SneakSingleHeadControl headControl;
         private void Start()
@@ -28,20 +29,15 @@ namespace sneak
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 DetectObjectInSector(new List<string> { "enemy" ,"enemybullet"});
+                sectorArea.SetActive(false);
             }
-        }
-        private void Accelerate()
-        {
-            headControl.moveForce += addMoveForce;
-            StartCoroutine(FinishAccelerate(addSpeedTime));
-        }
-        IEnumerator FinishAccelerate(float time)
-        {
-            yield return new WaitForSeconds(time);
-            headControl.moveForce -= addMoveForce;
+            if (Input.GetKey(KeyCode.E))
+            {
+                sectorArea.SetActive(true);
+            }
         }
         private void DetectObjectInSector(List<string> tags)
         {
@@ -71,6 +67,7 @@ namespace sneak
                     else if (collider.tag =="enemybullet")
                     {
                         GameObjectPool.Instance.CollectObject(collider.gameObject);
+                        GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food")as GameObject, collider.transform.position, Quaternion.identity);
                     }
                 }
             }
