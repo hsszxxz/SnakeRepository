@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9132778618076515300}
   - component: {fileID: -8968796040289317471}
   - component: {fileID: 8330620983029848548}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enemyBoss1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940787177242264529}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
 --- !u!212 &2611272065648632646
 SpriteRenderer:
   m_ObjectHideFlags: 0

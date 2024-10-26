@@ -55,7 +55,7 @@ namespace enemy
             {
                 GameObjectPool.Instance.CreateObject("enemy", Resources.Load("Prefabs/Enemy") as GameObject, transform.position, Quaternion.identity);
                 currentTime = 0;
-                GameObjectPool.Instance.CollectObject(gameObject);
+                Destroy(gameObject);
             }
         }
         private Transform FindTarget()

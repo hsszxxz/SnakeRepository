@@ -20,6 +20,7 @@ public class ShowUIWindow:UIWindow
     {
         Time.timeScale = 0f;
         itemImage.sprite = item.detailImgWithDescribe;
+        itemImage.SetNativeSize();
     }
 }
 

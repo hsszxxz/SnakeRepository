@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1921168937030631233}
   - component: {fileID: 2998267837223792295}
   - component: {fileID: 3687657158654968374}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyRemote
   m_TagString: enemy
   m_Icon: {fileID: 0}
