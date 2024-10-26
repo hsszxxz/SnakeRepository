@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BreakNum: 1
-  timeToEnemy: 3
   timeToBreak: 2
-  distance: 1
   breakEgg: {fileID: -8017597318337121140, guid: 0d00c23dcbb8cd845bb96535d2c7b72b, type: 3}
+  timeToEnemy: 5
+  distance: 5
 --- !u!50 &7236494117280333166
 Rigidbody2D:
   serializedVersion: 4
@@ -139,7 +139,6 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279974003699615009}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -163,7 +162,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
   m_Radius: 0.5
