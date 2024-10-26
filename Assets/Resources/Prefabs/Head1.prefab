@@ -198,8 +198,8 @@ MonoBehaviour:
   angle: 120
   range: 5
   backForce: 1
-  addMoveForce: 0
-  addSpeedTime: 0
+  addMoveForce: 3
+  addSpeedTime: 1
   sectorArea: {fileID: 9035177556765141957}
 --- !u!1 &9035177556765141957
 GameObject:
