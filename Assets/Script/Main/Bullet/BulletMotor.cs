@@ -14,9 +14,18 @@ namespace bullet
         public Vector3 direction;
         [Tooltip("子弹碰到哪些会消失")]
         public List<string> tags = new List<string>();
+        [HideInInspector]
+        public bool isBulletConfig = false;
         private void Update()
         {
-            BulletsMove();
+            if (isBulletConfig)
+            {
+                BulletsConfigMove();
+            }
+            else
+            {
+                BulletsMove();
+            }
             Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
             if (viewPos.x < -1.5 || viewPos.x > 1.5 || viewPos.y < -1.5 || viewPos.y > 1.5)
             {
@@ -26,6 +35,10 @@ namespace bullet
         private void BulletsMove()
         {
             transform.position += direction * bulletSpeed * Time.deltaTime;
+        }
+        private void BulletsConfigMove()
+        {
+            transform.Translate(direction * bulletSpeed * Time.deltaTime);
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {

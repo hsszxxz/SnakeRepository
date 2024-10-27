@@ -38,6 +38,7 @@ namespace bullet
                     bullet.GetComponent<SpriteRenderer>().sprite = data.bulletSprite;
                     bullet.transform.tag = "enemybullet";
                     BulletMotor motor = bullet.GetComponent<BulletMotor>();
+                    motor.isBulletConfig = true;
                     motor.bulletSpeed = data.speed;
                     motor.direction = bullet.transform.right;
                     bullet.transform.rotation = data.tempRotation* Quaternion.Euler(data.R_Offset);

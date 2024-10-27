@@ -10,22 +10,30 @@ public class SaveUIWindow:UIWindow
     [HideInInspector]
     public Dictionary<int,SaveItem> saveItems;
     [HideInInspector]
-    public int saveIndex=0;
+    public SaveItem saveItem;
     private void Start()
     {
         saveItems = new Dictionary<int,SaveItem>();
         back.onClick.AddListener(() => { ShutAndOpen(false); UIManager.Instance.GetUIWindow<MenuUIWindow>().ShutAndOpen(true); });
         readSave.onClick.AddListener(SelectSave);
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            SaveSystem.DeleteSave(saveItem.saveIndex);
+            Destroy(saveItem.gameObject);
+        }
+    }
     private void SelectSave()
     {
         ShutAndOpen(false);
         UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(true);
         Time.timeScale = 1.0f;
-        if (saveIndex!=0)
+        if (saveItem.saveIndex!=0)
         {
-            SaveSystem.LoadAll(saveIndex);
-            SaveManager.Instance.currentSaveIndex = saveIndex;
+            SaveSystem.LoadAll(saveItem.saveIndex);
+            SaveManager.Instance.currentSaveIndex = saveItem.saveIndex;
         }
     }
 

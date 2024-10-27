@@ -41,7 +41,7 @@ namespace save
         }
         private void SelectSave()
         {
-            UIManager.Instance.GetUIWindow<SaveUIWindow>().saveIndex = saveIndex;
+            UIManager.Instance.GetUIWindow<SaveUIWindow>().saveItem = this;
             foreach (var item in UIManager.Instance.GetUIWindow<SaveUIWindow>().saveItems.Values)
             {
                 if (item!=this)

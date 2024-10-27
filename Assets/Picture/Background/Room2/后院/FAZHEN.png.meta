@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 1f0813eefd9d13448b503bfd42bca935
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2152432514335042545
+    second: FAZHEN_0
+  - first:
+      213: 5409314805837923298
+    second: FAZHEN_1
+  - first:
+      213: 6702215932453892641
+    second: FAZHEN_2
+  - first:
+      213: 5706586710723779415
+    second: FAZHEN_3
+  - first:
+      213: 652444243008076269
+    second: FAZHEN_4
+  - first:
+      213: -301736076875294313
+    second: FAZHEN_5
+  - first:
+      213: -3152989151832651091
+    second: FAZHEN_6
+  - first:
+      213: 5832067877127941031
+    second: FAZHEN_7
+  - first:
+      213: -8676964492696334443
+    second: FAZHEN_8
+  - first:
+      213: -3958716465055689117
+    second: FAZHEN_9
+  - first:
+      213: 6357866876873399142
+    second: FAZHEN_10
+  - first:
+      213: 2949339718007184889
+    second: FAZHEN_11
+  - first:
+      213: -604530567236163481
+    second: FAZHEN_12
+  - first:
+      213: -8644372996464555662
+    second: FAZHEN_13
+  - first:
+      213: -1341599354265300998
+    second: FAZHEN_14
+  - first:
+      213: -2282943090690787661
+    second: FAZHEN_15
+  - first:
+      213: -1839170149783553631
+    second: FAZHEN_16
+  - first:
+      213: -6010259269300694075
+    second: FAZHEN_17
+  - first:
+      213: -4620914067240917156
+    second: FAZHEN_18
+  - first:
+      213: -1406161917769418553
+    second: FAZHEN_19
+  - first:
+      213: -6160435224564273608
+    second: FAZHEN_20
+  - first:
+      213: -2552786657560073017
+    second: FAZHEN_21
+  - first:
+      213: 690329821284748759
+    second: FAZHEN_22
+  - first:
+      213: 7358716435033722156
+    second: FAZHEN_23
+  - first:
+      213: -6392148624328950116
+    second: FAZHEN_24
+  - first:
+      213: 8578023681094724927
+    second: FAZHEN_25
+  - first:
+      213: 6058862184245590422
+    second: FAZHEN_26
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FAZHEN_0
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 493
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbe0fbb7f9fedd10800000000000000
+      internalID: 2152432514335042545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 488
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e30b38f72fb11b40800000000000000
+      internalID: 5409314805837923298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 454
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122b0e571ed030d50800000000000000
+      internalID: 6702215932453892641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_3
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 382
+        width: 99
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75bd7ace06ed13f40800000000000000
+      internalID: 5706586710723779415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 470
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de9be3c0592fd0900800000000000000
+      internalID: 652444243008076269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_5
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 469
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7999de103a400dbf0800000000000000
+      internalID: -301736076875294313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 448
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaca5852155e34d0800000000000000
+      internalID: -3152989151832651091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_7
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 403
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab6d2aa5daafe050800000000000000
+      internalID: 5832067877127941031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_8
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 426
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f482434ca359780800000000000000
+      internalID: -8676964492696334443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_9
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 419
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3669dd56950df09c0800000000000000
+      internalID: -3958716465055689117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_10
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 396
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bd2453d3eab3850800000000000000
+      internalID: 6357866876873399142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 392
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdd4c5e8d82ee820800000000000000
+      internalID: 2949339718007184889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_12
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 413
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768e50ce6a64c97f0800000000000000
+      internalID: -604530567236163481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_13
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 350
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27940cf3f84090880800000000000000
+      internalID: -8644372996464555662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_14
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 364
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff8f12de7ea16de0800000000000000
+      internalID: -1341599354265300998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_15
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 375
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b671f4ca5b5150e0800000000000000
+      internalID: -2282943090690787661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_16
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 386
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a936ac3e74f976e0800000000000000
+      internalID: -1839170149783553631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_17
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 370
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3555dc905479ca0800000000000000
+      internalID: -6010259269300694075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_18
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 361
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57ef7473273fdfb0800000000000000
+      internalID: -4620914067240917156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_19
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 372
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c8fbaa9f2f4c7ce0800000000000000
+      internalID: -1406161917769418553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_20
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 360
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83eea0a7dccb18aa0800000000000000
+      internalID: -6160435224564273608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_21
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 349
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc66c86f0ea29cd0800000000000000
+      internalID: -2552786657560073017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_22
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 310
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd498f905b849900800000000000000
+      internalID: 690329821284748759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_23
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 347
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d83090c996f1660800000000000000
+      internalID: 7358716435033722156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_24
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 341
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9efe5771b68a47a0800000000000000
+      internalID: -6392148624328950116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_25
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 311
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d2a82f6134b0770800000000000000
+      internalID: 8578023681094724927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAZHEN_26
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 296
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699710b2e07651450800000000000000
+      internalID: 6058862184245590422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FAZHEN_0: 2152432514335042545
+      FAZHEN_1: 5409314805837923298
+      FAZHEN_10: 6357866876873399142
+      FAZHEN_11: 2949339718007184889
+      FAZHEN_12: -604530567236163481
+      FAZHEN_13: -8644372996464555662
+      FAZHEN_14: -1341599354265300998
+      FAZHEN_15: -2282943090690787661
+      FAZHEN_16: -1839170149783553631
+      FAZHEN_17: -6010259269300694075
+      FAZHEN_18: -4620914067240917156
+      FAZHEN_19: -1406161917769418553
+      FAZHEN_2: 6702215932453892641
+      FAZHEN_20: -6160435224564273608
+      FAZHEN_21: -2552786657560073017
+      FAZHEN_22: 690329821284748759
+      FAZHEN_23: 7358716435033722156
+      FAZHEN_24: -6392148624328950116
+      FAZHEN_25: 8578023681094724927
+      FAZHEN_26: 6058862184245590422
+      FAZHEN_3: 5706586710723779415
+      FAZHEN_4: 652444243008076269
+      FAZHEN_5: -301736076875294313
+      FAZHEN_6: -3152989151832651091
+      FAZHEN_7: 5832067877127941031
+      FAZHEN_8: -8676964492696334443
+      FAZHEN_9: -3958716465055689117
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
