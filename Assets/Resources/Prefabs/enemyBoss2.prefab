@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7989989370841992190}
   - component: {fileID: 8602806327233079859}
   - component: {fileID: 359046469746248898}
+  - component: {fileID: 5729044993907641981}
   m_Layer: 11
   m_Name: enemyBoss2
   m_TagString: Untagged
@@ -353,6 +354,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60afd1452b473054eba2fafd8710fe50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5729044993907641981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b971a207c10d2c49aa90e99883e79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2150728362642102817
