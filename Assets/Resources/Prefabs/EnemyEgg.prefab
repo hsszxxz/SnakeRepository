@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c460f8654ac4ae4bb4bf532ba280085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BreakNum: 1
-  timeToBreak: 2
-  breakEgg: {fileID: -8017597318337121140, guid: 0d00c23dcbb8cd845bb96535d2c7b72b, type: 3}
+  BreakNum: 2
   timeToEnemy: 5
+  timeToBreak: 1
   distance: 5
+  breakEgg: {fileID: -8017597318337121140, guid: 0d00c23dcbb8cd845bb96535d2c7b72b, type: 3}
 --- !u!50 &7236494117280333166
 Rigidbody2D:
   serializedVersion: 4

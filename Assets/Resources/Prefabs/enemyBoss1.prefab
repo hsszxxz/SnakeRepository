@@ -151,7 +151,7 @@ MonoBehaviour:
   isAttack: 0
   bloodBackSprite: {fileID: 6022771725356323715, guid: 201a50e6c25373d44a1a1e74af13f695, type: 3}
   boss2Detect: {fileID: 0}
-  eggBlood: 1
+  eggBlood: 6
   generateEnemyEgg:
     positionOffset:
     - {x: 5, y: 5, z: 0}
@@ -196,7 +196,6 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940787177242264529}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -220,13 +219,13 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: -0.010445595, y: -0.08892726}
+  serializedVersion: 2
   m_Radius: 1.1789594
 --- !u!95 &5614830090356035486
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -240,7 +239,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
