@@ -12,10 +12,13 @@ namespace enemy
         [Tooltip("玩家距离boss多少距离时开启弹幕")]
         public float attackDetectDis;
         protected BulletConfig bulletConfig;
-        private bool isAttack = false;
+        public bool isAttack = false;
         protected BloodUIWindow bloodUIWindow;
         public Sprite bloodBackSprite;
         protected string enmeyInjureName;
+        protected bool isboss1Chat = false;
+        protected bool isboss2Chat = false;
+        public GameObject boss2Detect;
         protected override void Start()
         {
             base.Start();
@@ -28,14 +31,29 @@ namespace enemy
             base.EnemyInit();
             bulletConfig.enabled = false;
             isAttack = false;
-        }
+            isboss1Chat = false;
+            isboss2Chat = false;
+    }
         private void Update()
         {
             if (Vector2.Distance(transform.position, targetSneak.position) <= attackDetectDis && !isAttack)
             {
-                if (enemyInjureName=="enemyInjure1")
+                if (enemyInjureName == "enemyInjure1")
                 {
                     bulletConfig.enabled = true;
+                    if (!isboss1Chat)
+                    {
+                        isboss1Chat = true;
+                        FungusController.Instance.StartBlock("Boss1前");
+                    }
+                }
+                else if (!isboss2Chat)
+                {
+                    isboss2Chat = true;
+                    boss2Detect.SetActive(true);
+                    GetComponent<NearAttack>().isBoss2First = true;
+                    GetComponent<FollowPlayer>().PathFindingComponentControl(true);
+                    FungusController.Instance.StartBlock("Boss2前");
                 }
                 isAttack = true;
                 bloodUIWindow.ShutAndOpen(true);

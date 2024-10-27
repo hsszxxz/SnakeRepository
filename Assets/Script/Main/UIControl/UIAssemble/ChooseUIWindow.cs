@@ -1,10 +1,13 @@
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+public delegate void EventChoice(int index1,int index2);
 public class ChooseUIWindow : UIWindow
 {
+    public event EventChoice choice;
     public List<Image> player1Choices;
     public List<Image> player2Choices;
     public float chooseTime;
@@ -13,53 +16,84 @@ public class ChooseUIWindow : UIWindow
 
     private int player1index = 0;
     private int player2index = 0;
+    private bool isChoose=false;
 
     private float currentTime;
     public override void ShutAndOpen(bool flag)
     {
         base.ShutAndOpen(flag);
         if (flag)
+        {
+            currentTime = 0;
+            isChoose = false;
             StartCoroutine(ChooseText());
+        }
     }
     private void TimeLineChange(float fic)
     {
         timeLine.fillAmount = fic;
     }
-    private void PlayerChoose(int player,int change)
-    {
-        if (player==1)
-        {
-            player1index = (player1index + player1Choices.Count + change) % player1Choices.Count;
-        }
-        if (player==2)
-        {
-            player2index = (player2index+ player2Choices.Count + change) % player2Choices.Count;
-        }
-    }
     IEnumerator ChooseText()
     {
         while(currentTime <= chooseTime)
         {
-            chooseTime += Time.deltaTime;
+            yield return null;
+            currentTime += Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                PlayerChoose(2, -1);
+                player2Choices[1].gameObject.SetActive(false);
+                if (isChoose)
+                {
+                    break;
+                }
+                else
+                {
+                    isChoose=true;
+                }
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                PlayerChoose(2, 1);
+                player2Choices[0].gameObject.SetActive(false);
+                player2index = 1;
+                if (isChoose)
+                {
+                    break;
+                }
+                else
+                {
+                    isChoose = true;
+                }
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
-                PlayerChoose(1, -1);
+                player1Choices[1].gameObject.SetActive(false);
+                if (isChoose)
+                {
+                    break;
+                }
+                else
+                {
+                    isChoose = true;
+                }
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                PlayerChoose(1, 1);
+                player1Choices[0].gameObject.SetActive(false);
+                player1index = 1;
+                if (isChoose)
+                {
+                    break;
+                }
+                else
+                {
+                    isChoose = true;
+                }
             }
-            TimeLineChange((chooseTime-currentTime)/chooseTime);
-            yield return null;
+            TimeLineChange((float)(chooseTime-currentTime)/chooseTime);
         }
+        ShutAndOpen(false);
+        choice(player1index,player2index);
+        choice = null;
     }
 }
 

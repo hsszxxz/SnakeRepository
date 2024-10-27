@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 namespace enemy
@@ -32,17 +33,43 @@ namespace enemy
         public Dictionary<string,EnemyBase> bossDic = new Dictionary<string,EnemyBase>();
         [HideInInspector]
         public List<bool> enemyDebate;
+        private List<Transform> enemyTransform = new List<Transform>();
+        private bool InitRandomEnemy(List<int> num, List<Vector2> minPoints, List<Vector2> maxPoints, string PrefabPath, string poolTag)
+        {
+            if (minPoints.Count != maxPoints.Count || minPoints.Count != num.Count || num.Count != maxPoints.Count)
+            {
+                return false;
+            }
+            for (int i = 0; i < num.Count; i++)
+            {
+                for (int j = 0; j < num[i]; j++)
+                {
+                    Vector2 min = minPoints[i];
+                    Vector2 max = maxPoints[i];
+                    Vector3 pos = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), 0);
+                    Transform item = GameObjectPool.Instance.CreateObject(poolTag, Resources.Load(PrefabPath) as GameObject, pos, Quaternion.identity).transform;
+                    enemyTransform.Add(item);
+                }
+            }
+            return true;
+        }
+        public void ShutAndOpenEnemy(bool flag)
+        {
+            foreach (var item in enemyTransform)
+            {
+                item.gameObject.SetActive(flag);
+            }
+            bossDic["boss1"].gameObject.SetActive(flag);
+            bossDic["boss2"].gameObject.SetActive(flag);
+        }
         public override void Init()
         {
             enemyDebate = new List<bool> { false, false };
-        }
-        private void Start()
-        {
-            if (!GenerateMethod.InitRandomObject(nearEnemyNum, nearMinPoints, nearMaxPoints, "Prefabs/Enemy", "enemy"))
+            if (!InitRandomEnemy(nearEnemyNum, nearMinPoints, nearMaxPoints, "Prefabs/Enemy", "enemy"))
             {
                 Debug.LogError("enemy生成错误");
             }
-            if (!GenerateMethod.InitRandomObject(remoteEnemyNum, remoteMinPoints, remoteMaxPoints, "Prefabs/EnemyRemote", "enemyremote"))
+            if (!InitRandomEnemy(remoteEnemyNum, remoteMinPoints, remoteMaxPoints, "Prefabs/EnemyRemote", "enemyremote"))
             {
                 Debug.LogError("enemy生成错误");
             }

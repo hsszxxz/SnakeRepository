@@ -21,11 +21,14 @@ namespace enemy
         {
             enemyInjureName = "enemyInjure2";
             base.Start();
+            GetComponent<FollowPlayer>().PathFindingComponentControl(false);
         }
         public override void EnemyInit()
         {
             base.EnemyInit();
             isSecond = true;
+            boss2Detect.SetActive(true);
+            GetComponent<FollowPlayer>().PathFindingComponentControl(false);
         }
         protected override void GotInjured()
         {
@@ -35,11 +38,14 @@ namespace enemy
                 EnemyManager.Instance.bossDic.Remove("boss2");
                 EnemyManager.Instance.enemyDebate[1] = true;
                 bloodUIWindow.ShutAndOpen(false);
+                FungusController.Instance.StartBlock("Boss2ºó");
                 Destroy(gameObject);
             }
             else if (blood <= secondBlood && isSecond)
             {
                 isSecond = false;
+                GetComponent<NearAttack>().isBoss2First = false;
+                boss2Detect.SetActive(false);
                 GetComponent<FollowPlayer>().PathFindingComponentControl(false);
                 GetComponent<NearAttack>().distance = secondDis;
                 GetComponent<NearAttack>().spaceTime = secondSpace;

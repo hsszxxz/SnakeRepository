@@ -61,7 +61,9 @@ namespace sneak
             }
             else
             {
-                Debug.LogError("ƒ„À¿¡À");
+                Time.timeScale = 0;
+                UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(false);
+                UIManager.Instance.GetUIWindow<DeadUiWindow>().ShutAndOpen(true);
             }
             StartCoroutine(LightAgain());
         }

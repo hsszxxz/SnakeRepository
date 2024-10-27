@@ -180,11 +180,11 @@ namespace save
                 return null;
             }
         }
-        [MenuItem("Developer/Delete Player Data Prefs")]
-        public static void DeletPlayerDataPrefs()
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        //[MenuItem("Developer/Delete Player Data Prefs")]
+        //public static void DeletPlayerDataPrefs()
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //}
     }
 }
 

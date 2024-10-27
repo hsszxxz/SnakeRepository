@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8968796040289317471}
   - component: {fileID: 8330620983029848548}
   - component: {fileID: 2423838890255119163}
+  - component: {fileID: 5614830090356035486}
   m_Layer: 11
   m_Name: enemyBoss1
   m_TagString: enemy
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2945982262987997774, guid: 75323e1750bf3ed4d93a3bf2464b2ed7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 6
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -146,7 +147,9 @@ MonoBehaviour:
   colliderHurtTags:
   - playerbullet
   attackDetectDis: 6
+  isAttack: 0
   bloodBackSprite: {fileID: 6022771725356323715, guid: 201a50e6c25373d44a1a1e74af13f695, type: 3}
+  boss2Detect: {fileID: 0}
   eggBlood: 1
   generateEnemyEgg:
     positionOffset:
@@ -181,6 +184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 3
   spaceTime: 1
+  isBoss2First: 0
+  animator: {fileID: 0}
+  boss2: {fileID: 0}
 --- !u!58 &2423838890255119163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -189,6 +195,7 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940787177242264529}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -212,7 +219,29 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.010445595, y: -0.08892726}
+  m_Radius: 1.1789594
+--- !u!95 &5614830090356035486
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bd99dd034c81e148aac363cee16336b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

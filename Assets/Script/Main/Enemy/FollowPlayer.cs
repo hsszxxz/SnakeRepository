@@ -15,12 +15,15 @@ namespace enemy
         private AIPath aipath;
 
         private EnemyBase enemyBase;
-        private void Start()
+        private void Awake()
         {
             destinationSetter = GetComponent<AIDestinationSetter>();
             seeker = GetComponent<Seeker>();
             aipath = GetComponent<AIPath>();
             enemyBase = GetComponent<EnemyBase>();
+        }
+        private void Start()
+        {
             destinationSetter.target = enemyBase.targetSneak;
         }
         public IEnumerator OpenPathFindingComponet()

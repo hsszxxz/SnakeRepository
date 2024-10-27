@@ -82,7 +82,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,36 +134,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TENGMAN_0
-      rect:
-        serializedVersion: 2
-        x: 639
-        y: 7919
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5389a57e700c9bb40800000000000000
-      internalID: 5456603563714844725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: TENGMAN_1
       rect:
         serializedVersion: 2
         x: 439
-        y: 6759
+        y: 5399
         width: 892
-        height: 882
+        height: 2242
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,237 +150,6 @@ TextureImporter:
       bones: []
       spriteID: 28104071a8c502f10800000000000000
       internalID: 2242894362591887746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_2
-      rect:
-        serializedVersion: 2
-        x: 1279
-        y: 7539
-        width: 62
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7303e0b918e78230800000000000000
-      internalID: 3641134020791829372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_3
-      rect:
-        serializedVersion: 2
-        x: 489
-        y: 6679
-        width: 192
-        height: 172
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f8d05c44758e61b20800000000000000
-      internalID: 3104924454632099215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_4
-      rect:
-        serializedVersion: 2
-        x: 889
-        y: 6449
-        width: 222
-        height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f05bb4229118eab0800000000000000
-      internalID: -4978710068678930190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_5
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 6169
-        width: 412
-        height: 362
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f7b60e143f0b6f00800000000000000
-      internalID: 1110998449593432052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_6
-      rect:
-        serializedVersion: 2
-        x: 1119
-        y: 6529
-        width: 72
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac6fa9b2e126d4c00800000000000000
-      internalID: 886472583381972682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_7
-      rect:
-        serializedVersion: 2
-        x: 799
-        y: 5879
-        width: 392
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f95c41b4601316f90800000000000000
-      internalID: -6962229645838858849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_8
-      rect:
-        serializedVersion: 2
-        x: 1129
-        y: 5679
-        width: 212
-        height: 322
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 36f4394f38ae48bf0800000000000000
-      internalID: -322875420798922909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_9
-      rect:
-        serializedVersion: 2
-        x: 489
-        y: 5459
-        width: 332
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ec430421a9155f70800000000000000
-      internalID: 9175267995721878756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_10
-      rect:
-        serializedVersion: 2
-        x: 799
-        y: 5549
-        width: 72
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c64b3d54a7e6fdd0800000000000000
-      internalID: -2452518253931837756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_11
-      rect:
-        serializedVersion: 2
-        x: 899
-        y: 5589
-        width: 172
-        height: 172
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5374db80724d3d010800000000000000
-      internalID: 1212545988808230709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TENGMAN_12
-      rect:
-        serializedVersion: 2
-        x: 829
-        y: 5449
-        width: 82
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6446dcad312c698e0800000000000000
-      internalID: -1686947619872611258
       vertices: []
       indices: 
       edges: []

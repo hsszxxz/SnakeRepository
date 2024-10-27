@@ -9,6 +9,16 @@ using UnityEngine;
 public class ItemInGround : InteractWithDoor
 {
     public int id;
+    private bool isChat = false;
+    protected override void ShowPanel()
+    {
+        base.ShowPanel();
+        if (id==1 && !isChat)
+        {
+            isChat = true;
+            FungusController.Instance.StartBlock("1µı∆ø");
+        }
+    }
     protected override void InterectMethod()
     {
         UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(false);

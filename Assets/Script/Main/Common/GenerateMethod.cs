@@ -16,7 +16,7 @@ public static class  GenerateMethod
                 Vector2 min = minPoints[i];
                 Vector2 max = maxPoints[i];
                 Vector3 pos = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), 0);
-                GameObjectPool.Instance.CreateObject(poolTag, Resources.Load(PrefabPath) as GameObject, pos, Quaternion.identity);
+                Transform item =  GameObjectPool.Instance.CreateObject(poolTag, Resources.Load(PrefabPath) as GameObject, pos, Quaternion.identity).transform;
             }
         }
         return true;

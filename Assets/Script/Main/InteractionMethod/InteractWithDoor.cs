@@ -21,13 +21,17 @@ namespace interection
         {
             animation.Play();
         }
+        protected virtual void ShowPanel()
+        {
+            tiShiPanel.SetActive(true);
+        }
         private void Update()
         {
             if (FindSneakPosition.FindTarget(transform)!=null)
             {
                 if(Vector2.Distance(FindSneakPosition.FindTarget(transform).position,transform.position)<=distance)
                 {
-                    tiShiPanel.SetActive(true);
+                    ShowPanel();
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         InterectMethod();
