@@ -5560,7 +5560,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: -13.64, y: 104.48, z: 0.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 731797138}
@@ -9275,7 +9275,7 @@ Transform:
   m_GameObject: {fileID: 651242025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.67, y: -6.43, z: 0}
+  m_LocalPosition: {x: 14.9, y: -5.45, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11001,8 +11001,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.5200001, y: 4.020291}
+  m_Offset: {x: 0, y: -1.0055305}
+  m_Size: {x: 1.5200001, y: 2.00923}
   m_Direction: 0
 --- !u!212 &770373653
 SpriteRenderer:
@@ -11045,7 +11045,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 997259229368332564, guid: 6fc6937c96ce9f448a49cf717585d00c, type: 3}
+  m_Sprite: {fileID: -4440832533396157205, guid: 4ba98b99ad13c5442a61d0ba42115b0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12258,8 +12258,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.5200001, y: 4.020291}
+  m_Offset: {x: 0, y: -1.0252877}
+  m_Size: {x: 1.5200001, y: 1.9697154}
   m_Direction: 0
 --- !u!212 &850821388
 SpriteRenderer:
@@ -12302,7 +12302,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 997259229368332564, guid: 6fc6937c96ce9f448a49cf717585d00c, type: 3}
+  m_Sprite: {fileID: -4440832533396157205, guid: 4ba98b99ad13c5442a61d0ba42115b0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13631,13 +13631,15 @@ MonoBehaviour:
   - {x: 42, y: 22}
   - {x: 79, y: 18}
   - {x: -42, y: 93}
+  - {x: -25, y: 105}
   maxPoints:
   - {x: 1.5, y: 6}
   - {x: 68, y: 52}
   - {x: 68, y: 29}
   - {x: 89, y: 33}
   - {x: -34, y: 116}
-  foodNum: 0300000004000000020000000300000002000000
+  - {x: -1, y: 113}
+  foodNum: 030000000400000002000000030000000200000003000000
 --- !u!114 &946657838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28369,11 +28371,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 30.318956, y: 67.71948}
+  scrollPos: {x: -218.39642, y: 198.50865}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 406
-  zoom: 0.7900002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -28381,9 +28383,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1852493222}
-  selectedCommands:
-  - {fileID: 1852493220}
+  - {fileID: 1852493183}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -32611,7 +32612,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 997259229368332564, guid: 6fc6937c96ce9f448a49cf717585d00c, type: 3}
+  m_Sprite: {fileID: -4440832533396157205, guid: 4ba98b99ad13c5442a61d0ba42115b0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -32656,8 +32657,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.5200001, y: 4.020291}
+  m_Offset: {x: 0, y: -0.88335717}
+  m_Size: {x: 1.5200001, y: 2.2535765}
   m_Direction: 0
 --- !u!50 &1875123115
 Rigidbody2D:

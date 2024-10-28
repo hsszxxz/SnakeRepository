@@ -28,8 +28,8 @@ public class Boss2Choice : MonoBehaviour
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().player1Choices[1].sprite = player1choice[1];
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().player2Choices[0].sprite = player2choice[0];
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().player2Choices[1].sprite = player2choice[1];
-
-        UIManager.Instance.GetComponent<ChooseUIWindow>().Title.sprite = title;
+        
+        UIManager.Instance.GetUIWindow<ChooseUIWindow>().Title.sprite = title;
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().ShutAndOpen(true);
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().choice += EventBossChoice;
     }

@@ -153,7 +153,7 @@ MonoBehaviour:
   blood: 0
   colliderHurtTags:
   - playerbullet
-  attackDetectDis: 8
+  attackDetectDis: 6
   isAttack: 0
   bloodBackSprite: {fileID: 6733039282166032011, guid: d7e37ce1d0ebf314d8865d43985f59ba, type: 3}
   boss2Detect: {fileID: 2150728362642102817}
