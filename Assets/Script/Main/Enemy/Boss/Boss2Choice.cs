@@ -5,6 +5,7 @@ public class Boss2Choice : MonoBehaviour
 {
     public List<Sprite> player1choice;
     public List<Sprite> player2choice;
+    public Sprite title;
     public void EventBossChoice(int index1, int index2)
     {
         if (index1 == 0 && index2 == 0)
@@ -27,6 +28,8 @@ public class Boss2Choice : MonoBehaviour
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().player1Choices[1].sprite = player1choice[1];
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().player2Choices[0].sprite = player2choice[0];
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().player2Choices[1].sprite = player2choice[1];
+
+        UIManager.Instance.GetComponent<ChooseUIWindow>().Title.sprite = title;
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().ShutAndOpen(true);
         UIManager.Instance.GetUIWindow<ChooseUIWindow>().choice += EventBossChoice;
     }

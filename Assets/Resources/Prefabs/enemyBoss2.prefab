@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 5729044993907641981}
   m_Layer: 11
   m_Name: enemyBoss2
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   isAttack: 0
   bloodBackSprite: {fileID: 6733039282166032011, guid: d7e37ce1d0ebf314d8865d43985f59ba, type: 3}
   boss2Detect: {fileID: 2150728362642102817}
-  secondBlood: 8
+  secondBlood: 10
   secondDis: 5
   secondSpace: 2
 --- !u!114 &1304004450560370071
@@ -233,7 +233,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 1.5
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -320,8 +320,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.024069786}
-  m_Radius: 1.1152952
+  m_Offset: {x: 0, y: -0.08917165}
+  m_Radius: 1.341778
 --- !u!95 &8602806327233079859
 Animator:
   serializedVersion: 7

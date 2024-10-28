@@ -17,6 +17,7 @@ public class ChooseUIWindow : UIWindow
     private int player1index = 0;
     private int player2index = 0;
     private bool isChoose=false;
+    public Image Title;
 
     private float currentTime;
     public override void ShutAndOpen(bool flag)
@@ -93,6 +94,10 @@ public class ChooseUIWindow : UIWindow
         }
         ShutAndOpen(false);
         choice(player1index,player2index);
+        player1Choices[0].gameObject.SetActive(true);
+        player1Choices[1].gameObject.SetActive(true);
+        player2Choices[1].gameObject.SetActive(true);
+        player2Choices[0].gameObject.SetActive(true);
         choice = null;
     }
 }

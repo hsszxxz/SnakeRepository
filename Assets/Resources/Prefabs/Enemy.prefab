@@ -212,7 +212,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 1.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -305,6 +305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 2
   spaceTime: 2
+  isBoss2First: 0
+  animator: {fileID: 0}
+  boss2: {fileID: 0}
 --- !u!95 &-6310804334212763059
 Animator:
   serializedVersion: 7

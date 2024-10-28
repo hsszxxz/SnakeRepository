@@ -30,6 +30,12 @@ namespace enemy
             boss2Detect.SetActive(true);
             GetComponent<FollowPlayer>().PathFindingComponentControl(false);
         }
+        IEnumerator LightAgain()
+        {
+            spriteRenderer.color = Color.red;
+            yield return null;
+            spriteRenderer.color = Color.white;
+        }
         protected override void GotInjured()
         {
             blood -= 1;
@@ -43,10 +49,10 @@ namespace enemy
             }
             if (maxBlood-blood==4)
             {
-                GameObjectPool.Instance.CreateObject("food",Resources.Load("Prefabs/Food") as GameObject,transform.position+ new Vector3(0,1,0),Quaternion.identity);
-                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
-                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
-                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(-1, 0, 0), Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food",Resources.Load("Prefabs/Food") as GameObject,transform.position+ new Vector3(0,2,0),Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(0, -2, 0), Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(2, 0, 0), Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(-2, 0, 0), Quaternion.identity);
             }
             else if (blood <= secondBlood && isSecond)
             {
@@ -57,6 +63,10 @@ namespace enemy
                 GetComponent<NearAttack>().distance = secondDis;
                 GetComponent<NearAttack>().spaceTime = secondSpace;
                 bulletConfig.enabled = true;
+            }
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(LightAgain());
             }
         }
     }

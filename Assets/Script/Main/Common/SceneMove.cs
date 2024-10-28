@@ -1,3 +1,5 @@
+using enemy;
+using Pathfinding;
 using sneak;
 using System;
 using System.Collections;
@@ -15,6 +17,10 @@ public static class SceneMove
         for (int i = 0; i < sneakBodyLength; i++)
         {
             SneakManager.Instance.AddSneakBodyToPrevious(SneakManager.Instance.head1.GetComponent<SneakBody>());
+        }
+        foreach ( Transform item in EnemyManager.Instance.enemyTransform)
+        {
+            item.GetComponent<AIDestinationSetter>().target = SneakManager.Instance.head1.transform;
         }
         camera.transform.position = Position;
     }

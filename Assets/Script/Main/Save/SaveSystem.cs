@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using enemy;
 using System;
+using Pathfinding;
 namespace save
 {
     ///<summary>
@@ -137,6 +138,10 @@ namespace save
             for (int i = 0;i<snakeObjectData.sneakBodyLength;i++)
             {
                 SneakManager.Instance.AddSneakBodyToPrevious(SneakManager.Instance.head1.GetComponent<SneakBody>());
+            }
+            foreach (Transform item in EnemyManager.Instance.enemyTransform)
+            {
+                item.GetComponent<AIDestinationSetter>().target = SneakManager.Instance.head1.transform;
             }
         }
         private static void SavePlayerPrefs(string key, object data)

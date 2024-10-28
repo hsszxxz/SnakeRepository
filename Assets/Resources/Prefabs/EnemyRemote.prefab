@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 3
   bulletSprite: {fileID: -4660371837023906239, guid: e7011a2dee13a754b859ec36255dc7df, type: 3}
-  distance: 5
+  distance: 6
   spaceTime: 2
 --- !u!61 &1729478062827233909
 BoxCollider2D:
@@ -217,7 +217,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 0.5
+  maxSpeed: 1
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

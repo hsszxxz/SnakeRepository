@@ -35,10 +35,6 @@ namespace enemy
         private Transform target;
         private void GetAttacked()
         {
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(LightAgain());
-            }
             blood -= 1;
             if (blood <= 0)
             {
@@ -46,10 +42,15 @@ namespace enemy
                 GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
                 EnemyManager.Instance.enemyTransform.Remove(transform);
             }
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(LightAgain());
+            }
         }
         IEnumerator  LightAgain()
         {
-            yield return null;
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
             spriteRenderer.color = Color.white;
         }
         protected virtual void Start()

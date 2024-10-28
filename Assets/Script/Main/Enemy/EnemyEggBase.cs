@@ -24,6 +24,7 @@ namespace enemy
                 if (value <= 0)
                 {
                     GameObjectPool.Instance.CollectObject(gameObject);
+                    GameObjectPool.Instance.CreateObject("food",Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
                 }
             }
         }

@@ -43,17 +43,19 @@ namespace enemy
                 animator.SetBool("Detect", true);
                 StartCoroutine(LateCloseAnima2());
             }
-            if (Vector2.Distance(transform.position, enemyBase.targetSneak.position) <= distance && currentTime >= spaceTime)
+            if (currentTime >= spaceTime)
             {
                 if (isBoss2First)
                 {
                     boss2.SetBool("BaoZha", true);
                     StartCoroutine(LateCloseAnima());
                 }
-                currentTime = 0;
-                EventSystemCenter.Instance.EventTrigger("playerInjure");
+                if (Vector2.Distance(transform.position, enemyBase.targetSneak.position) <= distance && currentTime >= spaceTime)
+                {
+                    currentTime = 0;
+                    EventSystemCenter.Instance.EventTrigger("playerInjure");
+                }
             }
-            
         }
     }
 }
