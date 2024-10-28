@@ -41,6 +41,13 @@ namespace enemy
                 FungusController.Instance.StartBlock("Boss2ºó");
                 Destroy(gameObject);
             }
+            if (maxBlood-blood==4)
+            {
+                GameObjectPool.Instance.CreateObject("food",Resources.Load("Prefabs/Food") as GameObject,transform.position+ new Vector3(0,1,0),Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(-1, 0, 0), Quaternion.identity);
+            }
             else if (blood <= secondBlood && isSecond)
             {
                 isSecond = false;
