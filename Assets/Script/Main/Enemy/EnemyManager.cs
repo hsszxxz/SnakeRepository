@@ -33,7 +33,8 @@ namespace enemy
         public Dictionary<string,EnemyBase> bossDic = new Dictionary<string,EnemyBase>();
         [HideInInspector]
         public List<bool> enemyDebate;
-        private List<Transform> enemyTransform = new List<Transform>();
+        [HideInInspector]
+        public List<Transform> enemyTransform = new List<Transform>();
         private bool InitRandomEnemy(List<int> num, List<Vector2> minPoints, List<Vector2> maxPoints, string PrefabPath, string poolTag)
         {
             if (minPoints.Count != maxPoints.Count || minPoints.Count != num.Count || num.Count != maxPoints.Count)

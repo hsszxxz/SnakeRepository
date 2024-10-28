@@ -24,14 +24,14 @@ public class DeadUiWindow : UIWindow
             recordList.Add(endRecord);
         }
         SaveSystem.SaveSaveItems(recordList);
-        Application.Quit();
+        SceneManager.LoadScene("StartScene");
     }
     private void ContinueGame()
     {
         Time.timeScale = 1.0f;
         ShutAndOpen(false);
         UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(true);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("StartScene");
     }
     private void LoadGame()
     {

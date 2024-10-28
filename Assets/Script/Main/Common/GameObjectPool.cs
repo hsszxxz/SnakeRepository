@@ -28,9 +28,9 @@ public class GameObjectPool : MonoSingleton<GameObjectPool>
     /// </summary>
     /// <param name="go">回收对象</param>
     /// <param name="delay">延迟</param>
-    public void CollectObject(GameObject go, float delay = 0)
+    public void CollectObject(GameObject go)
     {
-        StartCoroutine(CollectObjectDelay(go, delay));
+        go.SetActive(false);
     }
     //清空
     //一般清空是倒着清空
@@ -56,11 +56,6 @@ public class GameObjectPool : MonoSingleton<GameObjectPool>
             }
         }
         cahe.Clear();
-    }
-    private IEnumerator CollectObjectDelay(GameObject go, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        go.SetActive(false);
     }
     private static void UseObject(Vector3 pos, Quaternion quaternion, GameObject go)
     {

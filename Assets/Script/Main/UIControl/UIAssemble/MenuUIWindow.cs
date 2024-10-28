@@ -2,6 +2,7 @@ using save;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MenuUIWindow : UIWindow
 {
@@ -23,7 +24,7 @@ public class MenuUIWindow : UIWindow
             recordList.Add(endRecord);
         }
         SaveSystem.SaveSaveItems(recordList);
-        Application.Quit();
+        SceneManager.LoadScene("StartScene");
     }
     private void ContinueGame()
     {
