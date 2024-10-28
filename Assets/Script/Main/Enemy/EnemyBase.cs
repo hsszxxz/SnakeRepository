@@ -49,8 +49,7 @@ namespace enemy
         }
         IEnumerator  LightAgain()
         {
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.2f);
+            yield return null;
             spriteRenderer.color = Color.white;
         }
         protected virtual void Start()

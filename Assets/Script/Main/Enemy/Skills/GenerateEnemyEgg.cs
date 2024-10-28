@@ -16,7 +16,7 @@ namespace enemy
         {
             for (int i = 0; i < positionOffset.Count; i++)
             {
-                GameObjectPool.Instance.CreateObject("enemyEgg", Resources.Load("Prefabs/EnemyEgg") as GameObject, positionOffset[i] + bossPos, Quaternion.identity);
+                GameObjectPool.Instance.CreateObject("enemyEgg", Resources.Load("Prefabs/EnemyEgg") as GameObject, positionOffset[i] + bossPos, Quaternion.identity).SetActive(true);
             }
         }
     }
