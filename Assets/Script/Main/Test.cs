@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using save;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +19,15 @@ namespace ns
         //        SceneMove.MoveSneak(target.position,camera);
         //    }
         //}
-
+        //private void Start()
+        //{
+        //    Dictionary<int, int> dict = new Dictionary<int, int>()
+        //    {
+        //        { 0, 1},
+        //    };
+        //    var json = JsonConvert.SerializeObject(dict);
+        //    Debug.Log(json);
+        //}
     }
 }
 

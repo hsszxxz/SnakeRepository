@@ -17,13 +17,6 @@ public class MenuUIWindow : UIWindow
     }
     private void QuitGame()
     {
-        List<string> recordList = new List<string>();
-        foreach(int key in SaveManager.Instance.saveRecord.Keys)
-        {
-            string endRecord = key.ToString()+","+ SaveManager.Instance.saveRecord[key];
-            recordList.Add(endRecord);
-        }
-        SaveSystem.SaveSaveItems(recordList);
         SceneManager.LoadScene("StartScene");
     }
     private void ContinueGame()

@@ -44,11 +44,11 @@ namespace save
             {
                 debateCondition = debate
             };
-            SavePlayerPrefs("boss"+index.ToString(),data);
+            SaveSystemManager.Instance.SaveObject(data, index);
         }
         private static void LoadEnemyBoss(int index)
         {
-            BossData bossData = LoadFromPlayerPrefs<BossData>("boss"+index.ToString());
+            BossData bossData = SaveSystemManager.Instance.LoadObject<BossData>(index);
             EnemyManager.Instance.BossInit(bossData.debateCondition);
         }
         private static void SaveBag(int index)
@@ -62,41 +62,20 @@ namespace save
             {
                 items = itemsValue
             };
-            SavePlayerPrefs("bag"+index.ToString(), bagData);
+            SaveSystemManager.Instance.SaveObject(bagData,index);
         }
         private static void LoadBag(int index)
         {
-            BagData data = LoadFromPlayerPrefs<BagData>("bag" + index.ToString());
+            BagData data = SaveSystemManager.Instance.LoadObject<BagData>(index);
             ItemManager.Instance.CleanAllItems();
             foreach ( Vector2 temp in data.items )
             {
                 ItemManager.Instance.AddObject((int)temp.x, (int)temp.y);
             }
         }
-        class Index 
-        {
-            public int index=0;
-        };
-        public static void SaveIndex(int i)
-        {
-            Index index1 = new Index()
-            {
-                index = i
-            };
-            SavePlayerPrefs("index", index1);
-        }
-        public static int LoadIndex()
-        {
-            Index index2 = LoadFromPlayerPrefs<Index>("index");
-            if (index2 == null)
-                return 0;
-            return index2.index;
-        }
         public static void DeleteSave(int index)
         {
-            PlayerPrefs.DeleteKey("boss"+index.ToString());
-            PlayerPrefs.DeleteKey("snake" + index.ToString());
-            PlayerPrefs.DeleteKey("bag" + index.ToString());
+           SaveSystemManager.Instance.DeleteSaveItem(index);
         }
         public static void SaveAll(int index)
         {
@@ -126,12 +105,12 @@ namespace save
                 sneakBodyLength = SneakManager.Instance.length,
                 head1position = SneakManager.Instance.head1.transform.position,
             };
-            SavePlayerPrefs("snake" + index.ToString(), sneakDate);
+            SaveSystemManager.Instance.SaveObject(sneakDate, index);
         }
         private static void LoadSnake(int index)
         {
             GameObject snake = SneakManager.Instance.sneakBodies;
-            SnakeObjectData snakeObjectData = LoadFromPlayerPrefs<SnakeObjectData>("snake"+index.ToString());
+            SnakeObjectData snakeObjectData = SaveSystemManager.Instance.LoadObject<SnakeObjectData>(index);
             snake.transform.position = snakeObjectData.position;
             SneakManager.Instance.InitHeads();
             SneakManager.Instance.head1.transform.position = snakeObjectData.head1position;
@@ -144,52 +123,12 @@ namespace save
                 item.GetComponent<AIDestinationSetter>().target = SneakManager.Instance.head1.transform;
             }
         }
-        private static void SavePlayerPrefs(string key, object data)
+
+
+        [MenuItem("developer/delete player data prefs")]
+        public static void DeletPlayerDataPrefs()
         {
-            var json =JsonUtility.ToJson(data);
-            PlayerPrefs.SetString(key, json);
-            PlayerPrefs.Save();
+            SaveSystemManager.Instance.DeleteAll();
         }
-        private static T LoadFromPlayerPrefs<T>(string key)
-        {
-            var json = PlayerPrefs.GetString(key, null);
-            if (json == string.Empty)
-            {
-                return default(T);
-            }
-            else
-            {
-                return JsonUtility.FromJson<T>(json);
-            }
-        }
-        class SaveItem
-        {
-            public List<string> items;
-        };
-        public static void SaveSaveItems(List<string>saveItems)
-        {
-            SaveItem index1 = new SaveItem()
-            {
-                items = saveItems
-            };
-            SavePlayerPrefs("item", index1);
-        }
-        public static List<string> LoadItems()
-        {
-            if (PlayerPrefs.HasKey("item"))
-            {
-                return LoadFromPlayerPrefs<SaveItem>("item").items;
-            }
-            else
-            {
-                return null;
-            }
-        }
-        //[MenuItem("Developer/Delete Player Data Prefs")]
-        //public static void DeletPlayerDataPrefs()
-        //{
-        //    PlayerPrefs.DeleteAll();
-        //}
     }
 }
-

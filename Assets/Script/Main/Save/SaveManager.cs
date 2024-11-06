@@ -17,41 +17,32 @@ namespace save
         public List<Transform> SavePoint = new List<Transform>();
         [Tooltip("存档点对应的提示")]
         public List<GameObject> tiShiPanels = new List<GameObject>();
+        private float distance = 5;
         [HideInInspector]
         public int currentSaveIndex;
         [HideInInspector]
-        public Dictionary<int,string> saveRecord = new Dictionary<int,string>();
-        private float distance = 5;
+        public bool isNewSave;
         public GameObject items;
         private Dictionary<int , GameObject> itemGo = new Dictionary<int , GameObject>();
         public override void Init()
         {
-            currentSaveIndex = SaveSystem.LoadIndex();
-            List<string > itemRecorder = SaveSystem.LoadItems();
+            ShowSaveItemList();
+        }
+
+        private void ShowSaveItemList()
+        {
+            List<SavePoint> itemRecorder = SaveSystemManager.Instance.GetAllSaveItemByUpdateTime();
             if (itemRecorder != null)
             {
                 for (int i = 0; i < itemRecorder.Count; i++)
                 {
                     GameObject saveItem = Instantiate(Resources.Load("Prefabs/SaveItem") as GameObject, items.transform);
-                    string[] departString = itemRecorder[i].Split(",");
-                    string pictureName = departString[1];
-                    int index = int.Parse(departString[0]);
-                    saveRecord.Add(index, pictureName);
-                    saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/" + pictureName), pictureName, index);
-                    itemGo.Add(index, saveItem);
+                    saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/"), itemRecorder[i].LastSaveTime.ToString(), itemRecorder[i].saveID);
+                    itemGo.Add(itemRecorder[i].saveID, saveItem);
                 }
             }
         }
-        private int FindMinIndex()
-        {
-            int min = 9999;
-            foreach(int keyIndex in saveRecord.Keys)
-            {
-                if (keyIndex < min)
-                    min = keyIndex;
-            }
-            return min;
-        }
+
         private void Update()
         {
             for (int i =0; i<SavePoint.Count;i++)
@@ -61,25 +52,14 @@ namespace save
                     tiShiPanels[i].SetActive(true);
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
+
                         SaveSystem.SaveAll(currentSaveIndex);
                         string pictureName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
                         ScreenCapture.CaptureScreenshot("Assets/Resources/ScreenShot/" + pictureName + ".png");
-                        if (saveRecord.ContainsKey(currentSaveIndex))
+                        if (!isNewSave)
                         {
-                            saveRecord[currentSaveIndex] = pictureName;
                             Destroy(itemGo[currentSaveIndex]);
                             itemGo.Remove(currentSaveIndex);
-                        }
-                        else if (saveRecord.Count<=5)
-                        {
-                            saveRecord.Add(currentSaveIndex, pictureName);
-                        }
-                        else
-                        {
-                            saveRecord.Remove(FindMinIndex());
-                            Destroy(itemGo[FindMinIndex()]);
-                            itemGo.Remove(FindMinIndex());
-                            saveRecord.Add(currentSaveIndex,pictureName);
                         }
                         GameObject saveItem = Instantiate(Resources.Load("Prefabs/SaveItem") as GameObject, items.transform);
                         Debug.Log(saveItem);

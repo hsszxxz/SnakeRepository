@@ -32,6 +32,9 @@ namespace sneak
             AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
             AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
             AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
+            AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
+            AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
+            AddSneakBodyToPrevious(head1.GetComponent<SneakBody>());
         }
 
         public void InitHeads()

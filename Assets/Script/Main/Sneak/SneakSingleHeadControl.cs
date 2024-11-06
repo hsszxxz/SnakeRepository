@@ -48,10 +48,7 @@ namespace sneak
             };
             type = headType;
             transform.tag = headType.ToString();
-            if (headType == HeadType.Head2)
-            {
-                EventSystemCenter.Instance.AddEventListener("playerInjure", GetInjuer);
-            }
+            EventSystemCenter.Instance.AddEventListener("playerInjure", GetInjuer);
         }
         private void GetInjuer()
         {
@@ -89,7 +86,7 @@ namespace sneak
                     GameObjectPool.Instance.CollectObject(collision.gameObject);
                 }
             }
-            if (collision.transform.CompareTag("enemybullet"))
+            if (collision.transform.CompareTag("enemybullet") || collision.transform.CompareTag("enemy"))
             {
                 EventSystemCenter.Instance.EventTrigger("playerInjure");
             }
