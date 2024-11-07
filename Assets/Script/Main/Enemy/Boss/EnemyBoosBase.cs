@@ -7,84 +7,73 @@ namespace enemy
     ///<summary>
     ///
     ///<summary>
+    public enum EnemyState
+    {
+        Standby,
+        Attack,
+        Chat
+    }
+    public delegate void EnterAttack();
+    public delegate void GetAttacked(int currentBlood);
+    public delegate void Death();
+    public delegate void EnemyInit();
     public class EnemyBoosBase:EnemyBase
     {
-        [Tooltip("玩家距离boss多少距离时开启弹幕")]
+        [Tooltip("玩家距离boss多少距离时进入攻击状态")]
         public float attackDetectDis;
-        protected BulletConfig bulletConfig;
-        public bool isAttack = false;
         protected BloodUIWindow bloodUIWindow;
         public Sprite bloodBackSprite;
-        protected string enmeyInjureName;
-        protected bool isboss1Chat = false;
-        protected bool isboss2Chat = false;
-        public GameObject boss2Detect;
+        [Tooltip("Boss1前/Boss2前")]
+        public string enemyBlockName;
+
+        [HideInInspector]
+        public EnemyState currentState = EnemyState.Standby;
+
+        public event EnterAttack OnEnterAttack;
+        public event GetAttacked OnGetAttacked;
+        public event Death OnDeath;
+        public event EnemyInit OnEnemyInit;
+
         protected override void Start()
         {
             base.Start();
             bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
-            bulletConfig = GetComponent<BulletConfig>();
-            EventSystemCenter.Instance.AddEventListener(enemyInjureName, GetAttacked);
         }
-        public override void EnemyInit()
-        {
-            base.EnemyInit();
-            bulletConfig.enabled = false;
-            isAttack = false;
-            isboss1Chat = false;
-            isboss2Chat = false;
-    }
         private void Update()
         {
-            if (Vector2.Distance(transform.position, targetSneak.position) <= attackDetectDis && !isAttack)
+            if (Vector2.Distance(transform.position, targetSneak.position) <= attackDetectDis && currentState == EnemyState.Standby)
             {
-                if (enemyInjureName == "enemyInjure1")
-                {
-                    bulletConfig.enabled = true;
-                    if (!isboss1Chat)
-                    {
-                        isboss1Chat = true;
-                        FungusController.Instance.StartBlock("Boss1前");
-                    }
-                }
-                else if (!isboss2Chat)
-                {
-                    isboss2Chat = true;
-                    boss2Detect.SetActive(true);
-                    GetComponent<NearAttack>().isBoss2First = true;
-                    GetComponent<FollowPlayer>().PathFindingComponentControl(true);
-                    FungusController.Instance.StartBlock("Boss2前");
-                }
-                isAttack = true;
+                OnEnterAttack();
+                FungusController.Instance.StartBlock(enemyBlockName);
+                currentState = EnemyState.Attack;
                 bloodUIWindow.ShutAndOpen(true);
                 bloodUIWindow.bloodBack.sprite = bloodBackSprite;
             }
-            if (isAttack)
+            if (currentState== EnemyState.Attack)
             {
                 bloodUIWindow.BloodLineChange(blood, maxBlood);
             }
         }
-        private void GetAttacked()
+        protected override void GetAttacked()
         {
-            if (gameObject.activeSelf)
+            if (currentState == EnemyState.Attack)
             {
-                StartCoroutine(LightAgain());
+                base.GetAttacked();
+                OnGetAttacked(blood);
             }
-            GotInjured();
         }
-        IEnumerator LightAgain()
+        protected override void Death()
         {
-            spriteRenderer.color = Color.red;
-            yield return null;
-            spriteRenderer.color = Color.white;
+            base.Death();
+            bloodUIWindow.ShutAndOpen(false);
+            OnDeath();
         }
-        protected virtual void GotInjured() { }
-        protected override void OnCollisionEnter2D(Collision2D collision)
+
+        public override void enemyInit()
         {
-            if (colliderHurtTags.Contains(collision.transform.tag))
-            {
-                EventSystemCenter.Instance.EventTrigger(enemyInjureName);
-            }
+            base.enemyInit();
+            OnEnemyInit();
+            currentState = EnemyState.Standby;
         }
     }
 }

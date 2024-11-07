@@ -1,3 +1,4 @@
+using bullet;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,8 +18,6 @@ namespace enemy
         private float nowTime;
         private void Awake()
         {
-            bulletTag = "enemybullet";
-            layerName = "Default";
             nowTime = 0;
         }
         private void Start()

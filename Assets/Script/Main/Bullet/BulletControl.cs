@@ -4,18 +4,19 @@ using UnityEngine;
 namespace bullet
 {
     ///<summary>
-    ///
+    ///子弹控制脚本
     ///<summary>
-    public class BulletMotor : MonoBehaviour
+    public class BulletControl : MonoBehaviour
     {
+        [Tooltip("是否是弹幕子弹")]
+        public bool isBulletConfig;
+        
         [HideInInspector]
         public float bulletSpeed;
         [HideInInspector]
         public Vector3 direction;
         [Tooltip("子弹碰到哪些会消失")]
         public List<string> tags = new List<string>();
-        [HideInInspector]
-        public bool isBulletConfig = false;
         private void Update()
         {
             if (isBulletConfig)
@@ -44,10 +45,7 @@ namespace bullet
         {
             if (tags.Contains(collision.transform.tag))
             {
-                if (!(collision.transform.tag == "enemy" && transform.tag == "enemybullet"))
-                {
-                    GameObjectPool.Instance.CollectObject(gameObject);
-                }
+                GameObjectPool.Instance.CollectObject(gameObject);
             }
         }
     }

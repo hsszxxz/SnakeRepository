@@ -1,7 +1,3 @@
-using bullet;
-using NUnit.Framework;
-using Pathfinding;
-using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +6,11 @@ namespace enemy
     ///<summary>
     ///
     ///<summary>
-    public class EnemyBase : MonoBehaviour
+    public interface IInitable
+    {
+        void enemyInit();
+    }
+    public class EnemyBase: MonoBehaviour,IInitable
     {
         [Tooltip("最大血量")]
         public int maxBlood;
@@ -19,35 +19,32 @@ namespace enemy
         [Tooltip("怪碰到哪些tag的碰撞体会受到伤害")]
         public List<string> colliderHurtTags ;
         protected SpriteRenderer spriteRenderer;
-        protected string enemyInjureName = null;
         [HideInInspector]
         public Transform targetSneak
         {
             get
             {
-                if (target==null)
-                {
-                    target = FindSneakPosition.FindTarget(transform);
-                }
-                return target;
+                return FindSneakPosition.FindTarget(transform);
             }
         }
-        private Transform target;
-        private void GetAttacked()
+        protected virtual void GetAttacked()
         {
             blood -= 1;
             if (blood <= 0)
             {
-                GameObjectPool.Instance.CollectObject(gameObject);
-                GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
-                EnemyManager.Instance.enemyTransform.Remove(transform);
+                Death();
             }
-            if (gameObject.activeSelf)
+            else if (gameObject.activeSelf)
             {
                 StartCoroutine(LightAgain());
             }
         }
-        IEnumerator  LightAgain()
+        protected virtual void Death()
+        {
+            GameObjectPool.Instance.CollectObject(gameObject);
+            EnemyManager.Instance.enemyTransform.Remove(transform);
+        }
+        protected IEnumerator  LightAgain()
         {
             spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(0.2f);
@@ -58,16 +55,17 @@ namespace enemy
             blood = maxBlood;
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
-        public virtual void EnemyInit()
-        {
-            blood = maxBlood;
-        }
-        protected virtual void OnCollisionEnter2D(Collision2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             if (colliderHurtTags.Contains(collision.transform.tag))
             {
                GetAttacked();
             }
+        }
+
+        public virtual void enemyInit()
+        {
+            blood = maxBlood;
         }
     }
 }

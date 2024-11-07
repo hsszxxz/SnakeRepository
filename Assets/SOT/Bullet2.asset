@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet2
   m_EditorClassIdentifier: 
   bulletSprite: {fileID: -6300694688270934975, guid: 6fd95584d113e1a4e92af24d4478642f, type: 3}
-  prafabs: {fileID: 5296609587309178213, guid: 9fefe6301c0a8664cbd845f082f7ce97, type: 3}
+  prafabs: {fileID: 5296609587309178213, guid: 747edfa9ed9a08740a68302e40ea1f8d, type: 3}
   P_Offset: {x: 0, y: 0, z: 0}
   R_Offset: {x: 0, y: 0, z: 0}
   Count: 36

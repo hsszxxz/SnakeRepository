@@ -223,4 +223,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 15
-  bulletSprite: {fileID: -7218990847841035998, guid: df2571eb011624449bb0043dc843d518, type: 3}
+  bulletPrefab: {fileID: 5296609587309178213, guid: 17dfcbe96ff09fc478099a04b8728768, type: 3}

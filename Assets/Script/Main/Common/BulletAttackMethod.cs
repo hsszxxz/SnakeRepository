@@ -6,9 +6,7 @@ using UnityEngine;
 public class BulletAttackMethod : MonoBehaviour
 {
     public float bulletSpeed;
-    protected string bulletTag;
-    protected string layerName;
-    public Sprite bulletSprite;
+    public GameObject bulletPrefab;
     protected virtual void Attack(Vector3 targetPos)
     {
         Vector2 direction = Quaternion.Euler(20, 0, 0) * (targetPos - transform.position).normalized;
@@ -17,12 +15,9 @@ public class BulletAttackMethod : MonoBehaviour
         {
             angle = -angle;
         }
-        GameObject bullet = GameObjectPool.Instance.CreateObject(bulletTag, Resources.Load("Prefabs/Bullet") as GameObject, transform.position,Quaternion.Euler(0,0,angle));
-        bullet.transform.tag = bulletTag;
-        bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
-        bullet.layer = LayerMask.NameToLayer(layerName);
-        bullet.GetComponent<BulletMotor>().bulletSpeed = bulletSpeed;
-        bullet.GetComponent<BulletMotor>().direction = direction;
+        GameObject bullet = GameObjectPool.Instance.CreateObject(bulletPrefab.name, bulletPrefab, transform.position,Quaternion.Euler(0,0,angle));
+        bullet.GetComponent<BulletControl>().bulletSpeed = bulletSpeed;
+        bullet.GetComponent<BulletControl>().direction = direction;
     }
 }
 

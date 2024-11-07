@@ -25,6 +25,11 @@ namespace enemy
             rigid.AddForce(dir * backForce, ForceMode2D.Impulse);
             StartCoroutine(followPlayer.OpenPathFindingComponet());
         }
+        protected override void Death()
+        {
+            GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
+            base.Death();
+        }
     }
 }
 

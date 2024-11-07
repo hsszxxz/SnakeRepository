@@ -8,7 +8,8 @@ namespace enemy
     ///<summary>
     ///
     ///<summary>
-    public class EnemyBossBase2 : EnemyBoosBase
+    [RequireComponent(typeof(EnemyBoosBase))]
+    public class EnemyBoss2Control :MonoBehaviour
     {
         [Tooltip("还剩多少血时进入二阶段")]
         public float secondBlood;
@@ -17,56 +18,63 @@ namespace enemy
         [Tooltip("二阶段攻击间隔")]
         public float secondSpace;
         private bool isSecond = true;
-        protected override void Start()
+        private NearAttack nearAttack;
+        private FollowPlayer followPlayer;
+        private EnemyBoosBase boosBase;
+        private BulletConfig bulletConfig;
+
+        public GameObject boss2Detect;
+        private void Start()
         {
-            enemyInjureName = "enemyInjure2";
-            base.Start();
-            GetComponent<FollowPlayer>().PathFindingComponentControl(false);
+            nearAttack = GetComponent<NearAttack>();
+            followPlayer = GetComponent<FollowPlayer>();
+            followPlayer.PathFindingComponentControl(false);
+            bulletConfig = GetComponent<BulletConfig>();
+            boosBase = GetComponent<EnemyBoosBase>();
+
+            boosBase.OnEnterAttack += EnterAttackMethod;
+            boosBase.OnGetAttacked += GotInjured;
+            boosBase.OnDeath += OnDeath;
+            boosBase.OnEnemyInit += enemyInit;
         }
-        public override void EnemyInit()
+        private void EnterAttackMethod()
         {
-            base.EnemyInit();
+            boss2Detect.SetActive(true);
+            nearAttack.isBoss2First = true;
+            followPlayer.PathFindingComponentControl(true);
+        }
+        private void enemyInit()
+        {
             isSecond = true;
             boss2Detect.SetActive(true);
-            GetComponent<FollowPlayer>().PathFindingComponentControl(false);
+            bulletConfig.enabled = false;
+            followPlayer.PathFindingComponentControl(false);
+            nearAttack.isBoss2First = false;
         }
-        IEnumerator LightAgain()
+        private void OnDeath()
         {
-            spriteRenderer.color = Color.red;
-            yield return null;
-            spriteRenderer.color = Color.white;
+            EnemyManager.Instance.bossDic.Remove("boss2");
+            EnemyManager.Instance.enemyDebate[1] = true;
+            FungusController.Instance.StartBlock("Boss2后");
         }
-        protected override void GotInjured()
+        private void GotInjured(int currentBlood)
         {
-            blood -= 1;
-            if (blood <= 0)
-            {
-                EnemyManager.Instance.bossDic.Remove("boss2");
-                EnemyManager.Instance.enemyDebate[1] = true;
-                bloodUIWindow.ShutAndOpen(false);
-                FungusController.Instance.StartBlock("Boss2后");
-                Destroy(gameObject);
-            }
-            if (maxBlood-blood==4)
+            if (currentBlood==12)
             {
                 GameObjectPool.Instance.CreateObject("food",Resources.Load("Prefabs/Food") as GameObject,transform.position+ new Vector3(0,4,0),Quaternion.identity);
                 GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(0, -4, 0), Quaternion.identity);
                 GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(4, 0, 0), Quaternion.identity);
                 GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(-4, 0, 0), Quaternion.identity);
             }
-            else if (blood <= secondBlood && isSecond)
+            else if (currentBlood <= secondBlood && isSecond)
             {
                 isSecond = false;
-                GetComponent<NearAttack>().isBoss2First = false;
+                nearAttack.isBoss2First = false;
                 boss2Detect.SetActive(false);
-                GetComponent<FollowPlayer>().PathFindingComponentControl(false);
-                GetComponent<NearAttack>().distance = secondDis;
-                GetComponent<NearAttack>().spaceTime = secondSpace;
+                followPlayer.PathFindingComponentControl(false);
+                nearAttack.distance = secondDis;
+                nearAttack.spaceTime = secondSpace;
                 bulletConfig.enabled = true;
-            }
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(LightAgain());
             }
         }
     }

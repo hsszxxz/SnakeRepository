@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8330620983029848548}
   - component: {fileID: 2423838890255119163}
   - component: {fileID: 5614830090356035486}
+  - component: {fileID: 290495518365641290}
   - component: {fileID: 6015674146402420589}
   m_Layer: 11
   m_Name: enemyBoss1
@@ -143,14 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3578668aef19494480c88b5b5764fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlood: 10
-  blood: 0
-  colliderHurtTags:
-  - playerbullet
-  attackDetectDis: 6
-  isAttack: 0
-  bloodBackSprite: {fileID: 6022771725356323715, guid: 201a50e6c25373d44a1a1e74af13f695, type: 3}
-  boss2Detect: {fileID: 0}
   eggBlood: 6
   generateEnemyEgg:
     positionOffset:
@@ -246,6 +239,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &290495518365641290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4d5ac8e1bd4eb49a9d445ebdd956b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBlood: 10
+  blood: 0
+  colliderHurtTags:
+  - playerbullet
+  attackDetectDis: 8
+  bloodBackSprite: {fileID: 6022771725356323715, guid: 201a50e6c25373d44a1a1e74af13f695, type: 3}
+  enemyBlockName: "Boss1\u524D"
+  currentState: 0
 --- !u!114 &6015674146402420589
 MonoBehaviour:
   m_ObjectHideFlags: 0

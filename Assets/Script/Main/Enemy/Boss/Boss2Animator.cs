@@ -14,7 +14,7 @@ public class Boss2Animator : MonoBehaviour
     }
     private void Update()
     {
-        animator.SetBool("Start", boos.isAttack);
+        animator.SetBool("Start", boos.currentState==EnemyState.Attack);
     }
 }
 

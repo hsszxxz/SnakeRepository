@@ -9,11 +9,6 @@ namespace sneak
     ///<summary>
     public class SneakAttack : BulletAttackMethod
     {
-        private void Awake()
-        {
-            bulletTag = "playerbullet";
-            layerName = "PlayerBullet";
-        }
         private void Update()
         { 
             if (Input.GetMouseButtonUp(1))

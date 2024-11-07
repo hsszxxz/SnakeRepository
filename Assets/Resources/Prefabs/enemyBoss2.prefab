@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 8602806327233079859}
   - component: {fileID: 359046469746248898}
   - component: {fileID: 5729044993907641981}
+  - component: {fileID: 2958353957433045965}
   m_Layer: 11
   m_Name: enemyBoss2
   m_TagString: enemy
@@ -149,17 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447554654fc59f741909096d93d1229b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlood: 16
-  blood: 0
-  colliderHurtTags:
-  - playerbullet
-  attackDetectDis: 6
-  isAttack: 0
-  bloodBackSprite: {fileID: 6733039282166032011, guid: d7e37ce1d0ebf314d8865d43985f59ba, type: 3}
-  boss2Detect: {fileID: 2150728362642102817}
   secondBlood: 10
   secondDis: 5
   secondSpace: 2
+  boss2Detect: {fileID: 2150728362642102817}
 --- !u!114 &1304004450560370071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +362,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b971a207c10d2c49aa90e99883e79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2958353957433045965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4d5ac8e1bd4eb49a9d445ebdd956b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBlood: 16
+  blood: 0
+  colliderHurtTags:
+  - playerbullet
+  attackDetectDis: 8
+  bloodBackSprite: {fileID: 6733039282166032011, guid: d7e37ce1d0ebf314d8865d43985f59ba, type: 3}
+  enemyBlockName: "Boss2\u524D"
+  currentState: 0
 --- !u!1 &2150728362642102817
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ namespace enemy
         public Vector3 enemyBoss2Position;
 
         [HideInInspector]
-        public Dictionary<string,EnemyBase> bossDic = new Dictionary<string,EnemyBase>();
+        public Dictionary<string,GameObject> bossDic = new Dictionary<string,GameObject>();
         [HideInInspector]
         public List<bool> enemyDebate;
         [HideInInspector]
@@ -52,6 +52,7 @@ namespace enemy
                     enemyTransform.Add(item);
                 }
             }
+
             return true;
         }
         public void ShutAndOpenEnemy(bool flag)
@@ -60,8 +61,6 @@ namespace enemy
             {
                 item.gameObject.SetActive(flag);
             }
-            bossDic["boss1"].gameObject.SetActive(flag);
-            bossDic["boss2"].gameObject.SetActive(flag);
         }
         public override void Init()
         {
@@ -76,21 +75,23 @@ namespace enemy
             }
             GameObject boss1 =Instantiate(Resources.Load("Prefabs/enemyBoss1") as GameObject);
             boss1.transform.position = enemyBoss1Position;
-            bossDic.Add("boss1",boss1.GetComponent<EnemyBase>());
+            enemyTransform.Add(boss1.transform);
+            bossDic.Add("boss1",boss1);
             GameObject boss2 = Instantiate(Resources.Load("Prefabs/enemyBoss2") as GameObject);
             boss2.transform.position = enemyBoss2Position;
-            bossDic.Add("boss2", boss2.GetComponent<EnemyBase>());
+            enemyTransform.Add(boss2.transform);
+            bossDic.Add("boss2", boss2);
         }
         public void BossInit(List<bool>debate)
         {
             if (!debate[0])
             {
-                bossDic["boss1"].EnemyInit();
+                bossDic["boss1"].GetComponent<IInitable>().enemyInit();
                 bossDic["boss1"].gameObject.transform.position = enemyBoss1Position;
             }
             if (!debate[1])
             {
-                bossDic["boss2"].EnemyInit();
+                bossDic["boss2"].GetComponent<IInitable>().enemyInit();
                 bossDic["boss2"].gameObject.transform.position = enemyBoss2Position;
             }
         }
