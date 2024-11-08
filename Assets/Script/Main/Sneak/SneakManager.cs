@@ -44,6 +44,7 @@ namespace sneak
             {
                 Destroy(child.gameObject);
             }
+            bodies = new List<SneakBody>();
             head1 = Instantiate(Resources.Load("Prefabs/Head1") as GameObject,sneakBodies.transform);
             head2 = Instantiate(Resources.Load("Prefabs/Head2") as GameObject,sneakBodies.transform);
             head1.GetComponent<SneakBody>().nextBody = head2.GetComponent<SneakBody>();
@@ -57,19 +58,19 @@ namespace sneak
         {
             Vector3 prePos = PreviousBody.transform.localPosition;
             SneakBody current = PreviousBody;
-            while(current != null)
+            while (current != null)
             {
-                current.transform.localPosition += current.transform.up*0.6f;
+                current.transform.localPosition += current.transform.up * 0.6f;
                 current = current.previousBody;
             }
-            GameObject note = Instantiate(Resources.Load("Prefabs/SneakBody") as GameObject,sneakBodies.transform);
+            GameObject note = Instantiate(Resources.Load("Prefabs/SneakBody") as GameObject, sneakBodies.transform);
             note.transform.localPosition = prePos;
             SneakBody body = note.GetComponent<SneakBody>();
             PreviousBody.nextBody.previousBody = body;
             body.previousBody = PreviousBody;
             body.nextBody = PreviousBody.nextBody;
             PreviousBody.nextBody = body;
-            note.transform.localRotation =  PreviousBody.transform.localRotation;
+            note.transform.localRotation = PreviousBody.transform.localRotation;
             head1.GetComponent<SneakSingleHeadControl>().moveForce += forceChange;
             head2.GetComponent<SneakSingleHeadControl>().moveForce += forceChange;
             bodies.Add(body);

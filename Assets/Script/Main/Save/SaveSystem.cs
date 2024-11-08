@@ -118,17 +118,13 @@ namespace save
             {
                 SneakManager.Instance.AddSneakBodyToPrevious(SneakManager.Instance.head1.GetComponent<SneakBody>());
             }
-            foreach (Transform item in EnemyManager.Instance.enemyTransform)
-            {
-                item.GetComponent<AIDestinationSetter>().target = SneakManager.Instance.head1.transform;
-            }
         }
 
 
-        [MenuItem("developer/delete player data prefs")]
-        public static void DeletPlayerDataPrefs()
-        {
-            SaveSystemManager.Instance.DeleteAll();
-        }
+        //[MenuItem("developer/delete player data prefs")]
+        //public static void DeletPlayerDataPrefs()
+        //{
+        //    SaveSystemManager.Instance.DeleteAll();
+        //}
     }
 }

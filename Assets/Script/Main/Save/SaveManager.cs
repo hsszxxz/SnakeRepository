@@ -24,8 +24,10 @@ namespace save
         public bool isNewSave;
         public GameObject items;
         private Dictionary<int , GameObject> itemGo = new Dictionary<int , GameObject>();
+        string path;
         public override void Init()
         {
+            path = Application.persistentDataPath + "/" + "saveData";
             ShowSaveItemList();
         }
 
@@ -37,12 +39,22 @@ namespace save
                 for (int i = 0; i < itemRecorder.Count; i++)
                 {
                     GameObject saveItem = Instantiate(Resources.Load("Prefabs/SaveItem") as GameObject, items.transform);
-                    saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/"), itemRecorder[i].LastSaveTime.ToString(), itemRecorder[i].saveID);
+                    Texture2D tx = new Texture2D(100,100);
+                    tx.LoadImage(getImageByte(path + "/" + itemRecorder[i].LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss") + ".png"));
+                    Sprite sprite = Sprite.Create(tx, new Rect(0, 0, tx.width, tx.height), Vector2.zero);
+                    saveItem.transform.GetComponent<SaveItem>().ItemInit(sprite, itemRecorder[i].LastSaveTime.ToString(), itemRecorder[i].saveID);
                     itemGo.Add(itemRecorder[i].saveID, saveItem);
                 }
             }
         }
-
+        private byte[] getImageByte(string imagePath)
+        {
+            FileStream files = new FileStream(imagePath, FileMode.Open);
+            byte[] imgByte = new byte[files.Length];
+            files.Read(imgByte,0,imgByte.Length);
+            files.Close();
+            return imgByte;
+        }
         private void Update()
         {
             for (int i =0; i<SavePoint.Count;i++)
@@ -54,8 +66,8 @@ namespace save
                     {
 
                         SaveSystem.SaveAll(currentSaveIndex);
-                        string pictureName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-                        ScreenCapture.CaptureScreenshot("Assets/Resources/ScreenShot/" + pictureName + ".png");
+                        string pictureName = SaveSystemManager.Instance.GetSaveItem(currentSaveIndex).LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss");
+                        ScreenCapture.CaptureScreenshot(path+"/"+ pictureName + ".png");
                         if (!isNewSave)
                         {
                             Destroy(itemGo[currentSaveIndex]);

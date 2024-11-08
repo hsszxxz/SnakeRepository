@@ -26,6 +26,13 @@ namespace enemy
         {
             destinationSetter.target = enemyBase.targetSneak;
         }
+        private void Update()
+        {
+            if (destinationSetter.target == null)
+            {
+                destinationSetter.target = enemyBase.targetSneak;
+            }
+        }
         public IEnumerator OpenPathFindingComponet()
         {
             yield return new WaitForSeconds(1);
