@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1942018045684727777}
   - component: {fileID: -1990661964478068870}
   - component: {fileID: -2123165826663137666}
+  - component: {fileID: 5616092329827375317}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: enemybullet
@@ -98,8 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b068a13094f635d4abdcd17335eb6171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBulletConfig: 0
-  bulletSpeed: 0
   direction: {x: 0, y: 0, z: 0}
   tags:
   - Head1
@@ -141,3 +140,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.49999997
+--- !u!114 &5616092329827375317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296609587309178213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b398925550283b745a691e22bc42b420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  tags:
+  - Head1
+  - Head2
+  - building

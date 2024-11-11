@@ -1,3 +1,4 @@
+using move;
 using save;
 using System;
 using System.Collections;
@@ -17,36 +18,30 @@ namespace sneak
     }
     public class SneakSingleHeadControl : SneakBody
     {
-        private SneakMotor sneakMotor= new SneakMotor();
+        private KeyBoardMotorControl motorControl;
         public HeadType headType;
-        private Dictionary<HeadType, List<KeyCode>> keyValuePairs;
         public float moveForce;
         public Color shineColor;
         private void Update()
         {
-            HeadMove(headType);
-        }
-
-        private void HeadMove(HeadType headType)
-        {
-            for (int i = 0; i < keyValuePairs[headType].Count; i++)
+            if (motorControl != null )
             {
-                if (Input.GetKey(keyValuePairs[headType][i]))
-                {
-                    sneakMotor.SneakMove((Direction)i,moveForce);
-                }
+                motorControl.MoveControl();
             }
         }
 
+
         protected override void Init()
         {
-            sneakMotor.InitMotor(this);
-            keyValuePairs = new Dictionary<HeadType, List<KeyCode>>()
-            {
-                { HeadType.Head2,new List<KeyCode>(){KeyCode.UpArrow,KeyCode.DownArrow,KeyCode.LeftArrow,KeyCode.RightArrow}},
-                 { HeadType.Head1,new List<KeyCode>(){KeyCode.W,KeyCode.S,KeyCode.A,KeyCode.D}},
-            };
             type = headType;
+            if (headType == HeadType.Head2)
+            {
+                motorControl = new KeyBoardMotorControl(KeyBoardKit.Arrow,transform,moveForce);
+            }
+            else
+            {
+                motorControl = new KeyBoardMotorControl(KeyBoardKit.WASD,transform,moveForce);
+            }
             transform.tag = headType.ToString();
             EventSystemCenter.Instance.AddEventListener("playerInjure", GetInjuer);
         }

@@ -1,3 +1,4 @@
+using move;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,26 +7,36 @@ namespace bullet
     ///<summary>
     ///子弹控制脚本
     ///<summary>
+    [RequireComponent(typeof(BulletBase))]
     public class BulletControl : MonoBehaviour
-    {
-        [Tooltip("是否是弹幕子弹")]
-        public bool isBulletConfig;
-        
+    {        
         [HideInInspector]
-        public float bulletSpeed;
+        public float bulletSpeed
+        {
+            get
+            {
+                return bulletSpeedValue;
+            }
+            set
+            {
+                bulletSpeedValue = value;
+                bulletBase.speed = value;
+            }
+        }
+        private float bulletSpeedValue;
         [HideInInspector]
-        public Vector3 direction;
-        [Tooltip("子弹碰到哪些会消失")]
-        public List<string> tags = new List<string>();
+        public Vector2 direction;
+
+        private BulletBase bulletBase;
+        private void Awake()
+        {
+            bulletBase = GetComponent<BulletBase>();
+        }
         private void Update()
         {
-            if (isBulletConfig)
+            if (direction != Vector2.zero)
             {
-                BulletsConfigMove();
-            }
-            else
-            {
-                BulletsMove();
+                bulletBase.GetComponent<ITargetMovable>().MoveToTaget(direction);
             }
             Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
             if (viewPos.x < -1.5 || viewPos.x > 1.5 || viewPos.y < -1.5 || viewPos.y > 1.5)
@@ -33,17 +44,9 @@ namespace bullet
                 GameObjectPool.Instance.CollectObject(gameObject);
             }
         }
-        private void BulletsMove()
-        {
-            transform.position += direction * bulletSpeed * Time.deltaTime;
-        }
-        private void BulletsConfigMove()
-        {
-            transform.Translate(direction * bulletSpeed * Time.deltaTime);
-        }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (tags.Contains(collision.transform.tag))
+            if (bulletBase.tags.Contains(collision.transform.tag))
             {
                 GameObjectPool.Instance.CollectObject(gameObject);
             }
