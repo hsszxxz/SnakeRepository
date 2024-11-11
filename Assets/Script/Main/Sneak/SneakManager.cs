@@ -68,8 +68,8 @@ namespace sneak
             body.nextBody = PreviousBody.nextBody;
             PreviousBody.nextBody = body;
             note.transform.localRotation = PreviousBody.transform.localRotation;
-            head1.GetComponent<SneakSingleHeadControl>().moveForce += forceChange;
-            head2.GetComponent<SneakSingleHeadControl>().moveForce += forceChange;
+            head1.GetComponent<Head1BodyBase>().moveForce += forceChange;
+            head2.GetComponent<Head2BodyBase>().moveForce += forceChange;
             bodies.Add(body);
             length++;
         }
@@ -90,8 +90,8 @@ namespace sneak
             NextBody.previousBody = body;
             body.nextBody = NextBody;
             note.transform.localRotation = NextBody.transform.localRotation;
-            head1.GetComponent<SneakSingleHeadControl>().moveForce += forceChange;
-            head2.GetComponent<SneakSingleHeadControl>().moveForce += forceChange;
+            head1.GetComponent<Head1BodyBase>().moveForce += forceChange;
+            head2.GetComponent<Head2BodyBase>().moveForce += forceChange;
             bodies.Add(body);
             length++;
         }
@@ -112,8 +112,8 @@ namespace sneak
             temp.nextBody.previousBody = temp.previousBody;
             temp.previousBody.nextBody = temp.nextBody;
             Destroy(temp.gameObject);
-            head1.GetComponent<SneakSingleHeadControl>().moveForce -= forceChange;
-            head2.GetComponent<SneakSingleHeadControl>().moveForce -= forceChange;
+            head1.GetComponent<Head1BodyBase>().moveForce -= forceChange;
+            head2.GetComponent<Head2BodyBase>().moveForce -= forceChange;
             length--;
             return true;
         }

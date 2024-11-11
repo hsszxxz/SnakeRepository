@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2702129108037783159}
   - component: {fileID: 7494242194353966922}
   - component: {fileID: 1527623571039254316}
+  - component: {fileID: 8809347666118024626}
   - component: {fileID: -8218092482469725973}
-  - component: {fileID: -6796766417454747466}
   m_Layer: 8
   m_Name: Head2
   m_TagString: Untagged
@@ -165,13 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e924b2b1d0b2140be137295b4ff47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  nextBody: {fileID: 0}
-  type: 0
-  headType: 1
-  moveForce: 2
-  shineColor: {r: 0.18431373, g: 0.29803923, b: 0.5529412, a: 1}
 --- !u!114 &1527623571039254316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +177,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b971a207c10d2c49aa90e99883e79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8809347666118024626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378640815835513197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc62482497c4d6149b026afff3ef959b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  nextBody: {fileID: 0}
+  type: 0
+  moveForce: 2
+  shineColor: {r: 0.13333334, g: 0.23137257, b: 0.32941177, a: 1}
+  bulletAttack:
+    bulletSpeed: 15
+    bulletPrefab: {fileID: 5296609587309178213, guid: 17dfcbe96ff09fc478099a04b8728768, type: 3}
+    targetPos: {x: 0, y: 0, z: 0}
 --- !u!233 &-8218092482469725973
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -210,17 +225,3 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!114 &-6796766417454747466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8378640815835513197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cbdceb8a40579b4692b5dea1ffc921a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 15
-  bulletPrefab: {fileID: 5296609587309178213, guid: 17dfcbe96ff09fc478099a04b8728768, type: 3}

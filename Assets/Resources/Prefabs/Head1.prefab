@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1061144932806952113}
   - component: {fileID: 4763254426224505273}
   - component: {fileID: 3503345640165275490}
+  - component: {fileID: -8413947376926597201}
   - component: {fileID: 3290165402117880624}
-  - component: {fileID: 6769363395093535401}
   m_Layer: 8
   m_Name: Head1
   m_TagString: Untagged
@@ -102,13 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e924b2b1d0b2140be137295b4ff47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  nextBody: {fileID: 0}
-  type: 0
-  headType: 0
-  moveForce: 2
-  shineColor: {r: 0.19215688, g: 0.3019608, b: 0.54901963, a: 1}
 --- !u!50 &4763254426224505273
 Rigidbody2D:
   serializedVersion: 4
@@ -172,6 +165,36 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.08676518}
   m_Radius: 0.4132348
+--- !u!114 &-8413947376926597201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631005094112231846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafbf6afcaa143c4aa47d181ad23b5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  nextBody: {fileID: 0}
+  type: 0
+  moveForce: 2
+  shineColor: {r: 0.13333334, g: 0.23137257, b: 0.32941177, a: 1}
+  area:
+    angle: 120
+    range: 7
+  backSkill:
+    backForce: 1
+    backEnemyTags:
+    - enemy
+  toAnother:
+    anotherTingPrefab: {fileID: 5296609587309178213, guid: 89cd2ce683d46cc40b4d2fc2c7b52dd1, type: 3}
+    thingTags:
+    - enemybullet
+  skillArea: {fileID: 9035177556765141957}
 --- !u!114 &3290165402117880624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,24 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b971a207c10d2c49aa90e99883e79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6769363395093535401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4631005094112231846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d531364f25601419f87af6f578a92d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angle: 120
-  range: 7
-  backForce: 1
-  addMoveForce: 3
-  addSpeedTime: 1
-  sectorArea: {fileID: 9035177556765141957}
 --- !u!1 &9035177556765141957
 GameObject:
   m_ObjectHideFlags: 0

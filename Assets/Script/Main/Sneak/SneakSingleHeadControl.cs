@@ -1,3 +1,5 @@
+using attack;
+using injure;
 using move;
 using save;
 using System;
@@ -16,74 +18,64 @@ namespace sneak
         Head2,
         Body
     }
-    public class SneakSingleHeadControl : SneakBody
+    [RequireComponent(typeof(SneakBody))]
+    public class SneakSingleHeadControl : MonoBehaviour
     {
-        private KeyBoardMotorControl motorControl;
-        public HeadType headType;
-        public float moveForce;
-        public Color shineColor;
+        private SneakBody head;
+        private IAttack attack;
+        private ISkillRelease skill;
+        private IGetInjured getInjured;
+        private IEatFood getFood;
+        private IMovable move;
+        private void Start()
+        {
+            head = GetComponent<SneakBody>();
+            attack = GetComponent<IAttack>();
+            skill = GetComponent<ISkillRelease>();
+            getInjured = GetComponent<IGetInjured>();
+            getFood = GetComponent<IEatFood>();
+            move = GetComponent<IMovable>();
+        }
         private void Update()
         {
-            if (motorControl != null )
+            if (attack != null )
             {
-                motorControl.MoveControl();
+                attack.Attack();
+            }
+            if ( skill != null )
+            {
+                skill.Release();
+            }
+            if (move != null)
+            {
+                move.ObjectMove();
             }
         }
-
-
-        protected override void Init()
+        private void Dead()
         {
-            type = headType;
-            if (headType == HeadType.Head2)
-            {
-                motorControl = new KeyBoardMotorControl(KeyBoardKit.Arrow,transform,moveForce);
-            }
-            else
-            {
-                motorControl = new KeyBoardMotorControl(KeyBoardKit.WASD,transform,moveForce);
-            }
-            transform.tag = headType.ToString();
-            EventSystemCenter.Instance.AddEventListener("playerInjure", GetInjuer);
-        }
-        private void GetInjuer()
-        {
-            if (SneakManager.Instance.bodies.Count >= 3)
-            {
-                SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-            }
-            else
-            {
-                Time.timeScale = 0;
-                UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(false);
-                UIManager.Instance.GetUIWindow<DeadUiWindow>().ShutAndOpen(true);
-            }
-            StartCoroutine(LightAgain());
-        }
-        IEnumerator LightAgain()
-        {
-            foreach (SneakBody body in SneakManager.Instance.bodies)
-            {
-                body.spriteRenderer.color = shineColor;
-            }
-            yield return new WaitForSeconds(0.2f);
-            foreach (SneakBody body in SneakManager.Instance.bodies)
-            {
-                body.spriteRenderer.color = Color.white;
-            }
+            Time.timeScale = 0;
+            UIManager.Instance.GetUIWindow<MainUIWindow>().ShutAndOpen(false);
+            UIManager.Instance.GetUIWindow<DeadUiWindow>().ShutAndOpen(true);
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if(collision.transform.CompareTag("food"))
             {
-                 if (headType == HeadType.Head1)
+                 if (getFood!=null)
                 {
-                    SneakManager.Instance.AddSneakBodyToPrevious(this);
-                    GameObjectPool.Instance.CollectObject(collision.gameObject);
+                    getFood.Eat(collision.transform.GetComponent<Food>());
                 }
             }
             if (collision.transform.CompareTag("enemybullet") || collision.transform.CompareTag("enemy"))
             {
-                EventSystemCenter.Instance.EventTrigger("playerInjure");
+                if (SneakManager.Instance.bodies.Count >= 3 && getInjured != null)
+                {
+                    getInjured.GetInjured();
+                }
+                else if (SneakManager.Instance.bodies.Count <3)
+                {
+                    Dead();
+                }
             }
         }
     }
