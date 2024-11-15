@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1766273249911901905}
   - component: {fileID: 7185259800169680467}
-  - component: {fileID: -7482165774526619592}
   - component: {fileID: 1729478062827233909}
-  - component: {fileID: 3644819681622491520}
   - component: {fileID: 4994187687907434411}
   - component: {fileID: 2279772146090397143}
   - component: {fileID: 1988455069919408130}
   - component: {fileID: 1921168937030631233}
   - component: {fileID: 2998267837223792295}
+  - component: {fileID: 8686493745461977289}
+  - component: {fileID: 65764214677049343}
   - component: {fileID: 3687657158654968374}
   - component: {fileID: -4504525750426640174}
   m_Layer: 11
@@ -94,22 +94,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7482165774526619592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746943627451774842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191e5c1cca2fa8a4a98fba75054cd36a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 3
-  bulletPrefab: {fileID: 5296609587309178213, guid: 3893605b4350d1b49964a7251ea81371, type: 3}
-  distance: 6
-  spaceTime: 2
 --- !u!61 &1729478062827233909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,23 +140,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3644819681622491520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746943627451774842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db3218991cc9aaf4190ea864556a41a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxBlood: 2
-  blood: 0
-  colliderHurtTags:
-  - playerbullet
-  - building
 --- !u!114 &4994187687907434411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +263,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8686493745461977289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746943627451774842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b443fc4b7986a4c92d1614e4e851f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDetectDis: 15
+  currentState: 0
+--- !u!114 &65764214677049343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746943627451774842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68526c977652e54d90f2c900ae3bacf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBlood: 2
+  blood: 0
+  colliderHurtTags:
+  - playerbullet
+  - building
+  bulletAttack:
+    bulletSpeed: 3
+    bulletPrefab: {fileID: 5296609587309178213, guid: 3893605b4350d1b49964a7251ea81371, type: 3}
+    targetPos: {x: 0, y: 0, z: 0}
+  distance: 6
+  spaceTime: 2
 --- !u!114 &3687657158654968374
 MonoBehaviour:
   m_ObjectHideFlags: 0

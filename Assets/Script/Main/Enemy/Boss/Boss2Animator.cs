@@ -2,14 +2,14 @@ using enemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(EnemyBoosBase))]
+[RequireComponent(typeof(EnemyControl))]
 public class Boss2Animator : MonoBehaviour
 {
     private Animator animator;
-    EnemyBoosBase boos;
+    EnemyControl boos;
     private void Start()
     {
-        boos = GetComponent<EnemyBoosBase>();
+        boos = GetComponent<EnemyControl>();
         animator = GetComponent<Animator>();
     }
     private void Update()

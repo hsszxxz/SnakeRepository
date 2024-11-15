@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using attack;
+using injure;
 namespace enemy
 {
     ///<summary>
@@ -10,7 +12,7 @@ namespace enemy
     {
         void enemyInit();
     }
-    public class EnemyBase: MonoBehaviour,IInitable
+    public abstract class EnemyBase: MonoBehaviour,IInitable,IAttack,IGetInjured,IDead,ISkillRelease
     {
         [Tooltip("×î´óÑªÁ¿")]
         public int maxBlood;
@@ -44,6 +46,11 @@ namespace enemy
             GameObjectPool.Instance.CollectObject(gameObject);
             EnemyManager.Instance.enemyTransform.Remove(transform);
         }
+        protected void GeneralDeath()
+        {
+            GameObjectPool.Instance.CollectObject(gameObject);
+            EnemyManager.Instance.enemyTransform.Remove(transform);
+        }
         protected IEnumerator  LightAgain()
         {
             spriteRenderer.color = Color.red;
@@ -67,6 +74,16 @@ namespace enemy
         {
             blood = maxBlood;
         }
+
+        public abstract void Attack();
+
+        public abstract void GetInjured();
+
+        public abstract void Dead();
+
+        public abstract void Release();
+
+        public abstract void OnEnterAttack();
     }
 }
 

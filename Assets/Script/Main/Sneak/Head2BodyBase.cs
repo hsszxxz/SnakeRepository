@@ -12,7 +12,7 @@ namespace sneak
     ///<summary>
     ///头1的基本信息
     ///<summary>
-    public class Head2BodyBase : SneakBody,IGetInjured,IAttack,ISkillRelease,IMovable
+    public class Head2BodyBase : SneakBody,IAttack,ISkillRelease,IMovable
     {
         [HideInInspector]
         public KeyBoardMotorControl motorControl;
@@ -41,14 +41,6 @@ namespace sneak
             light = null;
         }
 
-        public void GetInjured()
-        {
-            if (light == null)
-            {
-                SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-                light =StartCoroutine(LightAgain());
-            }
-        }
 
         public void Release()
         {
@@ -77,6 +69,8 @@ namespace sneak
         {
             motorControl.MoveControl();
         }
+
+        public void OnEnterAttack() { }
     }
 }
 

@@ -12,12 +12,11 @@ GameObject:
   - component: {fileID: 2611272065648632646}
   - component: {fileID: 430521260471342084}
   - component: {fileID: 7099078228184664076}
-  - component: {fileID: 9132778618076515300}
   - component: {fileID: -8968796040289317471}
-  - component: {fileID: 8330620983029848548}
   - component: {fileID: 2423838890255119163}
   - component: {fileID: 5614830090356035486}
-  - component: {fileID: 290495518365641290}
+  - component: {fileID: 6112738812234984165}
+  - component: {fileID: 5706152363803132368}
   - component: {fileID: 6015674146402420589}
   m_Layer: 11
   m_Name: enemyBoss1
@@ -132,25 +131,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &9132778618076515300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940787177242264529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3578668aef19494480c88b5b5764fe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eggBlood: 6
-  generateEnemyEgg:
-    positionOffset:
-    - {x: 5, y: 5, z: 0}
-    - {x: -5, y: -5, z: 0}
-    - {x: 5, y: -5, z: 0}
-    - {x: -5, y: 5, z: 0}
 --- !u!114 &-8968796040289317471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,23 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 0e2b813126988194e950e0d45950a7e2, type: 2}
---- !u!114 &8330620983029848548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940787177242264529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38bcdb8f854af284abb673f7a782d925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 3
-  spaceTime: 1
-  isBoss2First: 0
-  animator: {fileID: 0}
-  boss2: {fileID: 0}
 --- !u!58 &2423838890255119163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,7 +202,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &290495518365641290
+--- !u!114 &6112738812234984165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,17 +211,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1940787177242264529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4d5ac8e1bd4eb49a9d445ebdd956b2, type: 3}
+  m_Script: {fileID: 11500000, guid: e5b443fc4b7986a4c92d1614e4e851f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDetectDis: 8
+  currentState: 0
+--- !u!114 &5706152363803132368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940787177242264529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3578668aef19494480c88b5b5764fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxBlood: 10
   blood: 0
   colliderHurtTags:
   - playerbullet
-  attackDetectDis: 8
   bloodBackSprite: {fileID: 6022771725356323715, guid: 201a50e6c25373d44a1a1e74af13f695, type: 3}
-  enemyBlockName: "Boss1\u524D"
-  currentState: 0
+  eggBlood: 6
+  generateEnemyEgg:
+    positionOffset:
+    - {x: 5, y: 5, z: 0}
+    - {x: -5, y: -5, z: 0}
+    - {x: 5, y: -5, z: 0}
+    - {x: -5, y: 5, z: 0}
+  distance: 3
+  spaceTime: 1
 --- !u!114 &6015674146402420589
 MonoBehaviour:
   m_ObjectHideFlags: 0

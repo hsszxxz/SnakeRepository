@@ -9,7 +9,7 @@ namespace attack
     public interface IAttack
     {
         public void Attack();
-
+        public void OnEnterAttack();
     }
 }
 

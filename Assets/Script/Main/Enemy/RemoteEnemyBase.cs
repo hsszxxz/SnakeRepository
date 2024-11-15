@@ -1,6 +1,4 @@
 using attack;
-using Pathfinding;
-using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +7,7 @@ namespace enemy
     ///<summary>
     ///
     ///<summary>
-    public class SmallEnemyBase :EnemyBase,IEnemyBackable
+    public class RemoteEnemyBase: EnemyBase,IEnemyBackable
     {
         private Rigidbody2D rigid;
         private FollowPlayer followPlayer;
@@ -20,13 +18,19 @@ namespace enemy
         [Tooltip("隔多少时间攻击一次")]
         public float spaceTime;
         private float nowTime;
-        public override void enemyInit()
+        protected override void Start()
         {
-            base.enemyInit();
+            base.Start();
             rigid = GetComponent<Rigidbody2D>();
             followPlayer = GetComponent<FollowPlayer>();
             bulletAttack.Init(transform);
             nowTime = 0;
+        }
+        public override void enemyInit()
+        {
+            base.enemyInit();
+            nowTime = 0;
+            bulletAttack.Init(transform);
         }
         public void ShakeEnemyBack(Transform shakeFrom, float backForce)
         {
@@ -35,36 +39,36 @@ namespace enemy
             rigid.AddForce(dir * backForce, ForceMode2D.Impulse);
             StartCoroutine(followPlayer.OpenPathFindingComponet());
         }
-        protected override void Death()
-        {
-            GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
-            base.Death();
-        }
 
         public override void Attack()
         {
-            
+            nowTime += Time.deltaTime;
+            if (Vector3.Distance(targetSneak.position, transform.position) <= distance)
+            {
+                if (nowTime > spaceTime)
+                {
+                    nowTime = 0;
+                    bulletAttack.targetPos = targetSneak.position;
+                    bulletAttack.Attack();
+                }
+            }
         }
 
         public override void GetInjured()
         {
-            throw new System.NotImplementedException();
+            blood -= 1;
+            StartCoroutine(LightAgain());
         }
 
         public override void Dead()
         {
-            throw new System.NotImplementedException();
+            GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position, Quaternion.identity);
+            GeneralDeath();
         }
 
-        public override void Release()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override void Release() { }
 
-        public override void OnEnterAttack()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override void OnEnterAttack() { }
     }
 }
 

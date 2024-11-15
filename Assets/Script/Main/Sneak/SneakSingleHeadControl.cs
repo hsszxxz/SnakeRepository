@@ -35,6 +35,7 @@ namespace sneak
             getInjured = GetComponent<IGetInjured>();
             getFood = GetComponent<IEatFood>();
             move = GetComponent<IMovable>();
+            EventSystemCenter.Instance.AddEventListener("playerInjure", Injure);
         }
         private void Update()
         {
@@ -49,6 +50,17 @@ namespace sneak
             if (move != null)
             {
                 move.ObjectMove();
+            }
+        }
+        private void Injure()
+        {
+            if (SneakManager.Instance.bodies.Count >= 3 && getInjured != null)
+            {
+                getInjured.GetInjured();
+            }
+            else if (SneakManager.Instance.bodies.Count < 3)
+            {
+                Dead();
             }
         }
         private void Dead()
@@ -68,14 +80,8 @@ namespace sneak
             }
             if (collision.transform.CompareTag("enemybullet") || collision.transform.CompareTag("enemy"))
             {
-                if (SneakManager.Instance.bodies.Count >= 3 && getInjured != null)
-                {
-                    getInjured.GetInjured();
-                }
-                else if (SneakManager.Instance.bodies.Count <3)
-                {
-                    Dead();
-                }
+                EventSystemCenter.Instance.EventTrigger("playerInjure");
+                GameObjectPool.Instance.CollectObject(collision.gameObject);
             }
         }
     }
