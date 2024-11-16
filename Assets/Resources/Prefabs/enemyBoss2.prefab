@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 5729044993907641981}
   m_Layer: 11
   m_Name: enemyBoss2
-  m_TagString: enemy
+  m_TagString: enemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,6 @@ MonoBehaviour:
   distance: 3
   spaceTime: 2
   animator: {fileID: 124394318656785028}
-  boss2: {fileID: 8602806327233079859}
   boss2Detect: {fileID: 2150728362642102817}
 --- !u!114 &1304004450560370071
 MonoBehaviour:
@@ -287,7 +286,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 3072
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -350,7 +349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940787177242264529}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60afd1452b473054eba2fafd8710fe50, type: 3}
   m_Name: 

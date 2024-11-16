@@ -37,12 +37,7 @@ namespace enemy
             enemyGetInjured = GetComponent<IGetInjured>();
             enemyDead = GetComponent<IDead>();
             enemySkillRelease = GetComponent<ISkillRelease>();
-        }
-        private void OnEnable()
-        {
             enemyInit = GetComponent<IInitable>();
-            enemyInit.enemyInit();
-            currentState = EnemyState.Standby;
         }
         private void Update()
         {
@@ -68,7 +63,7 @@ namespace enemy
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (enemyBase.colliderHurtTags.Contains(collision.transform.tag))
+            if (enemyBase.colliderHurtTags.Contains(collision.transform.tag)&&currentState==EnemyState.Attack)
             {
                 if (enemyBase.blood == 1)
                 {

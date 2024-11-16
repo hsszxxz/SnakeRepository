@@ -10,7 +10,7 @@ namespace enemy
     ///<summary>
     public class EnemyBoss2Base : EnemyBase
     {
-        protected BloodUIWindow bloodUIWindow;
+        private  BloodUIWindow bloodUIWindow;
         public Sprite bloodBackSprite;
 
         [Tooltip("还剩多少血时进入二阶段")]
@@ -30,7 +30,7 @@ namespace enemy
         private float currentTime;
 
         public Animator animator;
-        public Animator boss2;
+        private Animator boss2;
 
         public GameObject boss2Detect;
         IEnumerator LateCloseAnima()
@@ -46,52 +46,26 @@ namespace enemy
         protected override void Start()
         {
             base.Start();
+            bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
+            boss2 = GetComponent<Animator>();
+            enemyInit();
         }
-        //private void EnterAttackMethod()
-        //{
-        //    boss2Detect.SetActive(true);
-        //    nearAttack.isBoss2First = true;
-        //    followPlayer.PathFindingComponentControl(true);
-        //}
+
         public override void enemyInit()
         {
             base.enemyInit();
             followPlayer = GetComponent<FollowPlayer>();
             bulletConfig = GetComponent<BulletConfig>();
             isSecond = true;
-            boss2Detect.SetActive(true);
             bulletConfig.enabled = false;
             followPlayer.PathFindingComponentControl(false);
         }
-        private void OnDeath()
-        {
-            EnemyManager.Instance.bossDic.Remove("boss2");
-            EnemyManager.Instance.enemyDebate[1] = true;
-            FungusController.Instance.StartBlock("Boss2后");
-        }
-        //private void GotInjured(int currentBlood)
-        //{
-        //    if (currentBlood==12)
-        //    {
-        //        GameObjectPool.Instance.CreateObject("food",Resources.Load("Prefabs/Food") as GameObject,transform.position+ new Vector3(0,4,0),Quaternion.identity);
-        //        GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(0, -4, 0), Quaternion.identity);
-        //        GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(4, 0, 0), Quaternion.identity);
-        //        GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(-4, 0, 0), Quaternion.identity);
-        //    }
-        //    else if (currentBlood <= secondBlood && isSecond)
-        //    {
-        //        isSecond = false;
-        //        nearAttack.isBoss2First = false;
-        //        boss2Detect.SetActive(false);
-        //        followPlayer.PathFindingComponentControl(false);
-        //        nearAttack.distance = secondDis;
-        //        nearAttack.spaceTime = secondSpace;
-        //        bulletConfig.enabled = true;
-        //    }
-        //}
+
+
 
         public override void Attack()
         {
+            boss2.SetBool("Start", true);
             bloodUIWindow.BloodLineChange(blood, maxBlood);
             currentTime += Time.deltaTime;
             if (isSecond && currentTime < spaceTime && spaceTime - currentTime < 0.8f)
@@ -116,6 +90,7 @@ namespace enemy
 
         public override void GetInjured()
         {
+            blood -= 1;
             if (blood == 12)
             {
                 GameObjectPool.Instance.CreateObject("food", Resources.Load("Prefabs/Food") as GameObject, transform.position + new Vector3(0, 4, 0), Quaternion.identity);
@@ -132,6 +107,7 @@ namespace enemy
                 spaceTime = secondSpace;
                 bulletConfig.enabled = true;
             }
+            StartCoroutine(LightAgain());
         }
 
         public override void Dead()
@@ -139,11 +115,11 @@ namespace enemy
             EnemyManager.Instance.bossDic.Remove("boss2");
             EnemyManager.Instance.enemyDebate[1] = true;
             FungusController.Instance.StartBlock("Boss2后");
+            bloodUIWindow.ShutAndOpen(false);
         }
 
         public override void Release()
         {
-            throw new System.NotImplementedException();
         }
 
         public override void OnEnterAttack()

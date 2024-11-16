@@ -60,19 +60,12 @@ namespace enemy
         protected virtual void Start()
         {
             blood = maxBlood;
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (colliderHurtTags.Contains(collision.transform.tag))
-            {
-               GetAttacked();
-            }
         }
 
         public virtual void enemyInit()
         {
             blood = maxBlood;
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         public abstract void Attack();

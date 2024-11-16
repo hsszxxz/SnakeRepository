@@ -9275,7 +9275,7 @@ Transform:
   m_GameObject: {fileID: 651242025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.06, y: -5.12, z: 0}
+  m_LocalPosition: {x: 12.9, y: -6.8, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9294,7 +9294,7 @@ GameObject:
   - component: {fileID: 655820275}
   m_Layer: 6
   m_Name: QIANG (7)_0
-  m_TagString: enemy
+  m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13602,7 +13602,6 @@ GameObject:
   - component: {fileID: 946657844}
   - component: {fileID: 946657847}
   - component: {fileID: 946657845}
-  - component: {fileID: 946657846}
   - component: {fileID: 946657848}
   - component: {fileID: 946657849}
   - component: {fileID: 946657850}
@@ -13766,18 +13765,6 @@ MonoBehaviour:
   enemyBoss2Position: {x: -12, y: 108, z: 0}
   enemyDebate: 
   enemyTransform: []
---- !u!114 &946657846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 946657836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860ea498170f6914289ddb2687e32163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &946657847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19619,7 +19606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -308.58997, y: 6.289978}
+  m_AnchoredPosition: {x: -308.5901, y: 6.290039}
   m_SizeDelta: {x: -934.67, y: -585.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1330256896

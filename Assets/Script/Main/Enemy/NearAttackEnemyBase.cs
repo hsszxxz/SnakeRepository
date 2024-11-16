@@ -28,6 +28,7 @@ namespace enemy
         {
             base.enemyInit();
             currentTime = 0;
+            spriteRenderer.color = Color.white;
         }
         public void ShakeEnemyBack(Transform shakeFrom, float backForce)
         {

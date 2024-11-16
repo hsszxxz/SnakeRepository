@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b443fc4b7986a4c92d1614e4e851f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDetectDis: 15
+  attackDetectDis: 8
   currentState: 0
 --- !u!114 &65764214677049343
 MonoBehaviour:
@@ -293,7 +293,6 @@ MonoBehaviour:
   blood: 0
   colliderHurtTags:
   - playerbullet
-  - building
   bulletAttack:
     bulletSpeed: 3
     bulletPrefab: {fileID: 5296609587309178213, guid: 3893605b4350d1b49964a7251ea81371, type: 3}

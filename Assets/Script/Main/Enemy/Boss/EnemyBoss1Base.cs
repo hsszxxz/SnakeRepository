@@ -11,7 +11,7 @@ namespace enemy
     ///<summary>
     public class EnemyBoss1Base:EnemyBase
     {
-        protected BloodUIWindow bloodUIWindow;
+        private BloodUIWindow bloodUIWindow;
         public Sprite bloodBackSprite;
 
         [Tooltip("在多少血之后产生怪物蛋")]
@@ -28,15 +28,14 @@ namespace enemy
         public float spaceTime;
         private float currentTime;
 
-        private void EnterAttackMethod()
-        {
-            bulletConfig.enabled = true;
-        }
+
         protected override void Start()
         {
             base.Start();
             key = GameObject.Find("8钥匙");
             key.SetActive(false);
+            bloodUIWindow = UIManager.Instance.GetUIWindow<BloodUIWindow>();
+            enemyInit();
         }
         public override void enemyInit()
         {
@@ -48,21 +47,6 @@ namespace enemy
             bulletConfig = GetComponent<BulletConfig>();
             bulletConfig.enabled = false;
             isEgg = true;
-        }
-        private void OnDeath()
-        {
-            EnemyManager.Instance.bossDic.Remove("boss1");
-            EnemyManager.Instance.enemyDebate[0] = true;
-            key.gameObject.SetActive(true);
-            key.transform.position = transform.position;
-        }
-        private void GotInjured(int currentBlood)
-        {
-            if (currentBlood <= eggBlood && isEgg)
-            {
-                generateEnemyEgg.Excute(transform.position);
-                isEgg = false;
-            }
         }
 
         public override void Attack()
@@ -78,11 +62,13 @@ namespace enemy
 
         public override void GetInjured()
         {
+            blood -= 1;
             if (blood <= eggBlood && isEgg)
             {
                 generateEnemyEgg.Excute(transform.position);
                 isEgg = false;
             }
+            StartCoroutine(LightAgain());
         }
 
         public override void Dead()
@@ -91,6 +77,7 @@ namespace enemy
             EnemyManager.Instance.enemyDebate[0] = true;
             key.gameObject.SetActive(true);
             key.transform.position = transform.position;
+            bloodUIWindow.ShutAndOpen(false);
         }
 
         public override void Release()

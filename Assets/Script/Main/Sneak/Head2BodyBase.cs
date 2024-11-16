@@ -1,4 +1,5 @@
 using attack;
+using control;
 using Fungus;
 using injure;
 using move;
@@ -15,15 +16,16 @@ namespace sneak
     public class Head2BodyBase : SneakBody,IAttack,ISkillRelease,IMovable
     {
         [HideInInspector]
-        public KeyBoardMotorControl motorControl;
+        public InputControl inputControl;
         public float moveForce;
+
         public Color shineColor;
         public BulletAttack bulletAttack = new BulletAttack();
         private Coroutine light;
         protected override void Init()
         {
             type = HeadType.Head2;
-            motorControl = new KeyBoardMotorControl(KeyBoardKit.Arrow, transform, moveForce);
+            inputControl = new InputControl(InputDevice.KeyBoard, transform, HeadType.Head2);
             transform.tag = "Head2";
             bulletAttack.Init(transform);
         }
@@ -49,25 +51,37 @@ namespace sneak
 
         public void Attack()
         {
-            if (Input.GetMouseButtonUp(1))
+            Vector3 bulletDir = inputControl.BulletAttackButton();
+            if (bulletDir.z!=-1.1f)
             {
-                if (Time.timeScale != 0)
+                if (SneakManager.Instance.bodies.Count <= 2)
+                    Debug.Log("No bullet");
+                else
                 {
-                    if (SneakManager.Instance.bodies.Count <= 2)
-                        Debug.Log("No bullet");
-                    else
-                    {
-                        SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-                        bulletAttack.targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        bulletAttack.Attack();
-                    }
+                    SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
+                    bulletAttack.targetPos = bulletDir;
+                    bulletAttack.Attack();
                 }
             }
+            //    if (Input.GetMouseButtonUp(1))
+            //{
+            //    if (Time.timeScale != 0)
+            //    {
+            //        if (SneakManager.Instance.bodies.Count <= 2)
+            //            Debug.Log("No bullet");
+            //        else
+            //        {
+            //            SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
+            //            bulletAttack.targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //            bulletAttack.Attack();
+            //        }
+            //    }
+            //}
         }
 
         public void ObjectMove()
         {
-            motorControl.MoveControl();
+            inputControl.Move(moveForce);
         }
 
         public void OnEnterAttack() { }

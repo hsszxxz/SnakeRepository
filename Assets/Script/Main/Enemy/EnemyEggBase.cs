@@ -8,7 +8,7 @@ namespace enemy
     ///<summary>
     ///
     ///<summary>
-    public class EnemyEggBase : MonoBehaviour, IEnemyBackable,IResetable
+    public class EnemyEggBase : MonoBehaviour, IEnemyBackable,IInitable
     {
         private Rigidbody2D rigid;
         [Tooltip("需要波打几次才会消失")]
@@ -84,7 +84,8 @@ namespace enemy
             breakNum--;
         }
 
-        public void OnReset()
+
+        public void enemyInit()
         {
             breakNum = resetBreakNum;
             timeToEnemy = resetTimeToEnemy;

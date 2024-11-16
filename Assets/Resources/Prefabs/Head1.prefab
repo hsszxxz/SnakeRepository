@@ -181,11 +181,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   nextBody: {fileID: 0}
   type: 0
-  moveForce: 2
+  moveForce: 1.8
   shineColor: {r: 0.13333334, g: 0.23137257, b: 0.32941177, a: 1}
   area:
     angle: 120
-    range: 7
+    range: 5
   backSkill:
     backForce: 1
     backEnemyTags:

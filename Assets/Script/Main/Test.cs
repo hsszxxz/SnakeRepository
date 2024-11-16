@@ -1,8 +1,11 @@
+using control;
 using Newtonsoft.Json;
 using save;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using move;
 namespace ns
 {
     ///<summary>
@@ -10,24 +13,20 @@ namespace ns
     ///<summary>
     public class Test : MonoBehaviour
     {
-        //public Transform target;
-        //public GameObject camera;
-        //private void Update()
-        //{
-        //    if (Input.GetKeyDown(KeyCode.X))
-        //    {
-        //        SceneMove.MoveSneak(target.position,camera);
-        //    }
-        //}
-        //private void Start()
-        //{
-        //    Dictionary<int, int> dict = new Dictionary<int, int>()
-        //    {
-        //        { 0, 1},
-        //    };
-        //    var json = JsonConvert.SerializeObject(dict);
-        //    Debug.Log(json);
-        //}
+        private CharacterInput characterInput;
+        private void Start()
+        {
+            //characterInput = new CharacterInput();
+            //characterInput.Enable();
+            //characterInput.gameplay.Move.started += ct => Debug.Log(ct.ReadValue<Vector2>());
+            //String.Format("{0}MotorControl", InputDevice.KeyBoard.ToString())
+            //Type type = Type.GetType(String.Format("move.{0}MotorControl", InputDevice.KeyBoard.ToString()));
+            //object[] objects = { Kit.Right, transform }; 
+            //object instance = Activator.CreateInstance(type,objects);
+        }
+        private void Update()
+        {
+        }
     }
 }
 

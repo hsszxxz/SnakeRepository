@@ -21,7 +21,6 @@ namespace sneak
     [RequireComponent(typeof(SneakBody))]
     public class SneakSingleHeadControl : MonoBehaviour
     {
-        private SneakBody head;
         private IAttack attack;
         private ISkillRelease skill;
         private IGetInjured getInjured;
@@ -29,7 +28,6 @@ namespace sneak
         private IMovable move;
         private void Start()
         {
-            head = GetComponent<SneakBody>();
             attack = GetComponent<IAttack>();
             skill = GetComponent<ISkillRelease>();
             getInjured = GetComponent<IGetInjured>();
@@ -81,7 +79,15 @@ namespace sneak
             if (collision.transform.CompareTag("enemybullet") || collision.transform.CompareTag("enemy"))
             {
                 EventSystemCenter.Instance.EventTrigger("playerInjure");
-                GameObjectPool.Instance.CollectObject(collision.gameObject);
+                IDead dead = collision.gameObject.GetComponent<IDead>();
+                if (dead != null)
+                {
+                    collision.gameObject.GetComponent<IDead>();
+                }
+                else
+                {
+                    GameObjectPool.Instance.CollectObject(collision.gameObject);
+                }
             }
         }
     }

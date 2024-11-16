@@ -23,8 +23,6 @@ namespace enemy
             base.Start();
             rigid = GetComponent<Rigidbody2D>();
             followPlayer = GetComponent<FollowPlayer>();
-            bulletAttack.Init(transform);
-            nowTime = 0;
         }
         public override void enemyInit()
         {

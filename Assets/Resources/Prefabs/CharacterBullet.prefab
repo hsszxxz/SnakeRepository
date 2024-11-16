@@ -99,10 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b068a13094f635d4abdcd17335eb6171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  tags:
-  - enemy
-  - building
+  direction: {x: 0, y: 0}
 --- !u!58 &-2123165826663137666
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -155,3 +152,4 @@ MonoBehaviour:
   tags:
   - enemy
   - building
+  - enemyBoss

@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 6015674146402420589}
   m_Layer: 11
   m_Name: enemyBoss1
-  m_TagString: enemy
+  m_TagString: enemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,8 +178,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010445595, y: -0.08892726}
-  m_Radius: 1.1789594
+  m_Offset: {x: -0.031336665, y: -0.25605556}
+  m_Radius: 1.0431674
 --- !u!95 &5614830090356035486
 Animator:
   serializedVersion: 7

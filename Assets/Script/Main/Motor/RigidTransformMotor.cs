@@ -7,31 +7,32 @@ namespace move
     ///<summary>
     ///可用输入设备控制的刚体物体的移动方法
     ///<summary>
-public class RigidTransformMotor : IControlMovable
+public class RigidTransformMotor
     {
-        public RigidTransformMotor(Transform Target, float MoveForce)
+        public RigidTransformMotor(Transform Target)
         {
             body = Target.GetComponent<Rigidbody2D>();
-            moveForce = MoveForce;
         }
         private Rigidbody2D body;
-        private float moveForce;
-        public void MoveToBackward()
+        public void MoveToBackward(float moveForce)
         {
             body.AddForce(new Vector2(0,-1) * moveForce, ForceMode2D.Force);
         }
-
-        public void MoveToForward()
+        public void MoveToAllDirection( Vector2 dir,float moveForce)
+        {
+            body.AddForce(dir * moveForce, ForceMode2D.Force);
+        }
+        public void MoveToForward(float moveForce)
         {
             body.AddForce(new Vector2(0, 1) * moveForce, ForceMode2D.Force);
         }
 
-        public void MoveToLeft()
+        public void MoveToLeft(float moveForce)
         {
             body.AddForce(new Vector2(-1, 0) * moveForce, ForceMode2D.Force);
         }
 
-        public void MoveToRight()
+        public void MoveToRight(float moveForce)
         {
             body.AddForce(new Vector2(1, 0) * moveForce, ForceMode2D.Force);
         }

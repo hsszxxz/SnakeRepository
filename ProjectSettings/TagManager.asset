@@ -13,6 +13,7 @@ TagManager:
   - wave
   - playerbullet
   - enemybullet
+  - enemyBoss
   layers:
   - Default
   - TransparentFX

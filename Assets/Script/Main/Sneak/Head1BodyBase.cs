@@ -1,4 +1,5 @@
 using attack;
+using control;
 using Fungus;
 using injure;
 using move;
@@ -15,7 +16,7 @@ namespace sneak
     public class Head1BodyBase : SneakBody,IGetInjured,IEatFood,ISkillRelease,IMovable
     {
         [HideInInspector]
-        public KeyBoardMotorControl motorControl;
+        public InputControl inputControl;
         public float moveForce;
         public Color shineColor;
         public SectorArea area = new SectorArea();
@@ -26,7 +27,7 @@ namespace sneak
         protected override void Init()
         {
             type = HeadType.Head1;
-            motorControl = new KeyBoardMotorControl(KeyBoardKit.WASD, transform, moveForce);
+            inputControl = new InputControl(InputDevice.KeyBoard,transform,HeadType.Head1);
             transform.tag = "Head1";
             area.Init(transform);
             backSkill.Init(transform,area);
@@ -63,13 +64,13 @@ namespace sneak
 
         public void Release()
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (inputControl.SkillButtonCancel())
             {
                 backSkill.Release();
                 toAnother.Release();
                 skillArea.SetActive(false);
             }
-            if (Input.GetKey(KeyCode.E))
+            if (inputControl.SkillButtonPress())
             {
                 skillArea.SetActive(true);
             }
@@ -77,7 +78,7 @@ namespace sneak
 
         public void ObjectMove()
         {
-            motorControl.MoveControl();
+            inputControl.Move(moveForce);
         }
     }
 }
