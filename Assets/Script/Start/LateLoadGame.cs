@@ -1,14 +1,14 @@
+using control;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace ns
+public class LateLoadGame : MonoBehaviour
 {
-    ///<summary>
-    ///
-    ///<summary>
-    public class LateLoadGame : MonoBehaviour
+    [HideInInspector]
+    public InputDevice[] headDevices;
+    private void Start()
     {
-    
+        headDevices = new InputDevice[2];
     }
 }
 

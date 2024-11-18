@@ -1,4 +1,3 @@
-using ns;
 using save;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +13,7 @@ public class UIControler : MonoBehaviour
     public GameObject Makers;
     public GameObject DontDestroyGo;
     private LateLoadGame lateLoadGame;
+    public InputChoose inputChoose;
     private void Start()
     {
         startGame.onClick.AddListener(StartGame);
@@ -23,10 +23,14 @@ public class UIControler : MonoBehaviour
         lateLoadGame = DontDestroyGo.GetComponent<LateLoadGame>();
         DontDestroyOnLoad(DontDestroyGo);
     }
-    private void StartGame()
+    public void StartGame()
     {
-        lateLoadGame.StartCoroutine(LateSart());
-        SceneManager.LoadScene("MainScene");
+        inputChoose.gameObject.SetActive(true);
+        inputChoose.gameStart += () =>
+        {
+            lateLoadGame.StartCoroutine(LateSart());
+            SceneManager.LoadScene("MainScene");
+        };
     }
     IEnumerator LateSart()
     {
@@ -35,16 +39,20 @@ public class UIControler : MonoBehaviour
         SaveManager.Instance.currentSaveIndex = savePoint.saveID;
         SaveManager.Instance.isNewSave = true;
     }
-    private void ContinueGame()
+    public void ContinueGame()
     {
-        List<SavePoint> points = SaveSystemManager.Instance.GetAllSaveItemByUpdateTime();
-        if (points.Count == 0)
-            return;
-        else
+        inputChoose.gameObject.SetActive(true);
+        inputChoose.gameStart += () =>
         {
-            lateLoadGame.StartCoroutine(LateLoad(points[0].saveID));
-            SceneManager.LoadScene("MainScene");
-        }
+            List<SavePoint> points = SaveSystemManager.Instance.GetAllSaveItemByUpdateTime();
+            if (points.Count == 0)
+                return;
+            else
+            {
+                lateLoadGame.StartCoroutine(LateLoad(points[0].saveID));
+                SceneManager.LoadScene("MainScene");
+            }
+        };
     }
     IEnumerator LateLoad(int index)
     {

@@ -24,10 +24,12 @@ namespace sneak
         public SectorTransforThingToAnother toAnother = new SectorTransforThingToAnother();
         public GameObject skillArea;
         private Coroutine light;
+        private LateLoadGame loadGame;
         protected override void Init()
         {
+            loadGame = GameObject.Find("DontDestroyGo").GetComponent<LateLoadGame>();
             type = HeadType.Head1;
-            inputControl = new InputControl(InputDevice.KeyBoard,transform,HeadType.Head1);
+            inputControl = new InputControl(loadGame.headDevices[0],transform,HeadType.Head1);
             transform.tag = "Head1";
             area.Init(transform);
             backSkill.Init(transform,area);

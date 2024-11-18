@@ -50,7 +50,7 @@ namespace control
                     inputAction.handleplay.Move.performed += Input => moveDir = Input.ReadValue<Vector2>();
                     inputAction.handleplay.Move.canceled += Input => moveDir = Vector2.zero;
 
-                    inputAction.handleplay.BulletAttack.canceled += input => { isHandleAttack = true; handleAttackDir = input.ReadValue<Vector2>(); };
+                    inputAction.handleplay.BulletAttack.canceled += input => handleAttackDir = input.ReadValue<Vector2>(); 
                 }
             }
             inputAction.Enable();
@@ -59,7 +59,6 @@ namespace control
         private CharacterInput inputAction;
         private RigidTransformMotor motor;
         private Vector2 moveDir;
-        private bool isHandleAttack = false;
         private Vector2 handleAttackDir;
         private Transform self;
         public bool SkillButtonCancel()
@@ -101,10 +100,10 @@ namespace control
             }
             else if (device == InputDevice.Handle)
             {
-                if (isHandleAttack)
+                if (inputAction.handleplay.BulletConfirm.WasPressedThisFrame())
                 {
-                    Vector3 dir = new Vector3(handleAttackDir.x, handleAttackDir.y, 0); 
-                    return dir + self.position;
+                    Vector3 dir = new Vector3(inputAction.handleplay.BulletAttack.ReadValue<Vector2>().x, inputAction.handleplay.BulletAttack.ReadValue<Vector2>().y,0); 
+                    return dir;
                 }
                 else
                 {

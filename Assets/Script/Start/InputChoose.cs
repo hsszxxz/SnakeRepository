@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using control;
+using UnityEngine.UI;
+
+///<summary>
+///
+///<summary>
+public delegate void GameStart(); 
+public class InputChoose : MonoBehaviour
+{
+    [HideInInspector]
+    public event GameStart gameStart;
+    private int indexValue;
+    private int index
+    {
+        get { return indexValue; }
+        set
+        {
+            indexValue = value;
+            for (int i = 0; i <headtishi.Length; i++)
+            {
+                if (i==value)
+                {
+                    headtishi[i].SetActive(true);
+                }
+                else
+                {
+                    headtishi[i].SetActive(false);
+                }
+            }
+        }
+    }
+    public GameObject[] headChooose;
+    public GameObject[] headtishi;
+    private CharacterInput inputAction;
+    public LateLoadGame loadGame;
+    private bool[] isReady = {false,false};
+    private void OnEnable()
+    {
+        index = 0;
+        headChooose[0].GetComponent<Button>().onClick.AddListener(() => index=0);
+        headChooose[1].GetComponent<Button>().onClick.AddListener(() => index=1);
+        inputAction = new CharacterInput();
+        inputAction.Enable();
+        inputAction.gameplay.ArrowMove.started += tp => index = (int)(tp.ReadValue<Vector2>().x + 0.99f);
+        inputAction.gameplay.WASDMove.started += tp => index = (int)(tp.ReadValue<Vector2>().x + 0.99f);
+        inputAction.handleplay.Move.started += tp => index = (int)(tp.ReadValue<Vector2>().x + 0.99f);
+        inputAction.gameplay.Confirm.started += tp => { ConfirmChoose(InputDevice.KeyBoard); };
+        inputAction.handleplay.Confirm.started += tp => { ConfirmChoose(InputDevice.Handle); };
+        inputAction.gameplay.Cancel.started += tp => { Cancel(); };
+        inputAction.handleplay.Cancel.started += tp => { Cancel(); };
+        
+    }
+    private void Cancel()
+    {
+        isReady[index] = false;
+        headChooose[index].GetComponent<Image>().color = Color.red;
+    }
+    private void ConfirmChoose(InputDevice device)
+    {
+        headChooose[index].GetComponent<Image>().color = Color.green; 
+        isReady[index] = true; 
+        loadGame.headDevices[index] = device;
+    }
+    private void Update()
+    {
+        if (isReady[0] && isReady[1])
+        {
+            gameStart();
+        }
+    }
+    private void OnDisable()
+    {
+        inputAction.Disable();
+    }
+}
+
+

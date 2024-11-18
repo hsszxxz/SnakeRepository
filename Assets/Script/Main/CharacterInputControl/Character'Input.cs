@@ -53,6 +53,24 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""b877a7ff-6326-4099-ac9e-670f73a3e885"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""08b88fa7-52fc-4d73-9433-11be3c1049b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -176,6 +194,28 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""action"": ""Skill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a268ae3f-cc8a-4ce9-b55f-b39cf94a6c16"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f5bc9c2-f971-49a3-bb7c-8197180cfe24"",
+                    ""path"": ""<Keyboard>/delete"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -209,6 +249,33 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BulletConfirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""26f0da83-ff6d-4a21-b197-95bcc8ca84b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""23679dc3-ff42-4433-9d20-a6c55a8ab843"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""97b02d2e-1c99-4086-88af-d79c56385393"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -226,7 +293,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""697022ac-8481-4d21-b74c-d201deeb7e61"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -237,7 +304,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""c3e00d76-f396-4942-92bf-b1e6f8c42957"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -248,7 +315,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""9c3f3af4-73d1-4143-a320-b950256304a3"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -259,7 +326,62 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""80059631-b2e0-46c7-8139-d3f1b5db4764"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ShiZiMove"",
+                    ""id"": ""d7a3dd75-11eb-4248-8a59-3fdb7f113378"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""cc4d82b9-fd03-4f98-bf7e-86f42896e000"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""28c9a924-61ff-4449-b787-a6b4fac11c3c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""5c83205a-3928-4bd2-a061-f72c45134a88"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""90534849-2dff-48ed-b952-6cc45e4bd247"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -281,7 +403,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""eea0c82a-a86b-4da5-87de-a46218d8be3b"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -292,7 +414,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""6752505f-f4e8-4ced-8f92-e40a0da98137"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -303,7 +425,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""375037b7-40e9-46f8-ae71-a0fb41763848"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -314,7 +436,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""f41393a6-6a17-4772-87d6-a941b00415f0"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -325,11 +447,44 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""749dd5e3-1a84-4add-9b9c-03577d3a3d9c"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SkillButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f00e5166-cdf2-41f3-80a0-b4a1365c7a32"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BulletConfirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe80f824-0f3a-4f70-8d38-856fb22530f5"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4883041a-47b4-416b-a809-92026b0540e9"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -349,11 +504,16 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         m_gameplay_WASDMove = m_gameplay.FindAction("WASDMove", throwIfNotFound: true);
         m_gameplay_ArrowMove = m_gameplay.FindAction("ArrowMove", throwIfNotFound: true);
         m_gameplay_Skill = m_gameplay.FindAction("Skill", throwIfNotFound: true);
+        m_gameplay_Confirm = m_gameplay.FindAction("Confirm", throwIfNotFound: true);
+        m_gameplay_Cancel = m_gameplay.FindAction("Cancel", throwIfNotFound: true);
         // handleplay
         m_handleplay = asset.FindActionMap("handleplay", throwIfNotFound: true);
         m_handleplay_Move = m_handleplay.FindAction("Move", throwIfNotFound: true);
         m_handleplay_BulletAttack = m_handleplay.FindAction("BulletAttack", throwIfNotFound: true);
         m_handleplay_SkillButton = m_handleplay.FindAction("SkillButton", throwIfNotFound: true);
+        m_handleplay_BulletConfirm = m_handleplay.FindAction("BulletConfirm", throwIfNotFound: true);
+        m_handleplay_Confirm = m_handleplay.FindAction("Confirm", throwIfNotFound: true);
+        m_handleplay_Cancel = m_handleplay.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -418,6 +578,8 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_WASDMove;
     private readonly InputAction m_gameplay_ArrowMove;
     private readonly InputAction m_gameplay_Skill;
+    private readonly InputAction m_gameplay_Confirm;
+    private readonly InputAction m_gameplay_Cancel;
     public struct GameplayActions
     {
         private @CharacterInput m_Wrapper;
@@ -425,6 +587,8 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         public InputAction @WASDMove => m_Wrapper.m_gameplay_WASDMove;
         public InputAction @ArrowMove => m_Wrapper.m_gameplay_ArrowMove;
         public InputAction @Skill => m_Wrapper.m_gameplay_Skill;
+        public InputAction @Confirm => m_Wrapper.m_gameplay_Confirm;
+        public InputAction @Cancel => m_Wrapper.m_gameplay_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -443,6 +607,12 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @Skill.started += instance.OnSkill;
             @Skill.performed += instance.OnSkill;
             @Skill.canceled += instance.OnSkill;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -456,6 +626,12 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @Skill.started -= instance.OnSkill;
             @Skill.performed -= instance.OnSkill;
             @Skill.canceled -= instance.OnSkill;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -480,6 +656,9 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_handleplay_Move;
     private readonly InputAction m_handleplay_BulletAttack;
     private readonly InputAction m_handleplay_SkillButton;
+    private readonly InputAction m_handleplay_BulletConfirm;
+    private readonly InputAction m_handleplay_Confirm;
+    private readonly InputAction m_handleplay_Cancel;
     public struct HandleplayActions
     {
         private @CharacterInput m_Wrapper;
@@ -487,6 +666,9 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_handleplay_Move;
         public InputAction @BulletAttack => m_Wrapper.m_handleplay_BulletAttack;
         public InputAction @SkillButton => m_Wrapper.m_handleplay_SkillButton;
+        public InputAction @BulletConfirm => m_Wrapper.m_handleplay_BulletConfirm;
+        public InputAction @Confirm => m_Wrapper.m_handleplay_Confirm;
+        public InputAction @Cancel => m_Wrapper.m_handleplay_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_handleplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -505,6 +687,15 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @SkillButton.started += instance.OnSkillButton;
             @SkillButton.performed += instance.OnSkillButton;
             @SkillButton.canceled += instance.OnSkillButton;
+            @BulletConfirm.started += instance.OnBulletConfirm;
+            @BulletConfirm.performed += instance.OnBulletConfirm;
+            @BulletConfirm.canceled += instance.OnBulletConfirm;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
         }
 
         private void UnregisterCallbacks(IHandleplayActions instance)
@@ -518,6 +709,15 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @SkillButton.started -= instance.OnSkillButton;
             @SkillButton.performed -= instance.OnSkillButton;
             @SkillButton.canceled -= instance.OnSkillButton;
+            @BulletConfirm.started -= instance.OnBulletConfirm;
+            @BulletConfirm.performed -= instance.OnBulletConfirm;
+            @BulletConfirm.canceled -= instance.OnBulletConfirm;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
         }
 
         public void RemoveCallbacks(IHandleplayActions instance)
@@ -549,11 +749,16 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         void OnWASDMove(InputAction.CallbackContext context);
         void OnArrowMove(InputAction.CallbackContext context);
         void OnSkill(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
     public interface IHandleplayActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnBulletAttack(InputAction.CallbackContext context);
         void OnSkillButton(InputAction.CallbackContext context);
+        void OnBulletConfirm(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
 }

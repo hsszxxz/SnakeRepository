@@ -22,10 +22,12 @@ namespace sneak
         public Color shineColor;
         public BulletAttack bulletAttack = new BulletAttack();
         private Coroutine light;
+        private LateLoadGame loadGame;
         protected override void Init()
         {
+            loadGame = GameObject.Find("DontDestroyGo").GetComponent<LateLoadGame>();
             type = HeadType.Head2;
-            inputControl = new InputControl(InputDevice.KeyBoard, transform, HeadType.Head2);
+            inputControl = new InputControl(loadGame.headDevices[1], transform, HeadType.Head2);
             transform.tag = "Head2";
             bulletAttack.Init(transform);
         }
@@ -63,20 +65,6 @@ namespace sneak
                     bulletAttack.Attack();
                 }
             }
-            //    if (Input.GetMouseButtonUp(1))
-            //{
-            //    if (Time.timeScale != 0)
-            //    {
-            //        if (SneakManager.Instance.bodies.Count <= 2)
-            //            Debug.Log("No bullet");
-            //        else
-            //        {
-            //            SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-            //            bulletAttack.targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //            bulletAttack.Attack();
-            //        }
-            //    }
-            //}
         }
 
         public void ObjectMove()
