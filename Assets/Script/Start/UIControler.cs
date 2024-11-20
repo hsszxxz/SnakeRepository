@@ -19,14 +19,18 @@ public class UIControler : MonoBehaviour
         startGame.onClick.AddListener(StartGame);
         continueGame.onClick.AddListener(ContinueGame);
         maker.onClick.AddListener(ShowMakers);
-        quit.onClick.AddListener(() => { Application.Quit(); });
+        quit.onClick.AddListener(QuitGame);
         lateLoadGame = DontDestroyGo.GetComponent<LateLoadGame>();
         DontDestroyOnLoad(DontDestroyGo);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     public void StartGame()
     {
         inputChoose.gameObject.SetActive(true);
-        inputChoose.gameStart += () =>
+        inputChoose.gameStart = () =>
         {
             lateLoadGame.StartCoroutine(LateSart());
             SceneManager.LoadScene("MainScene");
@@ -41,17 +45,16 @@ public class UIControler : MonoBehaviour
     }
     public void ContinueGame()
     {
+        List<SavePoint> points = SaveSystemManager.Instance.GetAllSaveItemByUpdateTime();
+        if (points.Count == 0)
+            return;
         inputChoose.gameObject.SetActive(true);
-        inputChoose.gameStart += () =>
+        inputChoose.gameStart =()=>
         {
+            Time.timeScale = 1;
             List<SavePoint> points = SaveSystemManager.Instance.GetAllSaveItemByUpdateTime();
-            if (points.Count == 0)
-                return;
-            else
-            {
-                lateLoadGame.StartCoroutine(LateLoad(points[0].saveID));
-                SceneManager.LoadScene("MainScene");
-            }
+            lateLoadGame.StartCoroutine(LateLoad(points[0].saveID));
+            SceneManager.LoadScene("MainScene");
         };
     }
     IEnumerator LateLoad(int index)

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using control;
 using UnityEngine.UI;
+using System;
+using NUnit.Framework;
 
 ///<summary>
 ///
 ///<summary>
-public delegate void GameStart(); 
 public class InputChoose : MonoBehaviour
 {
     [HideInInspector]
-    public event GameStart gameStart;
+    public Action gameStart;
     private int indexValue;
     private int index
     {
@@ -69,6 +70,8 @@ public class InputChoose : MonoBehaviour
         if (isReady[0] && isReady[1])
         {
             gameStart();
+            isReady[0] = false;
+            isReady[1] = false;
         }
     }
     private void OnDisable()

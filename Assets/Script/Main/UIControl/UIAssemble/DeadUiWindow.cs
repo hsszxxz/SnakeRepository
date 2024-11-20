@@ -18,6 +18,7 @@ public class DeadUiWindow : UIWindow
     private void QuitGame()
     {
         SceneManager.LoadScene("StartScene");
+        SaveSystemManager.Instance.DeleteSaveItem(SaveManager.Instance.currentSaveIndex);
     }
     private void ContinueGame()
     {

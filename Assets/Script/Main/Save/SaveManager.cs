@@ -24,7 +24,8 @@ namespace save
         public bool isNewSave;
         public GameObject items;
         private Dictionary<int , GameObject> itemGo = new Dictionary<int , GameObject>();
-        string path;
+        [HideInInspector]
+        public string path;
         public override void Init()
         {
             path = Application.persistentDataPath + "/" + "saveData";

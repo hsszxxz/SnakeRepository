@@ -17,6 +17,9 @@ public class MenuUIWindow : UIWindow
     }
     private void QuitGame()
     {
+        SaveSystem.SaveAll(SaveManager.Instance.currentSaveIndex);
+        string pictureName = SaveSystemManager.Instance.GetSaveItem(SaveManager.Instance.currentSaveIndex).LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss");
+        ScreenCapture.CaptureScreenshot(SaveManager.Instance.path + "/" + pictureName + ".png");
         SceneManager.LoadScene("StartScene");
     }
     private void ContinueGame()

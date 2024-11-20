@@ -276,6 +276,15 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4ca1b48-013e-4fe0-80a8-6e655c48bddf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -458,7 +467,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f00e5166-cdf2-41f3-80a0-b4a1365c7a32"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -469,7 +478,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fe80f824-0f3a-4f70-8d38-856fb22530f5"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -480,11 +489,22 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4883041a-47b4-416b-a809-92026b0540e9"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21e69afb-20af-49c9-b968-8678be682888"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -514,6 +534,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         m_handleplay_BulletConfirm = m_handleplay.FindAction("BulletConfirm", throwIfNotFound: true);
         m_handleplay_Confirm = m_handleplay.FindAction("Confirm", throwIfNotFound: true);
         m_handleplay_Cancel = m_handleplay.FindAction("Cancel", throwIfNotFound: true);
+        m_handleplay_Interact = m_handleplay.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -659,6 +680,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_handleplay_BulletConfirm;
     private readonly InputAction m_handleplay_Confirm;
     private readonly InputAction m_handleplay_Cancel;
+    private readonly InputAction m_handleplay_Interact;
     public struct HandleplayActions
     {
         private @CharacterInput m_Wrapper;
@@ -669,6 +691,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         public InputAction @BulletConfirm => m_Wrapper.m_handleplay_BulletConfirm;
         public InputAction @Confirm => m_Wrapper.m_handleplay_Confirm;
         public InputAction @Cancel => m_Wrapper.m_handleplay_Cancel;
+        public InputAction @Interact => m_Wrapper.m_handleplay_Interact;
         public InputActionMap Get() { return m_Wrapper.m_handleplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -696,6 +719,9 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @Cancel.started += instance.OnCancel;
             @Cancel.performed += instance.OnCancel;
             @Cancel.canceled += instance.OnCancel;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IHandleplayActions instance)
@@ -718,6 +744,9 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @Cancel.started -= instance.OnCancel;
             @Cancel.performed -= instance.OnCancel;
             @Cancel.canceled -= instance.OnCancel;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IHandleplayActions instance)
@@ -760,5 +789,6 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         void OnBulletConfirm(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

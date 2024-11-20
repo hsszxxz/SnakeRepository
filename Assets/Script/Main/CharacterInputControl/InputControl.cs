@@ -102,8 +102,8 @@ namespace control
             {
                 if (inputAction.handleplay.BulletConfirm.WasPressedThisFrame())
                 {
-                    Vector3 dir = new Vector3(inputAction.handleplay.BulletAttack.ReadValue<Vector2>().x, inputAction.handleplay.BulletAttack.ReadValue<Vector2>().y,0); 
-                    return dir;
+                    Vector3 dir = new Vector3(inputAction.handleplay.BulletAttack.ReadValue<Vector2>().x + self.position.x, inputAction.handleplay.BulletAttack.ReadValue<Vector2>().y + self.position.y, 0);
+                    return Quaternion.Euler(-20, 0, 0)*dir;
                 }
                 else
                 {
