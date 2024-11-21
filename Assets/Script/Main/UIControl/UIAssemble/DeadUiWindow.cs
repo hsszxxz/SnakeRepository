@@ -1,4 +1,7 @@
+using control;
 using save;
+using sneak;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +17,29 @@ public class DeadUiWindow : UIWindow
         newGame.onClick.AddListener(ContinueGame);
         quitGame.onClick.AddListener(QuitGame);
         loadGame.onClick.AddListener(LoadGame);
+    }
+    public override void ShutAndOpen(bool flag)
+    {
+        base.ShutAndOpen(flag);
+        if (flag)
+        {
+            Dictionary<Button, Action> buttons = new Dictionary<Button, Action>()
+        {
+            {newGame,ContinueGame },
+            {loadGame,LoadGame },
+            {quitGame,QuitGame},
+        };
+            CharacterInput[] inputs = new CharacterInput[SneakManager.Instance.inputControlers.Count];
+            for (int i = 0; i < inputs.Length; i++)
+            {
+                inputs[i] = SneakManager.Instance.inputControlers[i];
+            }
+            HandleButtonSelect.Instance.OpenHandleControl(buttons, inputs);
+        }
+        else
+        {
+            HandleButtonSelect.Instance.ShutHandleControl();
+        }
     }
     private void QuitGame()
     {

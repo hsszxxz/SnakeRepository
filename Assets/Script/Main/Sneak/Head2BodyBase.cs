@@ -11,7 +11,7 @@ using UnityEngine.Rendering.Universal;
 namespace sneak
 {
     ///<summary>
-    ///头1的基本信息
+    ///头2的基本信息
     ///<summary>
     public class Head2BodyBase : SneakBody,IAttack,ISkillRelease,IMovable
     {
@@ -23,8 +23,10 @@ namespace sneak
         public BulletAttack bulletAttack = new BulletAttack();
         private Coroutine light;
         private LateLoadGame loadGame;
+        private BulletDirSHow bulletDirShow;
         protected override void Init()
         {
+            bulletDirShow = GetComponentInChildren<BulletDirSHow>(); 
             loadGame = GameObject.Find("DontDestroyGo").GetComponent<LateLoadGame>();
             type = HeadType.Head2;
             inputControl = new InputControl(loadGame.headDevices[1], transform, HeadType.Head2);
@@ -53,18 +55,15 @@ namespace sneak
 
         public void Attack()
         {
-            Vector3 bulletDir = inputControl.BulletAttackButton();
-            if (bulletDir.z!=-1.1f)
+            if (SneakManager.Instance.bodies.Count > 2 &&inputControl.BulletAttackButton(bulletAttack))
             {
-                if (SneakManager.Instance.bodies.Count <= 2)
-                    Debug.Log("No bullet");
-                else
-                {
-                    SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
-                    bulletAttack.targetPos = bulletDir;
-                    bulletAttack.Attack();
-                }
+                SneakManager.Instance.DeletSneakBody(SneakManager.Instance.bodies[2]);
             }
+            else if (inputControl.BulletAttackButton(bulletAttack))
+            {
+                Debug.Log("No bullet");
+            }
+            bulletDirShow.angle = Vector2.Angle(new Vector2(0, 0),Camera.main.ViewportToWorldPoint(Input.mousePosition));
         }
 
         public void ObjectMove()

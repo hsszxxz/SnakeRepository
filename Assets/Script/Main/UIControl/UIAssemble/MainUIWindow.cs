@@ -1,3 +1,4 @@
+using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,19 @@ public class MainUIWindow:UIWindow
         Time.timeScale = 0;
         UIManager.Instance.GetUIWindow<MenuUIWindow>().ShutAndOpen(true);
         ShutAndOpen(false);
+    }
+    private void Update()
+    {
+        foreach (var input in SneakManager.Instance.inputControlers)
+        {
+            if (input.handleplay.Cancel.WasPressedThisFrame())
+            {
+                Time.timeScale = 0;
+                ShutAndOpen(false);
+                UIManager.Instance.GetUIWindow<MenuUIWindow>().ShutAndOpen(true);
+                break;
+            }
+        }
     }
 }
 

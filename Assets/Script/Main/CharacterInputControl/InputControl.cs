@@ -54,6 +54,7 @@ namespace control
                 }
             }
             inputAction.Enable();
+            SneakManager.Instance.inputControlers.Add(inputAction);
         }
         private InputDevice device;
         private CharacterInput inputAction;
@@ -85,32 +86,31 @@ namespace control
             }
             return false;
         }
-        public Vector3 BulletAttackButton()
+        public bool BulletAttackButton(BulletAttack bulletAttack)
         {
             if (device == InputDevice.KeyBoard)
             {
                 if (Input.GetMouseButtonUp(1))
                 {
-                    return Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                }
-                else
-                {
-                    return new Vector3(0, 0,-1.1f);
+                    Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    bulletAttack.targetPos  = target;
+                    Vector2 direction = Quaternion.Euler(20, 0, 0) * (target - self.position).normalized;
+                    bulletAttack.Attack(direction);
+                    return true;
                 }
             }
             else if (device == InputDevice.Handle)
             {
                 if (inputAction.handleplay.BulletConfirm.WasPressedThisFrame())
                 {
-                    Vector3 dir = new Vector3(inputAction.handleplay.BulletAttack.ReadValue<Vector2>().x + self.position.x, inputAction.handleplay.BulletAttack.ReadValue<Vector2>().y + self.position.y, 0);
-                    return Quaternion.Euler(-20, 0, 0)*dir;
-                }
-                else
-                {
-                    return new Vector3(0, 0, -1.1f);
+                    Vector2 s = self.position;
+                   Vector3 target = s + inputAction.handleplay.BulletAttack.ReadValue<Vector2>();
+                    bulletAttack.targetPos = Quaternion.Euler(-20,0,0)* target;
+                    bulletAttack.Attack(Quaternion.Euler(20, 0, 0) * inputAction.handleplay.BulletAttack.ReadValue<Vector2>());
+                    return true;
                 }
             }
-            return new Vector3(0,0,-1.1f);
+            return false;
         }
         public void Move(float moveForce)
         {

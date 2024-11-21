@@ -32,9 +32,13 @@ namespace interection
                 if(Vector2.Distance(FindSneakPosition.FindTarget(transform).position,transform.position)<=distance)
                 {
                     ShowPanel();
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    foreach (var input in SneakManager.Instance.inputControlers)
                     {
-                        InterectMethod();
+                        if (input.gameplay.Confirm.WasPressedThisFrame() || input.handleplay.Interact.WasPressedThisFrame())
+                        {
+                            InterectMethod();
+                            break;
+                        }
                     }
                 }
                 else

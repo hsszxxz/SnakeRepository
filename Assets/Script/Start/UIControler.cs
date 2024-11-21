@@ -1,7 +1,10 @@
+using control;
 using save;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class UIControler : MonoBehaviour
@@ -14,6 +17,7 @@ public class UIControler : MonoBehaviour
     public GameObject DontDestroyGo;
     private LateLoadGame lateLoadGame;
     public InputChoose inputChoose;
+    private CharacterInput inputActions;
     private void Start()
     {
         startGame.onClick.AddListener(StartGame);
@@ -22,6 +26,26 @@ public class UIControler : MonoBehaviour
         quit.onClick.AddListener(QuitGame);
         lateLoadGame = DontDestroyGo.GetComponent<LateLoadGame>();
         DontDestroyOnLoad(DontDestroyGo);
+
+    }
+    private void OnEnable()
+    {
+        inputActions = new CharacterInput();
+        inputChoose.inputAction = inputActions;
+        Dictionary<Button, Action> buttons = new Dictionary<Button, Action>()
+        {
+            {startGame,StartGame },
+            {continueGame,ContinueGame},
+            {quit,QuitGame},
+            {maker,ShowMakers },
+        };
+        CharacterInput[] inputs = new CharacterInput[1];
+        inputs[0] = inputActions;
+        HandleButtonSelect.Instance.OpenHandleControl(buttons,inputs);
+    }
+    private void OnDisable()
+    {
+        HandleButtonSelect.Instance.ShutHandleControl();
     }
     public void QuitGame()
     {
@@ -30,6 +54,7 @@ public class UIControler : MonoBehaviour
     public void StartGame()
     {
         inputChoose.gameObject.SetActive(true);
+        HandleButtonSelect.Instance.ShutAndOpenHandleControl(false);
         inputChoose.gameStart = () =>
         {
             lateLoadGame.StartCoroutine(LateSart());
@@ -67,6 +92,7 @@ public class UIControler : MonoBehaviour
     private void ShowMakers()
     {
         Makers.SetActive(true);
+        HandleButtonSelect.Instance.ShutAndOpenHandleControl(false);
         StartCoroutine(CancelMaker());
     }
     IEnumerator CancelMaker()
@@ -79,6 +105,7 @@ public class UIControler : MonoBehaviour
                 break;
             }
         }
+        HandleButtonSelect.Instance.ShutAndOpenHandleControl(true);
         Makers.SetActive(false);
     }
 }

@@ -20,30 +20,37 @@ public class InputChoose : MonoBehaviour
         set
         {
             indexValue = value;
-            for (int i = 0; i <headtishi.Length; i++)
+            if (headtishi != null)
             {
-                if (i==value)
+                for (int i = 0; i < headtishi.Length; i++)
                 {
-                    headtishi[i].SetActive(true);
-                }
-                else
-                {
-                    headtishi[i].SetActive(false);
+                    if (i == value && headtishi[i] != null)
+                    {
+                        headtishi[i].SetActive(true);
+                    }
+                    else if (headtishi[i] != null)
+                    {
+                        headtishi[i].SetActive(false);
+                    }
                 }
             }
         }
     }
     public GameObject[] headChooose;
     public GameObject[] headtishi;
-    private CharacterInput inputAction;
+    [HideInInspector]
+    public  CharacterInput inputAction;
     public LateLoadGame loadGame;
+    private Image[] headChooseImage;
     private bool[] isReady = {false,false};
     private void OnEnable()
     {
+        headChooseImage = new Image[2];
+        headChooseImage[0] = headChooose[0].GetComponent<Image>();
+        headChooseImage[1] = headChooose[1].GetComponent<Image>();
         index = 0;
         headChooose[0].GetComponent<Button>().onClick.AddListener(() => index=0);
         headChooose[1].GetComponent<Button>().onClick.AddListener(() => index=1);
-        inputAction = new CharacterInput();
         inputAction.Enable();
         inputAction.gameplay.ArrowMove.started += tp => index = (int)(tp.ReadValue<Vector2>().x + 0.99f);
         inputAction.gameplay.WASDMove.started += tp => index = (int)(tp.ReadValue<Vector2>().x + 0.99f);
@@ -57,11 +64,17 @@ public class InputChoose : MonoBehaviour
     private void Cancel()
     {
         isReady[index] = false;
-        headChooose[index].GetComponent<Image>().color = Color.red;
+        if (headChooseImage[index]!=null)
+        {
+            headChooseImage[index].color = Color.red;
+        }
     }
     private void ConfirmChoose(InputDevice device)
     {
-        headChooose[index].GetComponent<Image>().color = Color.green; 
+        if (headChooseImage[index] != null)
+        {
+            headChooseImage[index].color = Color.green;
+        }
         isReady[index] = true; 
         loadGame.headDevices[index] = device;
     }
@@ -70,6 +83,7 @@ public class InputChoose : MonoBehaviour
         if (isReady[0] && isReady[1])
         {
             gameStart();
+            this.gameObject.SetActive(false);
             isReady[0] = false;
             isReady[1] = false;
         }

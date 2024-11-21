@@ -13,7 +13,7 @@ namespace control
     {
         public Dictionary<Button,Action> buttonsAndListeners;
         private List<GameObject> buttonTishi;
-        private CharacterInput beforeInput;
+        private CharacterInput[] beforeInput;
         private CharacterInput currentInput;
         private int indexValue;
         private int index
@@ -35,27 +35,65 @@ namespace control
                 }
             }
         }
-        private void Start()
+        public override void  Init()
         {
+            base.Init();
             currentInput = new CharacterInput();
+            buttonTishi = new List<GameObject>();
+            buttonsAndListeners = new Dictionary<Button,Action>();
         }
-        public void OpenHandleControl(Dictionary<Button,Action> buttons, CharacterInput inputs)
+        public void OpenHandleControl(Dictionary<Button, Action> buttons, CharacterInput[] inputs)
         {
             beforeInput = inputs;
-            inputs.Disable();
+            foreach (var input in beforeInput)
+            {
+                input.Disable();
+            }
             foreach (var button in buttons.Keys)
             {
                 buttonTishi.Add(button.transform.GetChild(0).gameObject);
             }
             index = 0;
-            currentInput.handleplay.Move.started += tp => index = (index + (int)tp.ReadValue<Vector2>().y*2-1)%buttons.Count;
+            buttonsAndListeners = buttons;
+            currentInput.handleplay.Move.started += tp => { index = (index - (int)tp.ReadValue<Vector2>().y + buttonsAndListeners.Count) % buttonsAndListeners.Count; index = (index - (int)tp.ReadValue<Vector2>().x * 2 + buttonsAndListeners.Count) % buttonsAndListeners.Count; };
+            currentInput.handleplay.Confirm.started += tp=>OpenListener();
+            StartCoroutine(OpenCurrent());
+        }
+        IEnumerator OpenCurrent()
+        {
+            yield return null;
             currentInput.Enable();
+        }
+        private void OpenListener()
+        {
+            Button button = buttonTishi[index].GetComponentInParent<Button>();
+            buttonsAndListeners[button].Invoke();
+        }
+        public void ShutAndOpenHandleControl(bool flag)
+        {
+            if (flag)
+            {
+                currentInput.Enable();
+            }
+            else
+            {
+                currentInput.Disable();
+            }
         }
         public void ShutHandleControl()
         {
             currentInput.handleplay.Move.Reset();
             currentInput.Disable();
-            beforeInput.Enable();
+            if (beforeInput != null)
+            {
+                foreach (var input in beforeInput)
+                {
+                    if (input != null)
+                    {
+                        input.Enable();
+                    }
+                }
+            }
             buttonsAndListeners.Clear();
             buttonTishi.Clear();
         }

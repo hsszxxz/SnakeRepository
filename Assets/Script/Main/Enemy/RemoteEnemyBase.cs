@@ -2,6 +2,7 @@ using attack;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 namespace enemy
 {
     ///<summary>
@@ -47,7 +48,7 @@ namespace enemy
                 {
                     nowTime = 0;
                     bulletAttack.targetPos = targetSneak.position;
-                    bulletAttack.Attack();
+                    bulletAttack.Attack(Quaternion.Euler(20, 0, 0) * (targetSneak.position - transform.position).normalized);
                 }
             }
         }

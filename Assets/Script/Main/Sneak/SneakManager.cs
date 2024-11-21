@@ -20,6 +20,8 @@ namespace sneak
         [HideInInspector]
         public GameObject head2;
         private float forceChange = 0.3f;
+        [HideInInspector]
+        public List<CharacterInput> inputControlers = new List<CharacterInput>();
         public override void Init()
         {
             base.Init();

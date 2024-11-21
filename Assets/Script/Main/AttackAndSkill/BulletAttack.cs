@@ -20,9 +20,8 @@ namespace attack
         [HideInInspector]
         public Vector3 targetPos;
         private  Transform self;
-        public void Attack()
+        public void Attack(Vector2 direction)
         {
-            Vector2 direction = Quaternion.Euler(20, 0, 0) * (targetPos - self.position).normalized;
             float angle = Vector2.Angle(Vector2.up, direction);
             if (targetPos.x > self.position.x)
             {

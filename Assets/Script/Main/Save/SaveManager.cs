@@ -63,21 +63,24 @@ namespace save
                 if (Vector2.Distance(FindTarget().position, SavePoint[i].position)<=distance)
                 {
                     tiShiPanels[i].SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    foreach(var input in SneakManager.Instance.inputControlers)
                     {
-
-                        SaveSystem.SaveAll(currentSaveIndex);
-                        string pictureName = SaveSystemManager.Instance.GetSaveItem(currentSaveIndex).LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss");
-                        ScreenCapture.CaptureScreenshot(path+"/"+ pictureName + ".png");
-                        if (!isNewSave)
+                        if (input.gameplay.Confirm.WasPressedThisFrame() || input.handleplay.Interact.WasPressedThisFrame())
                         {
-                            Destroy(itemGo[currentSaveIndex]);
-                            itemGo.Remove(currentSaveIndex);
+                            SaveSystem.SaveAll(currentSaveIndex);
+                            string pictureName = SaveSystemManager.Instance.GetSaveItem(currentSaveIndex).LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss");
+                            ScreenCapture.CaptureScreenshot(path + "/" + pictureName + ".png");
+                            if (!isNewSave)
+                            {
+                                Destroy(itemGo[currentSaveIndex]);
+                                itemGo.Remove(currentSaveIndex);
+                            }
+                            GameObject saveItem = Instantiate(Resources.Load("Prefabs/SaveItem") as GameObject, items.transform);
+                            Debug.Log(saveItem);
+                            saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/" + pictureName), pictureName, currentSaveIndex);
+                            itemGo.Add(currentSaveIndex, saveItem);
+                            break;
                         }
-                        GameObject saveItem = Instantiate(Resources.Load("Prefabs/SaveItem") as GameObject, items.transform);
-                        Debug.Log(saveItem);
-                        saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/" + pictureName), pictureName, currentSaveIndex);
-                        itemGo.Add(currentSaveIndex,saveItem);
                     }
                 }
                 else
