@@ -44,6 +44,11 @@ public class DeadUiWindow : UIWindow
     private void QuitGame()
     {
         ShutAndOpen(false);
+        StartCoroutine(LateLoad());
+    }
+    IEnumerator LateLoad()
+    {
+        yield return null;
         SceneManager.LoadScene("StartScene");
         SaveSystemManager.Instance.DeleteSaveItem(SaveManager.Instance.currentSaveIndex);
     }

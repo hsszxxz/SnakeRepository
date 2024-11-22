@@ -57,6 +57,7 @@ public class UIControler : MonoBehaviour
         HandleButtonSelect.Instance.ShutAndOpenHandleControl(false);
         inputChoose.gameStart = () =>
         {
+            Time.timeScale = 1;
             lateLoadGame.StartCoroutine(LateSart());
             SceneManager.LoadScene("MainScene");
         };

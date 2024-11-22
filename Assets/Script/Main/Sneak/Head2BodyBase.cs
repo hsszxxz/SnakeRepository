@@ -4,8 +4,6 @@ using Fungus;
 using injure;
 using move;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 namespace sneak

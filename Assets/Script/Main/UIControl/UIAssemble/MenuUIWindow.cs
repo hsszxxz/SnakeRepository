@@ -48,6 +48,11 @@ public class MenuUIWindow : UIWindow
         string pictureName = SaveSystemManager.Instance.GetSaveItem(SaveManager.Instance.currentSaveIndex).LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss");
         ScreenCapture.CaptureScreenshot(SaveManager.Instance.path + "/" + pictureName + ".png");
         ShutAndOpen(false);
+        StartCoroutine(LateLoad());
+    }
+    IEnumerator LateLoad()
+    {
+        yield return null;
         SceneManager.LoadScene("StartScene");
     }
     private void ContinueGame()
