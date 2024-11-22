@@ -48,7 +48,7 @@ namespace enemy
                 {
                     nowTime = 0;
                     bulletAttack.targetPos = targetSneak.position;
-                    bulletAttack.Attack(Quaternion.Euler(20, 0, 0) * (targetSneak.position - transform.position).normalized);
+                    bulletAttack.Attack();
                 }
             }
         }

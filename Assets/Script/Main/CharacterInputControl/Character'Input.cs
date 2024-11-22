@@ -285,6 +285,15 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Bag"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cb8fbb0-b23a-4ad9-8016-20ec15663135"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -399,61 +408,6 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""BulletDir"",
-                    ""id"": ""e22f723c-150f-41f7-b63b-dad7c3e09082"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BulletAttack"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""eea0c82a-a86b-4da5-87de-a46218d8be3b"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BulletAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""6752505f-f4e8-4ced-8f92-e40a0da98137"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BulletAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""375037b7-40e9-46f8-ae71-a0fb41763848"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BulletAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f41393a6-6a17-4772-87d6-a941b00415f0"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BulletAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""749dd5e3-1a84-4add-9b9c-03577d3a3d9c"",
                     ""path"": ""<Gamepad>/buttonNorth"",
@@ -507,6 +461,28 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fccdfc5e-d07d-4892-b8ab-6abeef36a4be"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BulletAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1173b83-4f18-4797-85da-250e82e2fa15"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -535,6 +511,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         m_handleplay_Confirm = m_handleplay.FindAction("Confirm", throwIfNotFound: true);
         m_handleplay_Cancel = m_handleplay.FindAction("Cancel", throwIfNotFound: true);
         m_handleplay_Interact = m_handleplay.FindAction("Interact", throwIfNotFound: true);
+        m_handleplay_Bag = m_handleplay.FindAction("Bag", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -681,6 +658,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_handleplay_Confirm;
     private readonly InputAction m_handleplay_Cancel;
     private readonly InputAction m_handleplay_Interact;
+    private readonly InputAction m_handleplay_Bag;
     public struct HandleplayActions
     {
         private @CharacterInput m_Wrapper;
@@ -692,6 +670,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         public InputAction @Confirm => m_Wrapper.m_handleplay_Confirm;
         public InputAction @Cancel => m_Wrapper.m_handleplay_Cancel;
         public InputAction @Interact => m_Wrapper.m_handleplay_Interact;
+        public InputAction @Bag => m_Wrapper.m_handleplay_Bag;
         public InputActionMap Get() { return m_Wrapper.m_handleplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -722,6 +701,9 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Bag.started += instance.OnBag;
+            @Bag.performed += instance.OnBag;
+            @Bag.canceled += instance.OnBag;
         }
 
         private void UnregisterCallbacks(IHandleplayActions instance)
@@ -747,6 +729,9 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Bag.started -= instance.OnBag;
+            @Bag.performed -= instance.OnBag;
+            @Bag.canceled -= instance.OnBag;
         }
 
         public void RemoveCallbacks(IHandleplayActions instance)
@@ -790,5 +775,6 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         void OnConfirm(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnBag(InputAction.CallbackContext context);
     }
 }

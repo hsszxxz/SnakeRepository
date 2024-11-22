@@ -41,7 +41,7 @@ public class UIControler : MonoBehaviour
         };
         CharacterInput[] inputs = new CharacterInput[1];
         inputs[0] = inputActions;
-        HandleButtonSelect.Instance.OpenHandleControl(buttons,inputs);
+        HandleButtonSelect.Instance.OpenHandleControl(buttons, inputs);
     }
     private void OnDisable()
     {
@@ -67,9 +67,11 @@ public class UIControler : MonoBehaviour
         SavePoint savePoint = SaveSystemManager.Instance.CreateSaveItem();
         SaveManager.Instance.currentSaveIndex = savePoint.saveID;
         SaveManager.Instance.isNewSave = true;
+        HandleButtonSelect.Instance.ShutAndOpenHandleControl(true);
     }
     public void ContinueGame()
     {
+        HandleButtonSelect.Instance.ShutAndOpenHandleControl(false);
         List<SavePoint> points = SaveSystemManager.Instance.GetAllSaveItemByUpdateTime();
         if (points.Count == 0)
             return;
@@ -88,6 +90,7 @@ public class UIControler : MonoBehaviour
         SaveManager.Instance.currentSaveIndex = index;
         SaveSystem.LoadAll(index);
         SaveManager.Instance.isNewSave = false;
+        HandleButtonSelect.Instance.ShutAndOpenHandleControl(true);
     }
     private void ShowMakers()
     {

@@ -74,6 +74,17 @@ namespace control
             }
             return false;
         }
+        public Vector2 BulletAttackFaceDirection()
+        {
+            if (device == InputDevice.KeyBoard)
+            {
+                return Camera.main.ScreenToViewportPoint(Input.mousePosition) - Camera.main.WorldToViewportPoint(self.position);
+            }
+            else
+            {
+                return inputAction.handleplay.BulletAttack.ReadValue<Vector2>();
+            }
+        }
         public bool SkillButtonPress()
         {
             if (device == InputDevice.KeyBoard)
@@ -94,8 +105,7 @@ namespace control
                 {
                     Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     bulletAttack.targetPos  = target;
-                    Vector2 direction = Quaternion.Euler(20, 0, 0) * (target - self.position).normalized;
-                    bulletAttack.Attack(direction);
+                    bulletAttack.Attack();
                     return true;
                 }
             }
@@ -103,10 +113,10 @@ namespace control
             {
                 if (inputAction.handleplay.BulletConfirm.WasPressedThisFrame())
                 {
-                    Vector2 s = self.position;
-                   Vector3 target = s + inputAction.handleplay.BulletAttack.ReadValue<Vector2>();
-                    bulletAttack.targetPos = Quaternion.Euler(-20,0,0)* target;
-                    bulletAttack.Attack(Quaternion.Euler(20, 0, 0) * inputAction.handleplay.BulletAttack.ReadValue<Vector2>());
+                    Vector2 s =Camera.main.WorldToViewportPoint(self.position);
+                   Vector3 target =Camera.main.ViewportToWorldPoint(s + inputAction.handleplay.BulletAttack.ReadValue<Vector2>());
+                    bulletAttack.targetPos = target;
+                    bulletAttack.Attack(); 
                     return true;
                 }
             }

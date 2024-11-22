@@ -31,9 +31,12 @@ public class MainUIWindow:UIWindow
         {
             if (input.handleplay.Cancel.WasPressedThisFrame())
             {
-                Time.timeScale = 0;
-                ShutAndOpen(false);
-                UIManager.Instance.GetUIWindow<MenuUIWindow>().ShutAndOpen(true);
+                StopGame();
+                break;
+            }
+            if (input.handleplay.Bag.WasPressedThisFrame())
+            {
+                OpenBag();
                 break;
             }
         }

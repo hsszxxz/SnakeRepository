@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.Windows;
 namespace control
@@ -22,15 +23,21 @@ namespace control
             set
             {
                 indexValue = value;
-                for (int i = 0; i < buttonTishi.Count; i++)
+                if (buttonTishi != null)
                 {
-                    if (i == value)
+                    for (int i = 0; i < buttonTishi.Count; i++)
                     {
-                        buttonTishi[i].SetActive(true);
-                    }
-                    else
-                    {
-                        buttonTishi[i].SetActive(false);
+                        if (buttonTishi[i] != null)
+                        {
+                            if (i == value)
+                            {
+                                buttonTishi[i].SetActive(true);
+                            }
+                            else
+                            {
+                                buttonTishi[i].SetActive(false);
+                            }
+                        }
                     }
                 }
             }
@@ -55,19 +62,25 @@ namespace control
             }
             index = 0;
             buttonsAndListeners = buttons;
-            currentInput.handleplay.Move.started += tp => { index = (index - (int)tp.ReadValue<Vector2>().y + buttonsAndListeners.Count) % buttonsAndListeners.Count; index = (index - (int)tp.ReadValue<Vector2>().x * 2 + buttonsAndListeners.Count) % buttonsAndListeners.Count; };
-            currentInput.handleplay.Confirm.started += tp=>OpenListener();
-            StartCoroutine(OpenCurrent());
-        }
-        IEnumerator OpenCurrent()
-        {
-            yield return null;
+            currentInput.handleplay.Move.started += SelectMove;
+            currentInput.handleplay.Confirm.started += OpenListener;
+            currentInput.gameplay.ArrowMove.started += SelectMove;
+            currentInput.gameplay.WASDMove.started += SelectMove;
+            currentInput.gameplay.Confirm.started += OpenListener;
             currentInput.Enable();
         }
-        private void OpenListener()
+        private void SelectMove(InputAction.CallbackContext tp)
         {
-            Button button = buttonTishi[index].GetComponentInParent<Button>();
-            buttonsAndListeners[button].Invoke();
+            index = (index - (int)tp.ReadValue<Vector2>().y + buttonsAndListeners.Count) % buttonsAndListeners.Count; 
+            index = (index - (int)tp.ReadValue<Vector2>().x * 2 + buttonsAndListeners.Count) % buttonsAndListeners.Count;
+        }
+        private void OpenListener(InputAction.CallbackContext tp)
+        {
+            if (buttonTishi[index] != null)
+            {
+                Button button = buttonTishi[index].GetComponentInParent<Button>();
+                buttonsAndListeners[button].Invoke();
+            }
         }
         public void ShutAndOpenHandleControl(bool flag)
         {
@@ -82,7 +95,11 @@ namespace control
         }
         public void ShutHandleControl()
         {
-            currentInput.handleplay.Move.Reset();
+            currentInput.handleplay.Move.started-= SelectMove;
+            currentInput.handleplay.Confirm.started-=OpenListener;
+            currentInput.gameplay.ArrowMove.started-=SelectMove;
+            currentInput.gameplay.WASDMove.started -= SelectMove; 
+            currentInput.gameplay.Confirm.started-=OpenListener;
             currentInput.Disable();
             if (beforeInput != null)
             {

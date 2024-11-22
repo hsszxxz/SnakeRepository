@@ -43,6 +43,7 @@ public class DeadUiWindow : UIWindow
     }
     private void QuitGame()
     {
+        ShutAndOpen(false);
         SceneManager.LoadScene("StartScene");
         SaveSystemManager.Instance.DeleteSaveItem(SaveManager.Instance.currentSaveIndex);
     }
@@ -56,6 +57,11 @@ public class DeadUiWindow : UIWindow
     private void LoadGame()
     {
         ShutAndOpen(false);
+        StartCoroutine(LateOpen());
+    }
+    IEnumerator LateOpen()
+    {
+        yield return null;
         UIManager.Instance.GetUIWindow<SaveUIWindow>().ShutAndOpen(true);
     }
 }

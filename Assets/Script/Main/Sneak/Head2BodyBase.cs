@@ -63,7 +63,15 @@ namespace sneak
             {
                 Debug.Log("No bullet");
             }
-            bulletDirShow.angle = Vector2.Angle(new Vector2(0, 0),Camera.main.ViewportToWorldPoint(Input.mousePosition));
+            Vector2 faceDir = inputControl.BulletAttackFaceDirection();
+            if (faceDir.x < 0)
+            {
+                bulletDirShow.angle = Vector2.Angle(new Vector2(0, 1), faceDir);
+            }
+            else
+            {
+                bulletDirShow.angle = Vector2.Angle(new Vector2(0, -1), faceDir);
+            }
         }
 
         public void ObjectMove()

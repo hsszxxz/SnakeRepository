@@ -25,11 +25,11 @@ public class MenuUIWindow : UIWindow
         if (flag)
         {
             Dictionary<Button, Action> buttons = new Dictionary<Button, Action>()
-        {
-            {continueGame,ContinueGame },
-            {loadGame,LoadGame },
-            {quitGame,QuitGame},
-        };
+            {
+                {continueGame,ContinueGame },
+                {loadGame,LoadGame },
+                {quitGame,QuitGame},
+            };
             CharacterInput[] inputs = new CharacterInput[SneakManager.Instance.inputControlers.Count];
             for (int i = 0; i < inputs.Length; i++)
             {
@@ -47,6 +47,7 @@ public class MenuUIWindow : UIWindow
         SaveSystem.SaveAll(SaveManager.Instance.currentSaveIndex);
         string pictureName = SaveSystemManager.Instance.GetSaveItem(SaveManager.Instance.currentSaveIndex).LastSaveTime.ToString("yyyy-MM-dd-HH-mm-ss");
         ScreenCapture.CaptureScreenshot(SaveManager.Instance.path + "/" + pictureName + ".png");
+        ShutAndOpen(false);
         SceneManager.LoadScene("StartScene");
     }
     private void ContinueGame()
@@ -57,7 +58,12 @@ public class MenuUIWindow : UIWindow
     }
     private void LoadGame()
     {
-        ShutAndOpen(false) ;
+        ShutAndOpen(false);
+        StartCoroutine(LateOpen());
+    }
+    IEnumerator LateOpen()
+    {
+        yield return null;
         UIManager.Instance.GetUIWindow<SaveUIWindow>().ShutAndOpen(true);
     }
 }

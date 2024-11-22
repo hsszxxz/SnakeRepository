@@ -1,3 +1,6 @@
+using control;
+using sneak;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,6 +58,32 @@ public class BagUIWindow:UIWindow
         }
     }
     private int maxPage;
+    public override void ShutAndOpen(bool flag)
+    {
+        base.ShutAndOpen(flag);
+        if (flag)
+        {
+            Dictionary<Button, Action> buttons = new Dictionary<Button, Action>();
+            foreach(var page in pageItems.Values)
+            {
+                foreach (var item in page)
+                {
+                    buttons.Add(item.GetComponent<Button>(),item.GetComponent<ItemScript>().ShowDetails);
+                }
+            }
+            buttons.Add(close, CloseBag);
+            CharacterInput[] inputs = new CharacterInput[SneakManager.Instance.inputControlers.Count];
+            for (int i = 0; i < inputs.Length; i++)
+            {
+                inputs[i] = SneakManager.Instance.inputControlers[i];
+            }
+            HandleButtonSelect.Instance.OpenHandleControl(buttons, inputs);
+        }
+        else
+        {
+            HandleButtonSelect.Instance.ShutHandleControl();
+        }
+    }
 
     private void Start()
     {

@@ -1,3 +1,5 @@
+using Fungus;
+using sneak;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +28,7 @@ public class ItemScript : MonoBehaviour
         bagUIWindow = UIManager.Instance.GetUIWindow<BagUIWindow>();
         detailImage = bagUIWindow.detailImage.gameObject;
     }
-    private void ShowDetails()
+    public void ShowDetails()
     {
         bagUIWindow.detailText.text = data.description;
         detailImage.GetComponent<Image>(). sprite = data.img;
@@ -42,6 +44,13 @@ public class ItemScript : MonoBehaviour
         detailImage.GetComponent<Image>().sprite = data.detailImgWithDescribe;
         detailImage.GetComponent<Image>(). SetNativeSize();
         bagUIWindow.detailText.gameObject.SetActive(false);
+    }
+    private void Update()
+    {
+        if (bagUIWindow.detailText.gameObject.activeInHierarchy && (SneakManager.Instance.inputControlers[0].handleplay.Cancel.WasPressedThisFrame() || SneakManager.Instance.inputControlers[1].handleplay.Cancel.WasPressedThisFrame()))
+        {
+            DectImg();
+        }
     }
     IEnumerator CloseDetailImag(Vector3 detailImagPrimPos)
     {

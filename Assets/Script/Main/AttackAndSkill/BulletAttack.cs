@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 namespace attack
 {
     ///<summary>
@@ -30,6 +31,11 @@ namespace attack
             GameObject bullet = GameObjectPool.Instance.CreateObject(bulletPrefab.name, bulletPrefab, self.position, Quaternion.Euler(0, 0, angle));
             bullet.GetComponent<BulletControl>().bulletSpeed = bulletSpeed;
             bullet.GetComponent<BulletControl>().direction = direction; 
+        }
+        public void Attack()
+        {
+            Vector2 direction = Quaternion.Euler(20, 0, 0) * (targetPos - self.position).normalized;
+            Attack(direction);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace save
             text.text = time;
             saveIndex = index;
         }
-        private void SelectSave()
+        public void SelectSave()
         {
             UIManager.Instance.GetUIWindow<SaveUIWindow>().saveItem = this;
             foreach (var item in UIManager.Instance.GetUIWindow<SaveUIWindow>().saveItems.Values)
