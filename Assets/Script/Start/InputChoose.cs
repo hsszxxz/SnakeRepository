@@ -43,6 +43,11 @@ public class InputChoose : MonoBehaviour
     public LateLoadGame loadGame;
     private Image[] headChooseImage;
     private bool[] isReady = {false,false};
+    public Button startButton;
+    private void Start()
+    {
+        startButton.onClick.AddListener(StartGame);
+    }
     private void OnEnable()
     {
         headChooseImage = new Image[2];
@@ -78,7 +83,17 @@ public class InputChoose : MonoBehaviour
         isReady[index] = true; 
         loadGame.headDevices[index] = device;
     }
-    private void Update()
+    //private void Update()
+    //{
+    //    if (isReady[0] && isReady[1])
+    //    {
+    //        gameStart();
+    //        this.gameObject.SetActive(false);
+    //        isReady[0] = false;
+    //        isReady[1] = false;
+    //    }
+    //}
+    private void StartGame()
     {
         if (isReady[0] && isReady[1])
         {

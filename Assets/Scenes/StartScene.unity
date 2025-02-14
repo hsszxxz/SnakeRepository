@@ -368,6 +368,7 @@ MonoBehaviour:
   - {fileID: 1002169494}
   - {fileID: 1859539670}
   loadGame: {fileID: 2045622325}
+  startButton: {fileID: 0}
 --- !u!114 &453856062
 MonoBehaviour:
   m_ObjectHideFlags: 0

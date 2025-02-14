@@ -79,6 +79,7 @@ namespace save
                             Debug.Log(saveItem);
                             saveItem.transform.GetComponent<SaveItem>().ItemInit(Resources.Load<Sprite>("ScreenShot/" + pictureName), pictureName, currentSaveIndex);
                             itemGo.Add(currentSaveIndex, saveItem);
+                            UIManager.Instance.GetUIWindow<SaveUIWindow>().ShutAndOpen(true);
                             break;
                         }
                     }
